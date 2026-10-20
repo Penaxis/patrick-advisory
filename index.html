@@ -689,28 +689,24 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #hero-scene .letter{white-space:pre}
 #hero-scene .hero-kicker{position:absolute;left:0;bottom:100%;display:flex;align-items:baseline;gap:12px;margin:0 0 24px;color:#aaa;font-size:10px;line-height:1.6;letter-spacing:.035em;text-transform:uppercase}
 #hero-scene .hero-kicker strong{font-weight:400;color:#fff}
-#hero-scene .hero-kicker strong::before{content:"";display:inline-block;width:6px;height:6px;margin-right:10px;border-radius:50%;background:var(--accent);vertical-align:1px}
 #hero-scene .monogram{font-size:11.5cqw}
 #hero-scene .surname .letter:last-child{color:var(--accent)}
 #hero-scene .notes{max-width:530px;line-height:1.55}
 #hero-scene .notes p{text-wrap:pretty}
 #hero-scene .notes p + p{margin-top:6px}
 #hero-scene .hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:26px 0 0;padding:0}
-#hero-scene .hero-facts div{position:relative;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)}
-#hero-scene .hero-facts div::before{content:"";position:absolute;top:-1px;left:0;width:18px;height:1px;background:var(--accent)}
+#hero-scene .hero-facts div{position:relative}
 #hero-scene .hero-facts dt{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:34px;font-weight:250;line-height:1;letter-spacing:-.04em;white-space:nowrap}
 #hero-scene .hero-facts dd{margin:9px 0 0;color:#aaa;font-size:10px;line-height:1.5;letter-spacing:.035em;text-transform:uppercase}
 #hero-scene .hero.play .hero-kicker{animation:contentEntrance .5s .25s both}
 @media (min-width: 769px){#hero-scene .notes p{max-width:min(530px,44vw)}}
 @media (max-width: 768px){
   #hero-scene .hero-kicker{gap:8px;margin-bottom:16px;font-size:8px}
-  #hero-scene .hero-kicker strong::before{width:5px;height:5px;margin-right:7px}
   #hero-scene .monogram{font-size:17cqw}
   #hero-scene .notes{right:32px;bottom:100px;max-width:none;font-size:13px;line-height:1.5}
   #hero-scene .notes p:first-child{display:none}
   #hero-scene .notes p + p{margin-top:0;color:#ccc}
   #hero-scene .hero-facts{gap:14px;margin-top:18px}
-  #hero-scene .hero-facts div{padding-top:10px}
   #hero-scene .hero-facts dt{font-size:22px}
   #hero-scene .hero-facts dd{margin-top:6px;font-size:8px}
 }
@@ -722,11 +718,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #advisory-scenes ul,#advisory-scenes ol{padding:0;list-style:none}
 #advisory-scenes .adv-wrap{width:88%;max-width:1360px;margin-inline:auto}
 #advisory-scenes .adv-section{padding:140px 0}
-#advisory-scenes .adv-section + .adv-section{border-top:1px solid var(--line)}
-#advisory-scenes .adv-chapter{display:flex;align-items:center;gap:10px;color:var(--orange);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
-#advisory-scenes .adv-chapter::before{content:"";width:24px;height:1px;flex-shrink:0;background:var(--orange)}
 #advisory-scenes .adv-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,400px);gap:28px 8%;align-items:end;margin-bottom:72px}
-#advisory-scenes .adv-head .adv-chapter{grid-column:1/-1}
 #advisory-scenes .adv-title{margin:0;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(46px,6vw,96px);font-weight:500;line-height:.95;letter-spacing:-.055em}
 #advisory-scenes .adv-title span{display:block}
 #advisory-scenes .adv-light{font-weight:250;color:#a8a8a8}
@@ -744,67 +736,57 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 /* 01 Services */
 #advisory-scenes .svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 #advisory-scenes .svc-card{position:relative;display:flex;flex-direction:column;padding:48px 48px 44px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(165deg,#101010,#050505);overflow:hidden;transition:border-color .4s}
-#advisory-scenes .svc-card::before{content:"";position:absolute;left:48px;right:48px;top:0;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease)}
-#advisory-scenes .svc-card:hover::before{transform:scaleX(1)}
-#advisory-scenes .svc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
-#advisory-scenes .svc-num{color:#666}
-#advisory-scenes .svc-for{padding:7px 12px;border:1px solid rgba(255,99,15,.45);border-radius:99px;color:var(--orange)}
+#advisory-scenes .svc-top{margin-bottom:40px;font-size:15px}
+#advisory-scenes .svc-for{color:var(--orange)}
 #advisory-scenes .svc-title{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(36px,3.6vw,56px);font-weight:500;line-height:1;letter-spacing:-.05em}
 #advisory-scenes .svc-promise{margin-top:14px!important;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(22px,1.9vw,28px);font-weight:250;line-height:1.2;letter-spacing:-.03em;color:#ddd}
 #advisory-scenes .svc-body{margin-top:24px!important;max-width:520px;color:var(--text2);font-size:15px;line-height:1.7}
-#advisory-scenes .svc-label{margin:36px 0 6px!important;color:#777;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
-#advisory-scenes .svc-topics li{position:relative;padding:12px 0 12px 22px;border-bottom:1px solid var(--line);color:#e6e6e6;font-size:15px;line-height:1.45}
-#advisory-scenes .svc-topics li::before{content:"";position:absolute;left:0;top:19px;width:7px;height:7px;border:1px solid var(--orange);transform:rotate(45deg)}
+#advisory-scenes .svc-label{margin:36px 0 12px!important;color:#8a8a8a;font-size:14px}
+#advisory-scenes .svc-topics li{padding:5px 0;color:#e6e6e6;font-size:16px;line-height:1.45}
 #advisory-scenes .svc-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:30px 0 36px!important}
-#advisory-scenes .svc-meta dt{margin-bottom:6px;color:#777;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .svc-meta dt{margin-bottom:4px;color:#8a8a8a;font-size:14px}
 #advisory-scenes .svc-meta dd{color:#fff;font-size:14px;line-height:1.5}
 #advisory-scenes .svc-actions{margin-top:auto}
 
-/* Shared principle */
-#advisory-scenes .principle{margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
-#advisory-scenes .principle-intro{margin-bottom:34px!important;color:#888;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
-#advisory-scenes .principle-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;counter-reset:none}
-#advisory-scenes .principle-steps li{position:relative;padding-top:26px}
-#advisory-scenes .principle-steps li::before{content:"";position:absolute;left:0;right:-40px;top:0;height:1px;background:linear-gradient(90deg,var(--orange),rgba(255,99,15,.15));transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease)}
-#advisory-scenes .principle-steps li:nth-child(2)::before{transition-delay:.25s}
-#advisory-scenes .principle-steps li:nth-child(3)::before{right:0;transition-delay:.5s}
-#advisory-scenes .principle:not(.is-waiting) .principle-steps li::before{transform:scaleX(1)}
-#advisory-scenes .principle-num{display:block;margin-bottom:12px;color:var(--orange);font-size:10px;letter-spacing:.16em}
-#advisory-scenes .principle-steps h3{margin-bottom:10px;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:32px;font-weight:500;letter-spacing:-.04em}
-#advisory-scenes .principle-steps p{max-width:340px;color:var(--text2);font-size:15px;line-height:1.6}
+/* Shared principle: a quiet typographic sequence that lights up as you read */
+#advisory-scenes .principle{margin-top:150px}
+#advisory-scenes .principle-intro{max-width:620px;margin-bottom:56px!important;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(24px,2.2vw,34px);font-weight:250;line-height:1.25;letter-spacing:-.03em;color:#a8a8a8}
+#advisory-scenes .principle-step{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,360px);gap:8%;align-items:end;padding:14px 0}
+#advisory-scenes .principle-step h3{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(64px,9.4vw,150px);font-weight:500;line-height:.9;letter-spacing:-.065em;color:#262626;transition:color 1.2s var(--ease)}
+#advisory-scenes .principle-step h3 span{color:inherit;transition:color 1.2s var(--ease)}
+#advisory-scenes .principle-step p{padding-bottom:.6em;color:#b5b5b5;font-size:16px;line-height:1.6;opacity:.35;transform:translateY(10px);transition:opacity 1s ease,transform 1.1s var(--ease)}
+#advisory-scenes .principle-step.is-lit h3{color:#fff}
+#advisory-scenes .principle-step.is-lit h3 span{color:var(--orange)}
+#advisory-scenes .principle-step.is-lit p{opacity:1;transform:none}
 
 /* 02 Experience */
-#advisory-scenes .proof-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-#advisory-scenes .proof-stats li{display:flex;flex-direction:column;padding:40px 28px 36px;border-left:1px solid var(--line)}
-#advisory-scenes .proof-stats li:first-child{padding-left:0;border-left:0}
+#advisory-scenes .proof-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6%}
+#advisory-scenes .proof-stats li{display:flex;flex-direction:column}
 #advisory-scenes .proof-value{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(52px,5.4vw,84px);font-weight:250;line-height:1;letter-spacing:-.05em}
 #advisory-scenes .proof-label{margin-top:22px;color:#e6e6e6;font-size:15px;line-height:1.45}
-#advisory-scenes .proof-source{margin-top:8px;color:#777;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
-#advisory-scenes .proof-cert{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:32px!important;color:#999;font-size:13px}
-#advisory-scenes .proof-badge{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border:1px solid rgba(255,99,15,.45);border-radius:99px;color:#fff;font-size:12px}
-#advisory-scenes .proof-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
+#advisory-scenes .proof-source{margin-top:6px;color:#8a8a8a;font-size:14px}
+#advisory-scenes .proof-cert{margin-top:64px!important;color:#b5b5b5;font-size:16px}
 
 /* Sample markers */
-#advisory-scenes .sample-note{display:inline-flex;margin-right:8px;padding:4px 10px;border:1px dashed rgba(255,255,255,.35);border-radius:99px;color:#ddd;font-size:10px;letter-spacing:.12em;text-transform:uppercase;vertical-align:2px}
-#advisory-scenes .sample-tag{display:inline-flex;padding:4px 9px;border:1px dashed rgba(255,255,255,.3);border-radius:99px;color:#aaa;font-size:9px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+#advisory-scenes .sample-note{color:#fff}
+#advisory-scenes .sample-tag{color:#777;font-size:13px;font-style:italic;white-space:nowrap}
 
 /* 03 Cases */
 #advisory-scenes .case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 #advisory-scenes .case-card{display:flex;flex-direction:column;padding:34px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(165deg,#0f0f0f,#050505);transition:border-color .4s,transform .6s var(--ease)}
 #advisory-scenes .case-card:hover{transform:translateY(-4px)}
 #advisory-scenes .case-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:44px}
-#advisory-scenes .case-service{color:var(--orange);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .case-service{color:var(--orange);font-size:14px}
 #advisory-scenes .case-client{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(24px,2vw,30px);font-weight:500;line-height:1.08;letter-spacing:-.04em}
 #advisory-scenes .case-meta{margin-top:10px!important;color:#888;font-size:13px}
-#advisory-scenes .case-body{display:grid;gap:22px;margin-top:34px!important;padding-top:26px;border-top:1px solid var(--line)}
-#advisory-scenes .case-body dt{margin-bottom:6px;color:#777;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .case-body{display:grid;gap:20px;margin-top:30px!important}
+#advisory-scenes .case-body dt{margin-bottom:4px;color:#8a8a8a;font-size:14px}
 #advisory-scenes .case-body dd{color:var(--text2);font-size:15px;line-height:1.6}
-#advisory-scenes .case-outcome dd{position:relative;padding-left:20px;color:#fff}
-#advisory-scenes .case-outcome dd::before{content:"→";position:absolute;left:0;color:var(--orange)}
+#advisory-scenes .case-outcome dd{color:#fff}
 
 /* CTA banner */
 #advisory-scenes .adv-banner-wrap{padding:0 0 10px}
-#advisory-scenes .adv-work-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:30px;padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#advisory-scenes .adv-work-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:30px;padding:56px 56px;border-radius:24px;background:radial-gradient(700px circle at 85% 120%,rgba(255,99,15,.16),transparent 60%),#0b0b0b}
 #advisory-scenes .adv-work-foot>p{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(26px,2.6vw,40px);font-weight:500;line-height:1.05;letter-spacing:-.05em}
 
 /* 04 Voices */
@@ -812,14 +794,13 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #advisory-scenes .quote-card{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:36px 34px 30px;border:1px solid var(--line);border-radius:24px;background:#070707}
 #advisory-scenes .quote-card blockquote{position:relative;padding-top:44px;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(21px,1.7vw,26px);font-weight:250;line-height:1.3;letter-spacing:-.02em;color:#f2f2f2}
 #advisory-scenes .quote-card blockquote::before{content:"“";position:absolute;left:-2px;top:-14px;color:var(--orange);font-size:72px;font-weight:500;line-height:1}
-#advisory-scenes .quote-card figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--line);color:#999;font-size:13px;line-height:1.4}
+#advisory-scenes .quote-card figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#999;font-size:14px;line-height:1.4}
 
 /* 05 Fit */
 #advisory-scenes .fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 #advisory-scenes .fit-card{padding:40px;border:1px solid var(--line);border-radius:24px;background:#070707}
 #advisory-scenes .fit-card h3{margin-bottom:22px;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(24px,2vw,30px);font-weight:500;letter-spacing:-.04em}
-#advisory-scenes .fit-card li{position:relative;padding:13px 0 13px 30px;border-top:1px solid var(--line);color:#e6e6e6;font-size:15px;line-height:1.5}
-#advisory-scenes .fit-card li::before{content:"✓";position:absolute;left:2px;top:13px;color:var(--orange)}
+#advisory-scenes .fit-card li{padding:7px 0;color:#e6e6e6;font-size:16px;line-height:1.5}
 #advisory-scenes .fit-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;margin-top:40px}
 #advisory-scenes .fit-not{max-width:560px;color:#999;font-size:14px;line-height:1.65}
 #advisory-scenes .fit-not strong{color:#fff;font-weight:400}
@@ -841,9 +822,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 
 @media (max-width: 1100px) and (min-width: 900px){
   #advisory-scenes .svc-card{padding:40px 34px}
-  #advisory-scenes .svc-card::before{left:34px;right:34px}
   #advisory-scenes .case-card,#advisory-scenes .quote-card{padding:28px 24px}
-  #advisory-scenes .proof-stats li{padding:34px 18px}
 }
 @media (max-width: 899px){
   #advisory-scenes .adv-wrap{width:90%}
@@ -853,21 +832,21 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   #advisory-scenes .adv-lead{font-size:15px}
   #advisory-scenes .svc-grid,#advisory-scenes .case-grid,#advisory-scenes .quote-grid,#advisory-scenes .fit-grid{grid-template-columns:1fr;gap:16px}
   #advisory-scenes .svc-card{padding:30px 24px}
-  #advisory-scenes .svc-card::before{left:24px;right:24px}
-  #advisory-scenes .svc-top{margin-bottom:36px}
+  #advisory-scenes .svc-top{margin-bottom:28px}
   #advisory-scenes .svc-meta{grid-template-columns:1fr;gap:14px}
   #advisory-scenes .adv-button{width:100%}
-  #advisory-scenes .principle{margin-top:52px}
-  #advisory-scenes .principle-steps{grid-template-columns:1fr;gap:28px}
-  #advisory-scenes .principle-steps li::before,#advisory-scenes .principle-steps li:nth-child(3)::before{right:0}
-  #advisory-scenes .proof-stats{grid-template-columns:1fr}
-  #advisory-scenes .proof-stats li{padding:28px 0 26px;border-left:0}
-  #advisory-scenes .proof-stats li + li{border-top:1px solid var(--line)}
+  #advisory-scenes .principle{margin-top:90px}
+  #advisory-scenes .principle-intro{margin-bottom:36px!important}
+  #advisory-scenes .principle-step{grid-template-columns:1fr;gap:10px;padding:18px 0}
+  #advisory-scenes .principle-step h3{font-size:clamp(52px,15vw,84px)}
+  #advisory-scenes .principle-step p{padding-bottom:0;font-size:15px}
+  #advisory-scenes .proof-stats{grid-template-columns:1fr;gap:44px}
+  #advisory-scenes .proof-cert{margin-top:44px!important;font-size:15px}
   #advisory-scenes .proof-value{font-size:clamp(44px,13vw,60px)}
   #advisory-scenes .proof-label{margin-top:14px;font-size:14px}
   #advisory-scenes .case-card,#advisory-scenes .quote-card,#advisory-scenes .fit-card{padding:28px 24px}
   #advisory-scenes .case-top{margin-bottom:30px}
-  #advisory-scenes .adv-work-foot{padding:36px 0}
+  #advisory-scenes .adv-work-foot{padding:34px 24px}
   #advisory-scenes .adv-work-foot .adv-cta-actions,#advisory-scenes .fit-foot .adv-cta-actions{width:100%}
 }
 @media (prefers-reduced-motion: reduce){
@@ -1913,9 +1892,8 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #growth-scenes .footer-signature{font-size:clamp(24px,2.8vw,38px);line-height:1.15;letter-spacing:-.045em}
 #growth-scenes .footer-tail{padding:16px 0 24px}
 .booking-teaser{position:relative;overflow:hidden;min-width:0;padding:29px;border:1px solid rgba(255,255,255,.13);border-radius:24px;background:radial-gradient(ellipse at 100% 0,rgba(255,99,15,.1),transparent 58%),linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.015));box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
-.teaser-topline{display:flex;align-items:center;justify-content:space-between;gap:20px;color:#999;font-size:9px;letter-spacing:.07em}
+.teaser-topline{display:flex;align-items:center;justify-content:space-between;gap:20px;color:#ff630f;font-size:14px}
 .teaser-topline span:first-child{display:flex;gap:8px;align-items:center}
-.teaser-topline i{width:5px;height:5px;border-radius:50%;background:#ff630f}
 .teaser-topline svg{width:22px;height:22px;color:#ff630f}
 .booking-teaser h3{margin:25px 0 14px;font:500 clamp(28px,3.1vw,43px)/1.06 Mona,Arial,sans-serif;letter-spacing:-.045em}
 .booking-teaser>p{margin:0;max-width:340px;color:#999;font-size:12px;line-height:1.85}
@@ -2229,7 +2207,6 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 <section class="adv-section adv-services" id="services" aria-labelledby="services-title">
   <div class="adv-wrap">
     <header class="adv-head adv-reveal">
-      <p class="adv-chapter">01 / Services</p>
       <h2 id="services-title" class="adv-title">
         <span>Two areas.</span>
         <span class="adv-light">One principle.</span>
@@ -2243,7 +2220,6 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     <div class="svc-grid">
       <article class="svc-card adv-reveal" aria-labelledby="svc-advisory">
         <div class="svc-top">
-          <span class="svc-num">01</span>
           <span class="svc-for">For your company</span>
         </div>
         <h3 id="svc-advisory" class="svc-title">Strategic Advisory</h3>
@@ -2273,7 +2249,6 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 
       <article class="svc-card adv-reveal" aria-labelledby="svc-coaching">
         <div class="svc-top">
-          <span class="svc-num">02</span>
           <span class="svc-for">For you as a leader</span>
         </div>
         <h3 id="svc-coaching" class="svc-title">Executive Coaching</h3>
@@ -2302,23 +2277,22 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     </div>
 
     <!-- The shared principle behind both services -->
-    <div class="principle adv-reveal" aria-labelledby="principle-title">
-      <p class="principle-intro" id="principle-title">The same order of work, for companies and for people</p>
+    <div class="principle" aria-labelledby="principle-title">
+      <p class="principle-intro adv-reveal" id="principle-title">
+        Both start the same way, whether it is a company or a career.
+      </p>
       <ol class="principle-steps">
-        <li>
-          <span class="principle-num">01</span>
-          <h3>Clarity</h3>
-          <p>Why does this matter? Where are you actually heading?</p>
+        <li class="principle-step">
+          <h3>Clarity<span>.</span></h3>
+          <p>Why does this matter, and where are you actually heading?</p>
         </li>
-        <li>
-          <span class="principle-num">02</span>
-          <h3>Structure</h3>
-          <p>What needs to be in place so direction holds up day to day?</p>
+        <li class="principle-step">
+          <h3>Structure<span>.</span></h3>
+          <p>What needs to be in place so that direction holds up day to day.</p>
         </li>
-        <li>
-          <span class="principle-num">03</span>
-          <h3>Development</h3>
-          <p>Focus, effectiveness and sustainable growth, built on that foundation.</p>
+        <li class="principle-step">
+          <h3>Development<span>.</span></h3>
+          <p>Focus, effectiveness and growth that last, built on that foundation.</p>
         </li>
       </ol>
     </div>
@@ -2329,7 +2303,6 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 <section class="adv-section adv-proof" id="experience" aria-labelledby="proof-title">
   <div class="adv-wrap">
     <header class="adv-head adv-reveal">
-      <p class="adv-chapter">02 / Experience</p>
       <h2 id="proof-title" class="adv-title">
         <span>Advice from</span>
         <span class="adv-light">inside the work.</span>
@@ -2357,8 +2330,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
       </li>
     </ul>
     <p class="proof-cert adv-reveal">
-      <span class="proof-badge">Certified Business Coach</span>
-      <span>Greator, 2025–2026</span>
+      Certified Business Coach, Greator (2025–2026)
     </p>
   </div>
 </section>
@@ -2367,13 +2339,12 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 <section class="adv-section adv-work" id="work" aria-labelledby="work-title">
   <div class="adv-wrap">
     <header class="adv-head adv-reveal">
-      <p class="adv-chapter">03 / Selected work</p>
       <h2 id="work-title" class="adv-title">
         <span>What changes</span>
         <span class="adv-light">in practice.</span>
       </h2>
       <p class="adv-lead">
-        <span class="sample-note">Sample content</span>
+        <span class="sample-note">Sample content.</span>
         These cases illustrate typical engagements. They will be replaced
         with real, client-approved case studies.
       </p>
@@ -2430,13 +2401,12 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 <section class="adv-section adv-voices" id="voices" aria-labelledby="voices-title">
   <div class="adv-wrap">
     <header class="adv-head adv-reveal">
-      <p class="adv-chapter">04 / Client voices</p>
       <h2 id="voices-title" class="adv-title">
         <span>In their</span>
         <span class="adv-light">own words.</span>
       </h2>
       <p class="adv-lead">
-        <span class="sample-note">Sample content</span>
+        <span class="sample-note">Sample content.</span>
         Placeholder testimonials, shown for layout until real client quotes
         are approved.
       </p>
@@ -2462,7 +2432,6 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 <section class="adv-section adv-fit" id="fit" aria-labelledby="fit-title">
   <div class="adv-wrap">
     <header class="adv-head adv-reveal">
-      <p class="adv-chapter">05 / Fit</p>
       <h2 id="fit-title" class="adv-title">
         <span>Is this the</span>
         <span class="adv-light">right fit?</span>
@@ -2533,14 +2502,8 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
           height="1000"
         >
       </div>
-      <span class="portrait-label">
-        Patrick Grossmann / Strategic Advisor
-      </span>
     </div>
     <div class="about-copy reveal">
-      <p class="eyebrow">
-        The person behind the framework
-      </p>
       <h2 class="display" id="about-title">
         Hi, I’m<br>
         <span class="light">Patrick.</span>
@@ -2591,14 +2554,6 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
   aria-labelledby="booking-title"
 >
   <div class="wrap">
-    <div class="footer-top">
-      <p class="eyebrow">
-        Your next move
-      </p>
-      <span>
-        FROM PRODUCT-MARKET FIT TO STRUCTURAL SCALE
-      </span>
-    </div>
     <div class="footer-main">
       <div class="footer-copy reveal">
         <h2 class="display" id="booking-title">
@@ -2638,7 +2593,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
       </div>
       <div class="booking-teaser reveal">
   <div class="teaser-topline">
-    <span><i aria-hidden="true"></i>30 MINUTES / SCALE DIAGNOSTIC CALL</span>
+    <span>30-minute diagnostic call</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 3 22 21H2Z"/><path d="m12 9 5 9H7Z"/></svg>
   </div>
   <h3>A clearer view of<br>your next stage.</h3>
@@ -3545,6 +3500,17 @@ root.querySelectorAll(".svc-card,.case-card,.quote-card,.fit-card").forEach(card
     card.style.setProperty("--my",`${event.clientY-box.top}px`);
   });
 });
+const steps=[...root.querySelectorAll(".principle-step")];
+if(reduced.matches||!("IntersectionObserver" in window)){
+  steps.forEach(step=>step.classList.add("is-lit"));
+}else{
+  const lighter=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add("is-lit");lighter.unobserve(entry.target);}
+    });
+  },{rootMargin:"0px 0px -38% 0px"});
+  steps.forEach(step=>lighter.observe(step));
+}
 const items=[...root.querySelectorAll(".adv-reveal")];
 if(reduced.matches||!("IntersectionObserver" in window))return;
 const observer=new IntersectionObserver(entries=>{
