@@ -3857,12 +3857,14 @@ items.forEach(item=>{
     if(target.closest('iframe,.menu-panel,#site-loader'))return null;
     if(target.closest('#advisory-scenes'))return null;
     if(target.closest('#hero-scene')){
-      const foreground=target.closest('.hero-kicker,.monogram,.name,.subtitle,.notes,.side-label,.pill,.down-arrow,.menu-toggle,.clock');
+      const foreground=target.closest('.monogram,.name');
       if(foreground)return foreground;
       const hero=document.querySelector('#top');
       return hero.classList.contains('webgl-ready')?null:hero.querySelector('.portrait-surface');
     }
-    return target.closest('.story-card,.disc-window,.portrait-frame,.booking-teaser,#triangle-canvas,.glass-dialog,.statement,.story-copy,.chart-figure,.about-copy,.footer-copy,.footer-bottom,.footer-tail,.footer-top,.story-heading,.face-nav,.disc-heading,.chapter,.triangle-controls,.transition-line');
+    // Elsewhere only the About portrait ripples; text, buttons and forms stay sharp.
+    if(target.closest('a,button,input,textarea,select,label'))return null;
+    return target.closest('#growth-scenes .portrait-frame');
   }
   function select(element){
     if(element===active)return;
