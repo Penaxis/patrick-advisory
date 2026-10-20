@@ -491,7 +491,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 48px;
+  gap: clamp(24px, 3vw, 48px);
 }
 #hero-scene .rolling-link{
   display: inline-flex;
@@ -501,7 +501,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   color: #fff;
   background: transparent;
   font-family: Mona, Arial, sans-serif;
-  font-size: clamp(32px, 6vw, 96px);
+  font-size: clamp(30px, 4.6vw, 76px);
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -.04em;
@@ -673,7 +673,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
     gap: 26px;
   }
 #hero-scene .rolling-link{
-    font-size: 54px;
+    font-size: 46px;
   }}
 @media (prefers-reduced-motion: reduce){#hero-scene *,#hero-scene *::before,#hero-scene *::after{
     animation: none !important;
@@ -2212,12 +2212,9 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 ></button>
 <div class="menu-panel" id="menu-panel" inert>
   <div class="menu-links">
-    <button
-      class="rolling-link approach-button"
-      type="button"
-      aria-label="Approach"
-      data-roll="Approach"
-    ></button>
+    <button class="rolling-link approach-button" type="button" aria-label="Services" data-roll="Services"></button>
+    <button class="rolling-link work-button" type="button" aria-label="Work" data-roll="Work"></button>
+    <button class="rolling-link" type="button" aria-label="Insights" data-roll="Insights" data-next-page="Insights"></button>
     <button class="rolling-link about-button" type="button" aria-label="About Patrick" data-roll="About"></button>
     <button
       class="rolling-link contact-button"
@@ -3447,6 +3444,7 @@ function navigateTo(selector) {
 document.querySelectorAll(".contact-button").forEach(button => button.addEventListener("click", () => navigateTo("#booking")));
 document.querySelectorAll(".approach-button").forEach(button => button.addEventListener("click", () => navigateTo("#services")));
 document.querySelector(".about-button").addEventListener("click", () => navigateTo("#about"));
+document.querySelector(".work-button").addEventListener("click", () => navigateTo("#work"));
 /* VISIBILITY AND PREFERENCES */
 document.addEventListener("visibilitychange", () => {
   document.body.classList.toggle(
@@ -3973,6 +3971,12 @@ document.addEventListener("click",event=>{
   event.preventDefault();
   event.stopPropagation();
   opener=link;
+  /* From the menu: close the menu first, then return focus to its toggle */
+  const toggle=document.querySelector(".menu-toggle");
+  if(link.closest(".menu-panel")&&toggle&&toggle.getAttribute("aria-expanded")==="true"){
+    toggle.click();
+    opener=toggle;
+  }
   names.forEach(name=>{name.textContent=link.dataset.nextPage;});
   document.documentElement.classList.add("cursor-suspended");
   dialog.showModal();
