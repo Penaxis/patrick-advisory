@@ -70,7 +70,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   .roll-target:hover .roll-glyph{transform:translateY(-100%)}
 }
 /* Orange cards and filled buttons keep their dark text contrast. */
-#hero-scene .pill.roll-action,#scale-scenes .pill.roll-action,#growth-scenes .review-button.roll-action,#growth-scenes .fit-link.roll-action{--roll-to:currentColor}
+#hero-scene .pill.roll-action,#growth-scenes .review-button.roll-action,#growth-scenes .fit-link.roll-action{--roll-to:currentColor}
 #growth-scenes .footer .booking-frame{color-scheme:dark}
 @media(max-width:600px){.site-loader{padding:26px 6%}.loader-top,.loader-bottom{font-size:7px;letter-spacing:.08em}.loader-bottom span:last-child{display:none}.loader-symbol{width:110px}}
 @media(prefers-reduced-motion:reduce){
@@ -690,7 +690,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #hero-scene .hero-kicker{position:absolute;left:0;bottom:100%;display:flex;align-items:baseline;gap:12px;margin:0 0 24px;color:#aaa;font-size:10px;line-height:1.6;letter-spacing:.035em;text-transform:uppercase}
 #hero-scene .hero-kicker strong{font-weight:400;color:#fff}
 #hero-scene .hero-kicker strong::before{content:"";display:inline-block;width:6px;height:6px;margin-right:10px;border-radius:50%;background:var(--accent);vertical-align:1px}
-#hero-scene .monogram{font-size:13cqw}
+#hero-scene .monogram{font-size:11.5cqw}
 #hero-scene .surname .letter:last-child{color:var(--accent)}
 #hero-scene .notes{max-width:530px;line-height:1.55}
 #hero-scene .notes p{text-wrap:pretty}
@@ -714,787 +714,164 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   #hero-scene .hero-facts dt{font-size:22px}
   #hero-scene .hero-facts dd{margin-top:6px;font-size:8px}
 }
-/* ===== HOW PATRICK HELPS + EXPERIENCE & SELECTED WORK ===== */
-#advisory-scenes{--white:#fff;--orange:#ff630f;--muted:#999;--line:#252525;--ease:cubic-bezier(.16,1,.3,1);position:relative;background:#000;color:#fff;font-family:Arial,sans-serif}
+/* ===== HOMEPAGE MIDDLE: services, experience, work, voices, fit ===== */
+#advisory-scenes{--orange:#ff630f;--line:#232323;--card:#0b0b0b;--text2:#b5b5b5;--ease:cubic-bezier(.16,1,.3,1);position:relative;background:#000;color:#fff;font-family:Arial,sans-serif}
 #advisory-scenes *{box-sizing:border-box}
 #advisory-scenes ::selection{background:var(--orange);color:#000}
-#advisory-scenes p{margin:0}
-#advisory-scenes .adv-wrap{width:88%;max-width:1440px;margin-inline:auto}
-#advisory-scenes .adv-services{padding:150px 0 140px}
-#advisory-scenes .adv-work{padding:130px 0 140px;border-top:1px solid var(--line)}
-#advisory-scenes .adv-chapter{display:flex;align-items:center;gap:10px;margin-bottom:28px;color:var(--orange);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes p,#advisory-scenes h3,#advisory-scenes ul,#advisory-scenes ol,#advisory-scenes dl,#advisory-scenes dd,#advisory-scenes figure,#advisory-scenes blockquote{margin:0}
+#advisory-scenes ul,#advisory-scenes ol{padding:0;list-style:none}
+#advisory-scenes .adv-wrap{width:88%;max-width:1360px;margin-inline:auto}
+#advisory-scenes .adv-section{padding:140px 0}
+#advisory-scenes .adv-section + .adv-section{border-top:1px solid var(--line)}
+#advisory-scenes .adv-chapter{display:flex;align-items:center;gap:10px;color:var(--orange);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
 #advisory-scenes .adv-chapter::before{content:"";width:24px;height:1px;flex-shrink:0;background:var(--orange)}
-#advisory-scenes .adv-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,380px);gap:40px 8%;align-items:end;margin-bottom:90px}
-#advisory-scenes .adv-head .adv-chapter{grid-column:1/-1;margin-bottom:0}
-#advisory-scenes .adv-head-split>div .adv-chapter{margin-bottom:28px}
-#advisory-scenes .adv-title{margin:0;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(48px,6.6vw,108px);font-weight:500;line-height:.95;letter-spacing:-.06em}
+#advisory-scenes .adv-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,400px);gap:28px 8%;align-items:end;margin-bottom:72px}
+#advisory-scenes .adv-head .adv-chapter{grid-column:1/-1}
+#advisory-scenes .adv-title{margin:0;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(46px,6vw,96px);font-weight:500;line-height:.95;letter-spacing:-.055em}
 #advisory-scenes .adv-title span{display:block}
-#advisory-scenes .adv-light{font-weight:250;color:#aaa}
-#advisory-scenes .adv-lead{color:#aaa;font-size:15px;line-height:1.7;text-wrap:pretty}
+#advisory-scenes .adv-light{font-weight:250;color:#a8a8a8}
+#advisory-scenes .adv-lead{color:var(--text2);font-size:16px;line-height:1.7;text-wrap:pretty}
 
-/* Services: four problems, one answer each */
-#advisory-scenes .adv-points{margin:0;padding:0;list-style:none}
-#advisory-scenes .adv-point{position:relative;display:grid;grid-template-columns:90px minmax(0,1fr) minmax(240px,360px);gap:4%;align-items:baseline;padding:40px 0 42px;border-top:1px solid var(--line)}
-#advisory-scenes .adv-point:last-child{border-bottom:1px solid var(--line)}
-#advisory-scenes .adv-point::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
-#advisory-scenes .adv-num{color:#666;font-size:10px;letter-spacing:.16em;transition:color .4s}
-#advisory-scenes .adv-symptom{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(30px,3.4vw,54px);font-weight:250;line-height:1.05;letter-spacing:-.045em;transition:transform .7s var(--ease)}
-#advisory-scenes .adv-answer{color:#888;font-size:15px;line-height:1.6;text-wrap:pretty;transition:color .4s}
-@media (hover: hover) and (pointer: fine){
-  #advisory-scenes .adv-point:hover::before{transform:scaleX(1)}
-  #advisory-scenes .adv-point:hover .adv-num{color:var(--orange)}
-  #advisory-scenes .adv-point:hover .adv-symptom{transform:translateX(12px)}
-  #advisory-scenes .adv-point:hover .adv-answer{color:#fff}
-}
-#advisory-scenes .adv-point:nth-child(2){transition-delay:.08s}
-#advisory-scenes .adv-point:nth-child(3){transition-delay:.16s}
-#advisory-scenes .adv-point:nth-child(4){transition-delay:.24s}
-
-/* Conversion strip */
-#advisory-scenes .adv-work-foot>p{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(30px,3.4vw,52px);font-weight:500;line-height:1;letter-spacing:-.05em}
-#advisory-scenes .adv-cta-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
-#advisory-scenes .adv-button{display:inline-flex;align-items:center;gap:18px;min-height:52px;padding:16px 24px;border:1px solid rgba(255,255,255,.4);border-radius:99px;color:#fff;background:transparent;font:inherit;font-size:13px;line-height:1.2;text-decoration:none;cursor:pointer;transition:background .25s,border-color .25s,color .25s,transform .25s}
+/* Buttons */
+#advisory-scenes .adv-cta-actions,#advisory-scenes .svc-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+#advisory-scenes .adv-button{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:50px;padding:15px 22px;border:1px solid rgba(255,255,255,.35);border-radius:99px;color:#fff;background:transparent;font:inherit;font-size:13px;line-height:1.2;text-decoration:none;cursor:pointer;transition:background .25s,border-color .25s,color .25s,transform .25s}
 #advisory-scenes .adv-button:hover{border-color:var(--orange);color:var(--orange)}
 #advisory-scenes .adv-button-primary{border-color:#fff;color:#000;background:#fff}
 #advisory-scenes .adv-button-primary:hover{border-color:var(--orange);color:#000;background:var(--orange);transform:translateY(-2px)}
-#advisory-scenes .adv-text-link{color:#aaa;font-size:12px;text-decoration:none;transition:color .25s}
+#advisory-scenes .adv-text-link{color:#aaa;font-size:13px;text-decoration:none;transition:color .25s}
 #advisory-scenes .adv-text-link:hover{color:var(--orange)}
 
-/* Experience */
-#advisory-scenes .adv-years{margin:0 0 120px;padding:0;list-style:none}
-#advisory-scenes .adv-years li{display:grid;grid-template-columns:150px minmax(0,1fr) 260px;gap:4%;align-items:center;padding:24px 0;border-top:1px solid var(--line)}
-#advisory-scenes .adv-years li:last-child{border-bottom:1px solid var(--line)}
-#advisory-scenes .adv-years-value{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(44px,4.6vw,72px);font-weight:250;line-height:1;letter-spacing:-.05em}
-#advisory-scenes .adv-years-value small{margin-left:6px;color:#777;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-#advisory-scenes .adv-years-bar{position:relative;height:1px;background:var(--line)}
-#advisory-scenes .adv-years-bar i{position:absolute;left:0;top:-1px;height:3px;width:calc(var(--years) / 15 * 100%);background:#fff;transform-origin:left;transition:transform 1.4s var(--ease)}
-#advisory-scenes .adv-years-bar i::after{content:"";position:absolute;right:-4px;top:-3px;width:9px;height:9px;border-radius:50%;background:var(--orange)}
-#advisory-scenes .adv-years li:nth-child(2) .adv-years-bar i{transition-delay:.12s}
-#advisory-scenes .adv-years li:nth-child(3) .adv-years-bar i{transition-delay:.24s}
-#advisory-scenes .adv-years.is-waiting .adv-years-bar i{transform:scaleX(0)}
-#advisory-scenes .adv-years-label{color:#aaa;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+/* 01 Services */
+#advisory-scenes .svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#advisory-scenes .svc-card{position:relative;display:flex;flex-direction:column;padding:48px 48px 44px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(165deg,#101010,#050505);overflow:hidden;transition:border-color .4s}
+#advisory-scenes .svc-card::before{content:"";position:absolute;left:48px;right:48px;top:0;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease)}
+#advisory-scenes .svc-card:hover{border-color:#383838}
+#advisory-scenes .svc-card:hover::before{transform:scaleX(1)}
+#advisory-scenes .svc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .svc-num{color:#666}
+#advisory-scenes .svc-for{padding:7px 12px;border:1px solid rgba(255,99,15,.45);border-radius:99px;color:var(--orange)}
+#advisory-scenes .svc-title{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(36px,3.6vw,56px);font-weight:500;line-height:1;letter-spacing:-.05em}
+#advisory-scenes .svc-promise{margin-top:14px!important;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(22px,1.9vw,28px);font-weight:250;line-height:1.2;letter-spacing:-.03em;color:#ddd}
+#advisory-scenes .svc-body{margin-top:24px!important;max-width:520px;color:var(--text2);font-size:15px;line-height:1.7}
+#advisory-scenes .svc-label{margin:36px 0 6px!important;color:#777;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .svc-topics li{position:relative;padding:12px 0 12px 22px;border-bottom:1px solid var(--line);color:#e6e6e6;font-size:15px;line-height:1.45}
+#advisory-scenes .svc-topics li::before{content:"";position:absolute;left:0;top:19px;width:7px;height:7px;border:1px solid var(--orange);transform:rotate(45deg)}
+#advisory-scenes .svc-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:30px 0 36px!important}
+#advisory-scenes .svc-meta dt{margin-bottom:6px;color:#777;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .svc-meta dd{color:#fff;font-size:14px;line-height:1.5}
+#advisory-scenes .svc-actions{margin-top:auto}
 
-/* Case study slots */
-#advisory-scenes .adv-cases-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
-#advisory-scenes .adv-cases-head h3{margin:0;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(28px,2.6vw,40px);font-weight:500;letter-spacing:-.05em;line-height:1}
-#advisory-scenes .adv-cases-head p{max-width:400px;color:#888;font-size:13px;line-height:1.65}
-#advisory-scenes .adv-cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;perspective:1200px}
-#advisory-scenes .adv-case{--rx:0deg;--ry:0deg;--mx:50%;--my:50%;position:relative;min-height:340px;padding:30px;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:radial-gradient(420px at var(--mx) var(--my),rgba(255,99,15,.07),transparent 60%),linear-gradient(160deg,#0d0d0d,#040404);transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .6s var(--ease),border-color .4s}
-#advisory-scenes .adv-case:hover{border-color:#3a3a3a}
-#advisory-scenes .adv-case header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:56px}
-#advisory-scenes .adv-case-num{color:#777;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
-#advisory-scenes .adv-case-status{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border:1px solid rgba(255,99,15,.45);border-radius:99px;color:var(--orange);font-size:8px;letter-spacing:.14em;text-transform:uppercase}
-#advisory-scenes .adv-case-status::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--orange);animation:advPulse 2.2s ease-in-out infinite}
-#advisory-scenes .adv-case-title{margin-bottom:40px!important;color:#777;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:22px;font-weight:250;line-height:1.15;letter-spacing:-.03em}
-#advisory-scenes .adv-case dl{display:grid;gap:18px;margin:0}
-#advisory-scenes .adv-case dl div{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
-#advisory-scenes .adv-case dt{color:#555;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
-#advisory-scenes .adv-case dd{margin:0}
-#advisory-scenes .adv-case dd i{display:block;height:6px;border-radius:3px;background:#161616}
-#advisory-scenes .adv-case dl div:nth-child(1) i{width:62%}
-#advisory-scenes .adv-case dl div:nth-child(2) i{width:88%}
-#advisory-scenes .adv-case dl div:nth-child(3) i{width:74%}
-#advisory-scenes .adv-case dl div:nth-child(4) i{width:46%}
-@keyframes advPulse{0%,100%{opacity:1}50%{opacity:.25}}
+/* Shared principle */
+#advisory-scenes .principle{margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
+#advisory-scenes .principle-intro{margin-bottom:34px!important;color:#888;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .principle-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;counter-reset:none}
+#advisory-scenes .principle-steps li{position:relative;padding-top:26px}
+#advisory-scenes .principle-steps li::before{content:"";position:absolute;left:0;right:-40px;top:0;height:1px;background:linear-gradient(90deg,var(--orange),rgba(255,99,15,.15));transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease)}
+#advisory-scenes .principle-steps li:nth-child(2)::before{transition-delay:.25s}
+#advisory-scenes .principle-steps li:nth-child(3)::before{right:0;transition-delay:.5s}
+#advisory-scenes .principle:not(.is-waiting) .principle-steps li::before{transform:scaleX(1)}
+#advisory-scenes .principle-num{display:block;margin-bottom:12px;color:var(--orange);font-size:10px;letter-spacing:.16em}
+#advisory-scenes .principle-steps h3{margin-bottom:10px;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:32px;font-weight:500;letter-spacing:-.04em}
+#advisory-scenes .principle-steps p{max-width:340px;color:var(--text2);font-size:15px;line-height:1.6}
 
-#advisory-scenes .adv-work-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:30px;margin-top:100px;padding-top:44px;border-top:1px solid var(--line)}
-#advisory-scenes .adv-work-foot>p{font-size:clamp(26px,2.6vw,40px)}
+/* 02 Experience */
+#advisory-scenes .proof-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#advisory-scenes .proof-stats li{display:flex;flex-direction:column;padding:40px 28px 36px;border-left:1px solid var(--line)}
+#advisory-scenes .proof-stats li:first-child{padding-left:0;border-left:0}
+#advisory-scenes .proof-value{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(52px,5.4vw,84px);font-weight:250;line-height:1;letter-spacing:-.05em}
+#advisory-scenes .proof-label{margin-top:22px;color:#e6e6e6;font-size:15px;line-height:1.45}
+#advisory-scenes .proof-source{margin-top:8px;color:#777;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+#advisory-scenes .proof-cert{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:32px!important;color:#999;font-size:13px}
+#advisory-scenes .proof-badge{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border:1px solid rgba(255,99,15,.45);border-radius:99px;color:#fff;font-size:12px}
+#advisory-scenes .proof-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
+
+/* Sample markers */
+#advisory-scenes .sample-note{display:inline-flex;margin-right:8px;padding:4px 10px;border:1px dashed rgba(255,255,255,.35);border-radius:99px;color:#ddd;font-size:10px;letter-spacing:.12em;text-transform:uppercase;vertical-align:2px}
+#advisory-scenes .sample-tag{display:inline-flex;padding:4px 9px;border:1px dashed rgba(255,255,255,.3);border-radius:99px;color:#aaa;font-size:9px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+
+/* 03 Cases */
+#advisory-scenes .case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#advisory-scenes .case-card{display:flex;flex-direction:column;padding:34px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(165deg,#0f0f0f,#050505);transition:border-color .4s,transform .6s var(--ease)}
+#advisory-scenes .case-card:hover{border-color:#383838;transform:translateY(-4px)}
+#advisory-scenes .case-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:44px}
+#advisory-scenes .case-service{color:var(--orange);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .case-client{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(24px,2vw,30px);font-weight:500;line-height:1.08;letter-spacing:-.04em}
+#advisory-scenes .case-meta{margin-top:10px!important;color:#888;font-size:13px}
+#advisory-scenes .case-body{display:grid;gap:22px;margin-top:34px!important;padding-top:26px;border-top:1px solid var(--line)}
+#advisory-scenes .case-body dt{margin-bottom:6px;color:#777;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .case-body dd{color:var(--text2);font-size:15px;line-height:1.6}
+#advisory-scenes .case-outcome dd{position:relative;padding-left:20px;color:#fff}
+#advisory-scenes .case-outcome dd::before{content:"→";position:absolute;left:0;color:var(--orange)}
+
+/* CTA banner */
+#advisory-scenes .adv-banner-wrap{padding:0 0 10px}
+#advisory-scenes .adv-work-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:30px;padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#advisory-scenes .adv-work-foot>p{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(26px,2.6vw,40px);font-weight:500;line-height:1.05;letter-spacing:-.05em}
+
+/* 04 Voices */
+#advisory-scenes .quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#advisory-scenes .quote-card{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:36px 34px 30px;border:1px solid var(--line);border-radius:24px;background:#070707}
+#advisory-scenes .quote-card blockquote{position:relative;padding-top:44px;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(21px,1.7vw,26px);font-weight:250;line-height:1.3;letter-spacing:-.02em;color:#f2f2f2}
+#advisory-scenes .quote-card blockquote::before{content:"“";position:absolute;left:-2px;top:-14px;color:var(--orange);font-size:72px;font-weight:500;line-height:1}
+#advisory-scenes .quote-card figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--line);color:#999;font-size:13px;line-height:1.4}
+
+/* 05 Fit */
+#advisory-scenes .fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#advisory-scenes .fit-card{padding:40px;border:1px solid var(--line);border-radius:24px;background:#070707}
+#advisory-scenes .fit-card h3{margin-bottom:22px;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(24px,2vw,30px);font-weight:500;letter-spacing:-.04em}
+#advisory-scenes .fit-card li{position:relative;padding:13px 0 13px 30px;border-top:1px solid var(--line);color:#e6e6e6;font-size:15px;line-height:1.5}
+#advisory-scenes .fit-card li::before{content:"✓";position:absolute;left:2px;top:13px;color:var(--orange)}
+#advisory-scenes .fit-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;margin-top:40px}
+#advisory-scenes .fit-not{max-width:560px;color:#999;font-size:14px;line-height:1.65}
+#advisory-scenes .fit-not strong{color:#fff;font-weight:400}
 
 /* Reveal on scroll */
 #advisory-scenes .adv-reveal{transition:opacity .9s ease,transform 1.1s var(--ease)}
-#advisory-scenes .adv-reveal.is-waiting{opacity:0;transform:translateY(40px)}
+#advisory-scenes .adv-reveal.is-waiting{opacity:0;transform:translateY(36px)}
+#advisory-scenes .svc-card:nth-child(2),#advisory-scenes .case-card:nth-child(2),#advisory-scenes .quote-card:nth-child(2),#advisory-scenes .fit-card:nth-child(2),#advisory-scenes .proof-stats li:nth-child(2){transition-delay:.1s}
+#advisory-scenes .case-card:nth-child(3),#advisory-scenes .quote-card:nth-child(3),#advisory-scenes .proof-stats li:nth-child(3){transition-delay:.2s}
+#advisory-scenes .proof-stats li:nth-child(4){transition-delay:.3s}
 
+@media (max-width: 1100px) and (min-width: 900px){
+  #advisory-scenes .svc-card{padding:40px 34px}
+  #advisory-scenes .svc-card::before{left:34px;right:34px}
+  #advisory-scenes .case-card,#advisory-scenes .quote-card{padding:28px 24px}
+  #advisory-scenes .proof-stats li{padding:34px 18px}
+}
 @media (max-width: 899px){
   #advisory-scenes .adv-wrap{width:90%}
-  #advisory-scenes .adv-services{padding:100px 0 90px}
-  #advisory-scenes .adv-work{padding:90px 0 100px}
-  #advisory-scenes .adv-head{grid-template-columns:1fr;gap:24px;margin-bottom:50px}
-  #advisory-scenes .adv-title{font-size:clamp(44px,12vw,72px)}
-  #advisory-scenes .adv-lead{font-size:14px}
-  #advisory-scenes .adv-point{grid-template-columns:1fr;gap:12px;padding:30px 0 32px}
-  #advisory-scenes .adv-symptom{font-size:clamp(28px,8vw,38px)}
-  #advisory-scenes .adv-answer{font-size:14px}
-  #advisory-scenes .adv-button{width:100%;justify-content:space-between}
-  #advisory-scenes .adv-years{margin-bottom:80px}
-  #advisory-scenes .adv-years li{grid-template-columns:96px minmax(0,1fr);gap:8px 16px;padding:20px 0}
-  #advisory-scenes .adv-years-value{grid-row:span 2}
-  #advisory-scenes .adv-years-label{font-size:9px}
-  #advisory-scenes .adv-cases-head{display:block}
-  #advisory-scenes .adv-cases-head p{margin-top:14px}
-  #advisory-scenes .adv-cases{grid-template-columns:1fr;gap:14px}
-  #advisory-scenes .adv-case{min-height:0;padding:24px}
-  #advisory-scenes .adv-case header{margin-bottom:30px}
-  #advisory-scenes .adv-case-title{margin-bottom:28px!important;font-size:20px}
-  #advisory-scenes .adv-work-foot{margin-top:70px}
-  #advisory-scenes .adv-work-foot .adv-cta-actions{width:100%}
-}
-@media (min-width: 900px) and (max-width: 1180px){
-  #advisory-scenes .adv-cases{gap:14px}
-  #advisory-scenes .adv-case{padding:24px}
-  #advisory-scenes .adv-case dl div{grid-template-columns:1fr;gap:8px}
-  #advisory-scenes .adv-years li{grid-template-columns:130px minmax(0,1fr) 200px}
+  #advisory-scenes .adv-section{padding:90px 0}
+  #advisory-scenes .adv-head{grid-template-columns:1fr;gap:20px;margin-bottom:44px}
+  #advisory-scenes .adv-title{font-size:clamp(42px,12vw,68px)}
+  #advisory-scenes .adv-lead{font-size:15px}
+  #advisory-scenes .svc-grid,#advisory-scenes .case-grid,#advisory-scenes .quote-grid,#advisory-scenes .fit-grid{grid-template-columns:1fr;gap:16px}
+  #advisory-scenes .svc-card{padding:30px 24px}
+  #advisory-scenes .svc-card::before{left:24px;right:24px}
+  #advisory-scenes .svc-top{margin-bottom:36px}
+  #advisory-scenes .svc-meta{grid-template-columns:1fr;gap:14px}
+  #advisory-scenes .adv-button{width:100%}
+  #advisory-scenes .principle{margin-top:52px}
+  #advisory-scenes .principle-steps{grid-template-columns:1fr;gap:28px}
+  #advisory-scenes .principle-steps li::before,#advisory-scenes .principle-steps li:nth-child(3)::before{right:0}
+  #advisory-scenes .proof-stats{grid-template-columns:1fr}
+  #advisory-scenes .proof-stats li{padding:28px 0 26px;border-left:0}
+  #advisory-scenes .proof-stats li + li{border-top:1px solid var(--line)}
+  #advisory-scenes .proof-value{font-size:clamp(44px,13vw,60px)}
+  #advisory-scenes .proof-label{margin-top:14px;font-size:14px}
+  #advisory-scenes .case-card,#advisory-scenes .quote-card,#advisory-scenes .fit-card{padding:28px 24px}
+  #advisory-scenes .case-top{margin-bottom:30px}
+  #advisory-scenes .adv-work-foot{padding:36px 0}
+  #advisory-scenes .adv-work-foot .adv-cta-actions,#advisory-scenes .fit-foot .adv-cta-actions{width:100%}
 }
 @media (prefers-reduced-motion: reduce){
   #advisory-scenes *,#advisory-scenes *::before,#advisory-scenes *::after{transition:none!important;animation:none!important}
 }
 
-#scale-scenes{
-  --bg:#000;
-  --white:#fff;
-  --orange:#ff630f;
-  --muted:#999;
-  --line:#252525;
-}
-#scale-scenes *{box-sizing:border-box}
-#scale-scenes{
-  margin:0;
-  background:var(--bg);
-  color:var(--white);
-  font-family:Arial,sans-serif;
-}
-#scale-scenes a{color:inherit;text-decoration:none}
-#scale-scenes button{font:inherit}
-#scale-scenes a:focus-visible,#scale-scenes button:focus-visible{
-  outline:2px solid var(--orange);
-  outline-offset:5px;
-}
-#scale-scenes ::selection{
-  background:var(--orange);
-  color:#000;
-}
-#scale-scenes .topbar{
-  height:80px;
-  padding:20px 4%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid var(--line);
-}
-#scale-scenes .brand{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-#scale-scenes .brand b{
-  font-family:Mona,Arial;
-  font-weight:500;
-  font-size:32px;
-  letter-spacing:-.07em;
-}
-#scale-scenes .brand span{
-  font-size:10px;
-  line-height:1.6;
-}
-#scale-scenes .brand small{
-  display:block;
-  color:#888;
-  font-size:8px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-#scale-scenes .back{
-  font-size:11px;
-  color:#bbb;
-}
-#scale-scenes .back:hover{color:var(--orange)}
-#scale-scenes .chapter{
-  font-size:9px;
-  letter-spacing:.16em;
-  color:var(--orange);
-  text-transform:uppercase;
-  display:flex;
-  gap:10px;
-  align-items:center;
-  margin:0 0 25px;
-}
-#scale-scenes .chapter:before{
-  content:"";
-  width:24px;
-  height:1px;
-  background:var(--orange);
-  flex-shrink:0;
-}
-#scale-scenes .light{
-  font-weight:250;
-  color:#aaa;
-}
-#scale-scenes .orange{color:var(--orange)}
-#scale-scenes .framework-intro{
-  border-top:1px solid var(--line);
-  padding:120px 6% 85px;
-}
-#scale-scenes .statement{
-  max-width:1050px;
-  margin:0 auto 100px;
-  text-align:center;
-}
-#scale-scenes .statement .chapter{
-  justify-content:center;
-}
-#scale-scenes .statement h2{
-  font-family:Mona,Arial;
-  font-weight:250;
-  font-size:clamp(42px,6vw,88px);
-  line-height:1.07;
-  letter-spacing:-.055em;
-  margin:0;
-}
-#scale-scenes .statement h2 strong{
-  font-weight:500;
-}
-#scale-scenes .statement h2 em{
-  font-style:normal;
-  color:var(--orange);
-}
-#scale-scenes .framework-track{
-  position:relative;
-  max-width:1400px;
-  margin:auto;
-}
-#scale-scenes .framework-stage{
-  padding:25px 0 45px;
-}
-#scale-scenes .framework-track.is-pinned{
-  height:330svh;
-}
-#scale-scenes .is-pinned .framework-stage{
-  position:sticky;
-  top:0;
-  min-height:660px;
-  height:100svh;
-  display:flex;
-  align-items:center;
-}
-#scale-scenes .framework-layout{
-  display:grid;
-  width:100%;
-  max-width:1200px;
-  margin:auto;
-  grid-template-columns:1.03fr 1fr;
-  gap:5%;
-  align-items:center;
-}
-#scale-scenes .disc-column{
-  min-width:0;
-}
-#scale-scenes .disc-heading{
-  font-family:Mona,Arial;
-  font-weight:250;
-  font-size:clamp(25px,2.6vw,38px);
-  letter-spacing:-.04em;
-  line-height:1.12;
-  margin:0 0 24px;
-}
-#scale-scenes .disc-heading strong{
-  font-weight:500;
-}
-#scale-scenes .disc-window{
-  position:relative;
-  height:540px;
-  overflow:hidden;
-  isolation:isolate;
-  border-radius:0 260px 260px 0;
-  background:#080808;
-  border-left:1px solid #333;
-  --direction:1;
-}
-#scale-scenes .disc-wheel{
-  position:absolute;
-  width:1080px;
-  height:1080px;
-  left:-540px;
-  top:calc(50% - 540px);
-  border-radius:50%;
-  border:1px solid #363636;
-  background:repeating-conic-gradient(
-    from 0deg,
-    transparent 0deg 9.75deg,
-    #343434 9.75deg 10deg
-  );
-  will-change:transform;
-  pointer-events:none;
-  opacity:.75;
-}
-#scale-scenes .disc-wheel:before{
-  content:"";
-  position:absolute;
-  inset:28px;
-  border-radius:50%;
-  background:#080808;
-  border:1px solid #202020;
-}
-#scale-scenes .disc-wheel:after{
-  content:"";
-  position:absolute;
-  inset:70px;
-  border-radius:50%;
-  border:1px solid #171717;
-}
-#scale-scenes .disc-pointer{
-  position:absolute;
-  left:0;
-  top:50%;
-  width:22px;
-  height:2px;
-  background:var(--orange);
-  z-index:3;
-}
-#scale-scenes .disc-copy{
-  position:absolute;
-  inset:0;
-  padding:28px 72px 28px 35px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  opacity:0;
-  visibility:hidden;
-  filter:blur(4px);
-  transform:
-    rotate(calc(var(--direction) * 14deg))
-    translateY(35px);
-  transform-origin:-80px 50%;
-  transition:
-    opacity .55s ease,
-    transform .75s cubic-bezier(.2,.8,.2,1),
-    filter .55s ease,
-    visibility .75s;
-  pointer-events:none;
-}
-#scale-scenes .disc-copy.is-active{
-  opacity:1;
-  visibility:visible;
-  filter:blur(0);
-  transform:rotate(0deg) translateY(0);
-}
-#scale-scenes .disc-copy.is-past{
-  transform:
-    rotate(calc(var(--direction) * -14deg))
-    translateY(-35px);
-}
-#scale-scenes .disc-index{
-  display:block;
-  font-size:9px;
-  letter-spacing:.16em;
-  color:var(--orange);
-  margin-bottom:12px;
-}
-#scale-scenes .disc-copy h3{
-  font-family:Mona,Arial;
-  font-size:clamp(55px,5.6vw,74px);
-  font-weight:500;
-  letter-spacing:-.065em;
-  line-height:.95;
-  margin:0 0 13px;
-}
-#scale-scenes .disc-copy .disc-lead{
-  font-family:Mona,Arial;
-  font-weight:250;
-  font-size:21px;
-  letter-spacing:-.035em;
-  line-height:1.2;
-  color:#e3e3e3;
-  margin:0 0 12px;
-  max-width:330px;
-}
-#scale-scenes .disc-copy .disc-body{
-  font-size:11px;
-  line-height:1.65;
-  color:#a4a4a4;
-  max-width:330px;
-  margin:0 0 11px;
-}
-#scale-scenes .disc-tags{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:8px;
-  font-size:10px;
-  color:#ccc;
-}
-#scale-scenes .disc-tags li{
-  display:flex;
-  align-items:center;
-  gap:9px;
-}
-#scale-scenes .disc-tags li:before{
-  content:"";
-  width:4px;
-  height:4px;
-  flex-shrink:0;
-  background:var(--orange);
-  border-radius:50%;
-}
-#scale-scenes .disc-outcome{
-  font-size:11px;
-  line-height:1.7;
-  color:#999;
-  margin:13px 0 0;
-  max-width:345px;
-}
-#scale-scenes .disc-outcome strong{
-  color:#ddd;
-  font-weight:400;
-}
-#scale-scenes .face-nav{
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  margin:19px 0 0;
-}
-#scale-scenes .face-nav button{
-  color:#888;
-  cursor:pointer;
-  background:transparent;
-  border:1px solid #303030;
-  border-radius:99px;
-  padding:10px 14px;
-  font-size:10px;
-  transition:
-    background .25s,
-    color .25s,
-    border-color .25s;
-}
-#scale-scenes .face-nav button small{
-  font-size:8px;
-  margin-right:7px;
-  color:#666;
-}
-#scale-scenes .face-nav button[aria-pressed="true"]{
-  background:var(--white);
-  border-color:var(--white);
-  color:#000;
-}
-#scale-scenes .face-nav button:hover{
-  border-color:var(--orange);
-}
-#scale-scenes .scene-note{
-  color:#777;
-  font-size:9px;
-  letter-spacing:.04em;
-  line-height:1.6;
-  margin:15px 0 0;
-}
-#scale-scenes .triangle-art{
-  position:relative;
-  min-width:0;
-  height:570px;
-  isolation:isolate;
-}
-#scale-scenes .triangle-caption{
-  position:absolute;
-  top:17px;
-  left:0;
-  right:0;
-  text-align:center;
-  color:#777;
-  font-size:8px;
-  letter-spacing:.14em;
-  z-index:2;
-  pointer-events:none;
-}
-#scale-scenes .triangle-canvas{
-  position:absolute;
-  inset:44px -20px 105px;
-  cursor:grab;
-  touch-action:pan-y;
-  z-index:1;
-}
-#scale-scenes .triangle-canvas.dragging{
-  cursor:grabbing;
-}
-#scale-scenes .triangle-canvas canvas{
-  display:block;
-  width:100%;
-  height:100%;
-}
-#scale-scenes .triangle-controls{
-  position:absolute;
-  bottom:12px;
-  left:0;
-  right:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:12px;
-  z-index:3;
-}
-#scale-scenes .motion-buttons{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
-}
-#scale-scenes .spin-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  border:1px solid #444;
-  border-radius:99px;
-  background:transparent;
-  color:#fff;
-  padding:12px 20px;
-  font-size:11px;
-  cursor:pointer;
-  transition:
-    background .2s,
-    color .2s,
-    transform .2s;
-}
-#scale-scenes .spin-button:hover{
-  background:var(--orange);
-  border-color:var(--orange);
-  color:#000;
-  transform:translateY(-2px);
-}
-#scale-scenes .spin-button:active{
-  transform:scale(.97);
-}
-#scale-scenes .spin-button[hidden],#scale-scenes .auto-button[hidden]{
-  display:none;
-}
-#scale-scenes .auto-button{
-  font-size:10px;
-  padding:12px 14px;
-  border:1px solid #303030;
-  border-radius:99px;
-  background:transparent;
-  color:#aaa;
-  cursor:pointer;
-}
-#scale-scenes .auto-button:hover{
-  color:white;
-  border-color:#777;
-}
-#scale-scenes .auto-button:disabled{
-  opacity:.5;
-  cursor:default;
-}
-#scale-scenes .current-face{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:#aaa;
-  font-size:9px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  margin-bottom:3px;
-}
-#scale-scenes .current-face:before{
-  content:"";
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:var(--orange);
-}
-#scale-scenes .triangle-hint{
-  font-size:9px;
-  color:#777;
-  letter-spacing:.03em;
-}
-#scale-scenes .triangle-fallback{
-  position:absolute;
-  inset:40px 15px 85px;
-  z-index:0;
-}
-#scale-scenes .triangle-fallback[hidden]{
-  display:none;
-}
-#scale-scenes .triangle-fallback svg{
-  width:100%;
-  height:100%;
-}
-#scale-scenes .pyramid{
-  width:100%;
-  max-width:440px;
-  overflow:visible;
-}
-#scale-scenes .pyramid text{
-  font-family:Mona,Arial;
-  font-weight:500;
-  text-anchor:middle;
-  stroke:none;
-}
-#scale-scenes .transition-line{
-  border-top:1px solid var(--line);
-  margin:100px auto 0;
-  padding-top:35px;
-  max-width:1120px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
-}
-#scale-scenes .framework-track.is-pinned+.transition-line{
-  margin-top:45px;
-}
-#scale-scenes .transition-line p{
-  font-family:Mona,Arial;
-  font-size:30px;
-  font-weight:250;
-  letter-spacing:-.035em;
-  margin:0;
-}
-#scale-scenes .pill{
-  padding:15px 23px;
-  border-radius:99px;
-  background:white;
-  color:black;
-  display:inline-flex;
-  align-items:center;
-  gap:20px;
-  font-size:12px;
-  white-space:nowrap;
-  transition:background .25s,transform .25s;
-}
-#scale-scenes .pill:hover{
-  background:var(--orange);
-  transform:translateY(-2px);
-}
-#scale-scenes .sr-only{
-  position:absolute;
-  width:1px;
-  height:1px;
-  padding:0;
-  margin:-1px;
-  overflow:hidden;
-  clip:rect(0,0,0,0);
-  white-space:nowrap;
-  border:0;
-}
-@media(max-width:1000px){#scale-scenes .disc-copy{
-    padding-left:25px;
-    padding-right:55px;
-  }
-#scale-scenes .disc-copy h3{font-size:61px}
-#scale-scenes .disc-copy .disc-lead{font-size:19px}
-#scale-scenes .disc-copy .disc-body,#scale-scenes .disc-outcome{
-    font-size:10.5px;
-  }
-#scale-scenes .disc-tags{
-    font-size:9.5px;
-    gap:7px;
-  }}
-@media(max-width:899px){
-#scale-scenes .framework-intro{padding:75px 6%}
-#scale-scenes .statement{margin-bottom:65px}
-#scale-scenes .transition-line{
-    margin-top:65px;
-    align-items:flex-start;
-    flex-direction:column;
-  }
-#scale-scenes .transition-line p{font-size:27px}}
-@media(max-width:899px){#scale-scenes .framework-stage{padding:0}
-#scale-scenes .framework-layout{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
-#scale-scenes .disc-column{
-    width:100%;
-    max-width:560px;
-    justify-self:center;
-  }
-#scale-scenes .disc-heading{font-size:32px}
-#scale-scenes .disc-window{height:560px}
-#scale-scenes .disc-copy{
-    padding:30px 90px 30px 35px;
-  }
-#scale-scenes .disc-copy h3{font-size:72px}
-#scale-scenes .disc-copy .disc-lead{font-size:23px}
-#scale-scenes .disc-copy .disc-body,#scale-scenes .disc-outcome{
-    font-size:12px;
-  }
-#scale-scenes .disc-tags{
-    font-size:11px;
-    gap:9px;
-  }
-#scale-scenes .triangle-art{
-    width:100%;
-    height:510px;
-    max-width:560px;
-    justify-self:center;
-  }
-#scale-scenes .triangle-canvas{
-    inset:30px 0 110px;
-  }}
-@media(max-width:480px){#scale-scenes .topbar{padding:18px 6%}
-#scale-scenes .brand span{font-size:9px}
-#scale-scenes .brand small{font-size:7px}
-#scale-scenes .back{font-size:10px}
-#scale-scenes .chapter{font-size:8px}
-#scale-scenes .statement h2{font-size:40px}
-#scale-scenes .pill{font-size:11px}
-#scale-scenes .disc-heading{font-size:27px}
-#scale-scenes .disc-window{
-    height:610px;
-    border-radius:0 270px 270px 0;
-  }
-#scale-scenes .disc-copy{
-    padding:32px 55px 32px 25px;
-  }
-#scale-scenes .disc-copy h3{font-size:59px}
-#scale-scenes .disc-copy .disc-lead{font-size:21px}
-#scale-scenes .disc-copy .disc-body,#scale-scenes .disc-outcome{
-    font-size:11px;
-  }
-#scale-scenes .disc-index{font-size:8px}
-#scale-scenes .disc-tags{
-    font-size:10px;
-    gap:9px;
-  }
-#scale-scenes .face-nav button{
-    font-size:9px;
-    padding:10px 11px;
-  }
-#scale-scenes .triangle-art{height:455px}
-#scale-scenes .triangle-caption{font-size:7px}
-#scale-scenes .triangle-hint{font-size:8px}}
-@media(min-width:900px){#scale-scenes .is-pinned .disc-heading{
-    font-size:27px;
-    margin-bottom:13px;
-  }
-#scale-scenes .is-pinned .disc-column>.chapter{
-    font-size:8px;
-    margin-bottom:13px;
-  }
-#scale-scenes .is-pinned .disc-window{
-    height:min(540px,calc(100svh - 170px));
-    min-height:470px;
-  }
-#scale-scenes .is-pinned .disc-copy{
-    padding:24px 62px 24px 33px;
-  }
-#scale-scenes .is-pinned .disc-copy h3{
-    font-size:64px;
-    margin-bottom:11px;
-  }
-#scale-scenes .is-pinned .disc-copy .disc-lead{
-    font-size:20px;
-    margin-bottom:10px;
-  }
-#scale-scenes .is-pinned .disc-copy .disc-body,#scale-scenes .is-pinned .disc-outcome{
-    font-size:11px;
-    line-height:1.65;
-  }
-#scale-scenes .is-pinned .disc-outcome{
-    margin-top:11px;
-  }
-#scale-scenes .is-pinned .disc-tags{
-    font-size:10px;
-    gap:7px;
-  }
-#scale-scenes .is-pinned .face-nav{margin-top:13px}
-#scale-scenes .is-pinned .scene-note{display:none}
-#scale-scenes .is-pinned .framework-stage{padding:10px 0}
-#scale-scenes .is-pinned .triangle-art{
-    height:min(570px,calc(100svh - 65px));
-  }}
-@media(prefers-reduced-motion:reduce){#scale-scenes *,#scale-scenes *:before,#scale-scenes *:after{
-    animation:none!important;
-    transition:none!important;
-    scroll-behavior:auto!important;
-  }}
+
+
+
+
+
 #growth-scenes{
   --black:#000;
   --white:#f5f4f1;
@@ -2517,11 +1894,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
     transform:none;
   }}
 /* Review revision: calm typography, compact conversion area and glass panels. */
-#scale-scenes .framework-intro{padding-top:76px;padding-bottom:70px}
-#scale-scenes .statement{max-width:1120px;margin:0 auto 64px;padding:0 3%;}
-#scale-scenes .statement h2{font-size:clamp(35px,4.5vw,62px);line-height:1.12;letter-spacing:-.05em;overflow:visible}
-#scale-scenes .statement h2 strong{display:inline-block;margin-top:9px}
-#scale-scenes .statement h2 strong em{display:inline;margin-left:.12em}
+
 #growth-scenes .footer{padding-top:65px;background:#080808}
 #growth-scenes .footer-main{grid-template-columns:1fr 1fr;gap:7%;align-items:center}
 #growth-scenes .footer-top{margin-bottom:32px}
@@ -2597,30 +1970,11 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 .intro-skip:hover{color:#ff630f;border-color:#ff630f}
 .site-loader>.loader-top,.site-loader>.loader-bottom{position:relative;z-index:1}
 @media(max-width:899px){#growth-scenes .footer-main{grid-template-columns:1fr;gap:32px}.booking-teaser{max-width:600px}.glass-dialog-header{padding:20px}.glass-dialog-foot{padding:14px 20px}.glass-booking-frame{height:min(650px,calc(100dvh - 185px))}}
-@media(max-width:600px){#scale-scenes .framework-intro{padding-top:58px}#scale-scenes .statement{padding:0;margin-bottom:45px}#scale-scenes .statement h2{font-size:35px}#growth-scenes .footer{padding-top:48px}#growth-scenes .footer-copy h2{font-size:48px}#growth-scenes .footer-signature{font-size:27px}#growth-scenes .footer-bottom{margin-top:31px;padding:22px 0;gap:20px}#growth-scenes .footer-tail{font-size:7px}.booking-teaser{padding:23px}.booking-teaser h3{font-size:32px}.booking-overlay{padding:10px}.glass-dialog{border-radius:20px;max-height:calc(100dvh - 20px)}.glass-dialog-header{padding:20px 17px}.glass-dialog-foot{padding:12px 17px;flex-wrap:wrap}.intro-lockup{gap:15px}.intro-logo{width:58px;height:54px}.intro-wordmark strong{font-size:27px}.intro-wordmark small{font-size:7px}}
+@media(max-width:600px){#growth-scenes .footer{padding-top:48px}#growth-scenes .footer-copy h2{font-size:48px}#growth-scenes .footer-signature{font-size:27px}#growth-scenes .footer-bottom{margin-top:31px;padding:22px 0;gap:20px}#growth-scenes .footer-tail{font-size:7px}.booking-teaser{padding:23px}.booking-teaser h3{font-size:32px}.booking-overlay{padding:10px}.glass-dialog{border-radius:20px;max-height:calc(100dvh - 20px)}.glass-dialog-header{padding:20px 17px}.glass-dialog-foot{padding:12px 17px;flex-wrap:wrap}.intro-lockup{gap:15px}.intro-logo{width:58px;height:54px}.intro-wordmark strong{font-size:27px}.intro-wordmark small{font-size:7px}}
 @media(prefers-reduced-motion:reduce){.site-loader,.intro-logo,.intro-wordmark,.booking-overlay,.glass-dialog{transition:none!important}.site-loader.is-complete{transform:none;opacity:0;visibility:hidden}#brand-cursor,#cursor-trail{display:none!important}.linkedin-icon-stack{transition:none}.linkedin-link:hover .linkedin-icon-stack{transform:none}.roll-target .roll-glyph{transform:none!important}}
 
 /* MOTION REPAIR V2 — sticky motion is based on width, never screen height. */
 @media(min-width:900px){
- #scale-scenes .framework-track.is-pinned{height:330svh}
- #scale-scenes .is-pinned .framework-stage{position:sticky;top:0;height:100svh;min-height:0;display:flex;align-items:center;padding:16px 0}
- #scale-scenes .framework-layout{grid-template-columns:1.03fr 1fr;gap:5%;width:100%;align-items:center}
- #scale-scenes .is-pinned .disc-column>.chapter{font-size:8px;margin-bottom:10px}
- #scale-scenes .is-pinned .disc-heading{font-size:clamp(24px,4.5svh,32px);line-height:1.12;margin:0 0 13px}
- #scale-scenes .is-pinned .disc-window{height:min(540px,calc(100svh - 138px));min-height:0}
- #scale-scenes .is-pinned .disc-copy{padding:20px 54px 20px 28px;justify-content:center}
- #scale-scenes .is-pinned .disc-copy>*{flex-shrink:0}
- #scale-scenes .is-pinned .disc-copy h3{font-size:clamp(43px,8svh,64px);margin-bottom:10px}
- #scale-scenes .is-pinned .disc-copy .disc-lead{font-size:clamp(17px,3svh,21px);line-height:1.22;margin-bottom:8px}
- #scale-scenes .is-pinned .disc-index{font-size:8px;margin-bottom:9px}
- #scale-scenes .is-pinned .disc-copy .disc-body,#scale-scenes .is-pinned .disc-outcome{font-size:11px;line-height:1.6}
- #scale-scenes .is-pinned .disc-outcome{margin-top:8px}
- #scale-scenes .is-pinned .disc-tags{font-size:10px;line-height:1.55;gap:6px;margin-top:12px;margin-bottom:4px}
- #scale-scenes .is-pinned .face-nav{margin-top:12px;gap:7px}
- #scale-scenes .is-pinned .face-nav button{font-size:9px;padding:9px 12px}
- #scale-scenes .is-pinned .triangle-art{height:min(570px,calc(100svh - 35px));min-height:0}
- #scale-scenes .is-pinned .triangle-canvas{inset:30px 0 92px}
- #scale-scenes .is-pinned .scene-note{display:none}
  /* All cards occupy the same centred frame and use the original two-column balance. */
  #growth-scenes .horizontal-story.is-horizontal{height:var(--track-height);padding:0}
  #growth-scenes .is-horizontal .horizontal-stage{position:sticky;top:0;display:grid;grid-template-rows:auto var(--card-height,440px) auto;align-content:center;gap:var(--card-gap,16px);height:100svh;min-height:0;padding:var(--stage-padding,18px) 0}
@@ -2669,15 +2023,9 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
  #growth-scenes .compact-cards .fit-column ul{gap:7px}
  #growth-scenes .compact-cards .fit-link{margin-top:15px}
 }
-@media(min-width:900px) and (max-height:540px){
- #scale-scenes .is-pinned .disc-copy{padding:15px 45px 15px 25px}
- #scale-scenes .is-pinned .disc-copy h3{font-size:38px;margin-bottom:8px}
- #scale-scenes .is-pinned .disc-copy .disc-lead{font-size:16px}
- #scale-scenes .is-pinned .disc-copy .disc-body,#scale-scenes .is-pinned .disc-outcome{font-size:10px;line-height:1.5}
- #scale-scenes .is-pinned .disc-tags{font-size:9px;gap:4px}
-}
+
 /* A very short window can still read every line without clipped content. */
-#scale-scenes .disc-copy.has-copy-overflow{justify-content:flex-start;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#555 transparent}
+
 #growth-scenes .story-card.has-card-overflow{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#777 transparent}
 #growth-scenes .is-horizontal .fit-column,#growth-scenes .is-horizontal .benefits-layout>div,#growth-scenes .is-horizontal .audience-layout>div{min-width:0}
 #surface-water-defs{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
@@ -2761,36 +2109,36 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
   <div class="title-block">
     <p class="hero-kicker">
       <strong>Patrick Grossmann</strong>
-      <span>Strategic Advisor</span>
+      <span>Advisor &amp; Executive Coach</span>
     </p>
     <!-- HEADLINE: the promise, split around the portrait -->
     <h1
       class="title"
-      aria-label="Scale beyond the founder."
+      aria-label="Clarity before action."
     >
       <span
         class="monogram"
-        data-letters="Scale"
+        data-letters="Clarity"
         aria-hidden="true"
       ></span>
       <span class="name" aria-hidden="true">
         <span
           class="first-name"
-          data-letters="beyond"
+          data-letters="before"
         ></span>
         <span
           class="surname"
-          data-letters="the founder."
+          data-letters="action."
         ></span>
         <sup>[01]</sup>
       </span>
     </h1>
     <div class="subtitle">
       <span>
-        FROM PRODUCT-MARKET FIT TO STRUCTURAL SCALE
+        STRATEGIC ADVISORY / EXECUTIVE COACHING
       </span>
       <span>
-        [ CLARITY / STRUCTURE / CADENCE ]
+        [ CLARITY / STRUCTURE / DEVELOPMENT ]
       </span>
     </div>
     <button
@@ -2814,23 +2162,23 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     </button>
   </div>
   <span class="side-label">
-    PATRICK GROSSMANN / STRATEGIC ADVISOR — 001
+    PATRICK GROSSMANN / ADVISORY &amp; COACHING — 001
   </span>
   <div class="notes">
-    <p>When growth outpaces structure, too many decisions still reach the founder.</p>
-    <p>Patrick helps founder-led companies build clear direction, ownership and operating rhythm, so the business can scale without running through one person.</p>
+    <p>Without clarity, friction grows. In a company and in a career.</p>
+    <p>Patrick helps founders build the structure their company needs to scale, and leaders find clarity in transition, through strategic advisory and executive coaching.</p>
     <dl class="hero-facts">
       <div>
         <dt>€20–80M</dt>
-        <dd>Annual revenue, founder-led companies</dd>
+        <dd>Founder-led companies, strategic advisory</dd>
       </div>
       <div>
-        <dt>6–12</dt>
-        <dd>Months with founder and leadership team</dd>
+        <dt>1:1</dt>
+        <dd>Executive coaching for leaders in transition</dd>
       </div>
       <div>
         <dt>15</dt>
-        <dd>Years in high-growth environments</dd>
+        <dd>Years in fast-growing companies</dd>
       </div>
     </dl>
   </div>
@@ -2838,7 +2186,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     class="pill bottom-action approach-button"
     type="button"
   >
-    Explore the approach ↗
+    Explore the services ↗
   </button>
 
 <button
@@ -2870,141 +2218,281 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 
 <div id="advisory-scenes">
 
-<!-- 01 / HOW PATRICK HELPS -->
-<section class="adv-services" id="services" aria-labelledby="services-title">
+<!-- 01 / SERVICES: two areas, one principle -->
+<section class="adv-section adv-services" id="services" aria-labelledby="services-title">
   <div class="adv-wrap">
     <header class="adv-head adv-reveal">
-      <p class="adv-chapter">01 / How Patrick helps</p>
+      <p class="adv-chapter">01 / Services</p>
       <h2 id="services-title" class="adv-title">
-        <span>Where growth</span>
-        <span class="adv-light">gets stuck.</span>
+        <span>Two areas.</span>
+        <span class="adv-light">One principle.</span>
       </h2>
       <p class="adv-lead">
-        Four signs a company has outgrown its structure, and what
-        Patrick changes.
+        In a company or in a career, the real problem rarely starts with
+        execution. It starts with a lack of clarity. Patrick works on both.
       </p>
     </header>
-    <ol class="adv-points">
-      <li class="adv-point adv-reveal">
-        <span class="adv-num">01</span>
-        <p class="adv-symptom">The team is busy, but not aligned.</p>
-        <p class="adv-answer">Clear direction and priorities the whole team works to.</p>
-      </li>
-      <li class="adv-point adv-reveal">
-        <span class="adv-num">02</span>
-        <p class="adv-symptom">Every decision still waits for you.</p>
-        <p class="adv-answer">Clear decision rights, so the team moves without you.</p>
-      </li>
-      <li class="adv-point adv-reveal">
-        <span class="adv-num">03</span>
-        <p class="adv-symptom">Everyone is involved. No one owns it.</p>
-        <p class="adv-answer">Clear ownership of every outcome.</p>
-      </li>
-      <li class="adv-point adv-reveal">
-        <span class="adv-num">04</span>
-        <p class="adv-symptom">More meetings. Same problems.</p>
-        <p class="adv-answer">A steady rhythm of reviews that turns plans into results.</p>
-      </li>
-    </ol>
+
+    <div class="svc-grid">
+      <article class="svc-card adv-reveal" aria-labelledby="svc-advisory">
+        <div class="svc-top">
+          <span class="svc-num">01</span>
+          <span class="svc-for">For your company</span>
+        </div>
+        <h3 id="svc-advisory" class="svc-title">Strategic Advisory</h3>
+        <p class="svc-promise">From decision bottleneck to strategic architect.</p>
+        <p class="svc-body">
+          For founders of growing e-commerce and omnichannel companies.
+          Define the company’s North Star, then turn it into clear ownership,
+          structure and decision cadences. Structured growth without chaos.
+        </p>
+        <p class="svc-label">Typical topics</p>
+        <ul class="svc-topics">
+          <li>Vision and strategic clarity</li>
+          <li>Positioning and focus</li>
+          <li>Structure and roles</li>
+          <li>Prioritisation and decision-making</li>
+          <li>Foundations for scalable growth</li>
+        </ul>
+        <dl class="svc-meta">
+          <div><dt>Format</dt><dd>6–12 months with founder and leadership team</dd></div>
+          <div><dt>Best fit</dt><dd>Founder-led, €20–80M annual revenue</dd></div>
+        </dl>
+        <div class="svc-actions">
+          <a class="adv-button adv-button-primary" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Start the free Scale Readiness Review <span aria-hidden="true">↗</span></a>
+          <button class="adv-button" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a call <span aria-hidden="true">↗</span></button>
+        </div>
+      </article>
+
+      <article class="svc-card adv-reveal" aria-labelledby="svc-coaching">
+        <div class="svc-top">
+          <span class="svc-num">02</span>
+          <span class="svc-for">For you as a leader</span>
+        </div>
+        <h3 id="svc-coaching" class="svc-title">Executive Coaching</h3>
+        <p class="svc-promise">Clarity instead of reaction.</p>
+        <p class="svc-body">
+          For specialists, leaders and business owners navigating a
+          professional transition. Sharpen your professional identity and make
+          decisions from clarity, so your direction holds up under pressure.
+        </p>
+        <p class="svc-label">Typical topics</p>
+        <ul class="svc-topics">
+          <li>Taking stock during professional transitions</li>
+          <li>Professional identity and decision clarity</li>
+          <li>Handling responsibility and pressure</li>
+          <li>Priorities across roles and responsibilities</li>
+          <li>Clarity with or without a leadership role</li>
+        </ul>
+        <dl class="svc-meta">
+          <div><dt>Format</dt><dd>1:1 executive coaching</dd></div>
+          <div><dt>Experience</dt><dd>40+ coaching clients since 2022</dd></div>
+        </dl>
+        <div class="svc-actions">
+          <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a free introductory call <span aria-hidden="true">↗</span></button>
+        </div>
+      </article>
+    </div>
+
+    <!-- The shared principle behind both services -->
+    <div class="principle adv-reveal" aria-labelledby="principle-title">
+      <p class="principle-intro" id="principle-title">The same order of work, for companies and for people</p>
+      <ol class="principle-steps">
+        <li>
+          <span class="principle-num">01</span>
+          <h3>Clarity</h3>
+          <p>Why does this matter? Where are you actually heading?</p>
+        </li>
+        <li>
+          <span class="principle-num">02</span>
+          <h3>Structure</h3>
+          <p>What needs to be in place so direction holds up day to day?</p>
+        </li>
+        <li>
+          <span class="principle-num">03</span>
+          <h3>Development</h3>
+          <p>Focus, effectiveness and sustainable growth, built on that foundation.</p>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
-<!-- 02 / EXPERIENCE & SELECTED WORK -->
-<section class="adv-work" id="work" aria-labelledby="work-title">
+<!-- 02 / EXPERIENCE: verified credentials -->
+<section class="adv-section adv-proof" id="experience" aria-labelledby="proof-title">
   <div class="adv-wrap">
-    <header class="adv-head adv-head-split adv-reveal">
-      <div>
-        <p class="adv-chapter">02 / Experience &amp; selected work</p>
-        <h2 id="work-title" class="adv-title">
-          <span>Built inside</span>
-          <span class="adv-light">growing companies.</span>
-        </h2>
-      </div>
+    <header class="adv-head adv-reveal">
+      <p class="adv-chapter">02 / Experience</p>
+      <h2 id="proof-title" class="adv-title">
+        <span>Advice from</span>
+        <span class="adv-light">inside the work.</span>
+      </h2>
       <p class="adv-lead">
-        Patrick’s advice comes from three perspectives: working in
-        high-growth environments, leading teams, and coaching leaders.
+        Patrick combines coaching with first-hand operational leadership in a
+        fast-growing company, so his advice holds up in day-to-day reality.
       </p>
     </header>
-
-    <!-- Verified figures from the About section -->
-    <ul class="adv-years" aria-label="Experience">
-      <li style="--years:15">
-        <span class="adv-years-value">15<small>yrs</small></span>
-        <span class="adv-years-bar" aria-hidden="true"><i></i></span>
-        <span class="adv-years-label">In high-growth environments</span>
+    <ul class="proof-stats">
+      <li class="adv-reveal">
+        <span class="proof-value"><span data-count="50">50</span>+</span>
+        <span class="proof-label">People led as Director of Operations</span>
+        <span class="proof-source">Glow25</span>
       </li>
-      <li style="--years:10">
-        <span class="adv-years-value">10<small>yrs</small></span>
-        <span class="adv-years-bar" aria-hidden="true"><i></i></span>
-        <span class="adv-years-label">Leadership experience</span>
+      <li class="adv-reveal">
+        <span class="proof-value">€<span data-count="50">50</span>M</span>
+        <span class="proof-label">Budget under operational responsibility</span>
+        <span class="proof-source">Glow25</span>
       </li>
-      <li style="--years:5">
-        <span class="adv-years-value">5<small>yrs</small></span>
-        <span class="adv-years-bar" aria-hidden="true"><i></i></span>
-        <span class="adv-years-label">Coaching experience</span>
+      <li class="adv-reveal">
+        <span class="proof-value"><span data-count="40">40</span>+</span>
+        <span class="proof-label">Executive coaching clients</span>
+        <span class="proof-source">Since January 2022</span>
       </li>
     </ul>
+    <p class="proof-cert adv-reveal">
+      <span class="proof-badge">Certified Business Coach</span>
+      <span>Greator, 2025–2026</span>
+    </p>
+  </div>
+</section>
 
-    <div class="adv-cases-head adv-reveal">
-      <h3>Selected work</h3>
-      <p>
-        Client engagements are confidential. Case studies will be
-        published here once clients approve them.
+<!-- 03 / SELECTED WORK: SAMPLE CASES. Replace with real, client-approved cases. -->
+<section class="adv-section adv-work" id="work" aria-labelledby="work-title">
+  <div class="adv-wrap">
+    <header class="adv-head adv-reveal">
+      <p class="adv-chapter">03 / Selected work</p>
+      <h2 id="work-title" class="adv-title">
+        <span>What changes</span>
+        <span class="adv-light">in practice.</span>
+      </h2>
+      <p class="adv-lead">
+        <span class="sample-note">Sample content</span>
+        These cases illustrate typical engagements. They will be replaced
+        with real, client-approved case studies.
       </p>
-    </div>
-
-    <!--
-      CASE STUDY SLOTS: placeholders only, no real client data.
-      To publish one: replace the placeholder text, set
-      data-status="published" and change the status label.
-    -->
-    <div class="adv-cases">
-      <article class="adv-case adv-reveal" data-status="placeholder">
-        <header>
-          <span class="adv-case-num">Case 01</span>
-          <span class="adv-case-status">In preparation</span>
-        </header>
-        <p class="adv-case-title">Case study to be published with client approval</p>
-        <dl>
-          <div><dt>Company</dt><dd><i></i></dd></div>
-          <div><dt>Challenge</dt><dd><i></i></dd></div>
-          <div><dt>What changed</dt><dd><i></i></dd></div>
-          <div><dt>Outcome</dt><dd><i></i></dd></div>
+    </header>
+    <div class="case-grid">
+      <article class="case-card adv-reveal" data-sample="true">
+        <div class="case-top"><span class="case-service">Strategic Advisory</span><span class="sample-tag">Sample</span></div>
+        <h3 class="case-client">Founder-led omnichannel retailer</h3>
+        <p class="case-meta">Approx. €35M revenue · 9 months</p>
+        <dl class="case-body">
+          <div><dt>Challenge</dt><dd>Pricing, hiring and assortment decisions all went through the founder. The leadership team waited.</dd></div>
+          <div><dt>What changed</dt><dd>Decision domains for five leaders, a monthly strategy review and a weekly KPI forum.</dd></div>
+          <div class="case-outcome"><dt>Outcome</dt><dd>The founder moved from daily approvals to one weekly decision review.</dd></div>
         </dl>
       </article>
-      <article class="adv-case adv-reveal" data-status="placeholder">
-        <header>
-          <span class="adv-case-num">Case 02</span>
-          <span class="adv-case-status">In preparation</span>
-        </header>
-        <p class="adv-case-title">Case study to be published with client approval</p>
-        <dl>
-          <div><dt>Company</dt><dd><i></i></dd></div>
-          <div><dt>Challenge</dt><dd><i></i></dd></div>
-          <div><dt>What changed</dt><dd><i></i></dd></div>
-          <div><dt>Outcome</dt><dd><i></i></dd></div>
+      <article class="case-card adv-reveal" data-sample="true">
+        <div class="case-top"><span class="case-service">Strategic Advisory</span><span class="sample-tag">Sample</span></div>
+        <h3 class="case-client">D2C e-commerce brand</h3>
+        <p class="case-meta">Approx. €60M revenue · 12 months</p>
+        <dl class="case-body">
+          <div><dt>Challenge</dt><dd>After fast growth, six departments pursued different priorities and meetings multiplied.</dd></div>
+          <div><dt>What changed</dt><dd>An explicit North Star, three company priorities and a quarterly review rhythm.</dd></div>
+          <div class="case-outcome"><dt>Outcome</dt><dd>One shared priority list, with budget decisions owned by the leadership team.</dd></div>
         </dl>
       </article>
-      <article class="adv-case adv-reveal" data-status="placeholder">
-        <header>
-          <span class="adv-case-num">Case 03</span>
-          <span class="adv-case-status">In preparation</span>
-        </header>
-        <p class="adv-case-title">Case study to be published with client approval</p>
-        <dl>
-          <div><dt>Company</dt><dd><i></i></dd></div>
-          <div><dt>Challenge</dt><dd><i></i></dd></div>
-          <div><dt>What changed</dt><dd><i></i></dd></div>
-          <div><dt>Outcome</dt><dd><i></i></dd></div>
+      <article class="case-card adv-reveal" data-sample="true">
+        <div class="case-top"><span class="case-service">Executive Coaching</span><span class="sample-tag">Sample</span></div>
+        <h3 class="case-client">Head of Operations, scale-up</h3>
+        <p class="case-meta">New leadership role · 6 months</p>
+        <dl class="case-body">
+          <div><dt>Challenge</dt><dd>Promoted into a larger role and stuck in constant firefighting.</dd></div>
+          <div><dt>What changed</dt><dd>A clear role definition, priorities across responsibilities and a weekly planning routine.</dd></div>
+          <div class="case-outcome"><dt>Outcome</dt><dd>Leading from priorities instead of reacting to the inbox.</dd></div>
         </dl>
       </article>
     </div>
+  </div>
+</section>
 
+<!-- CTA BANNER -->
+<section class="adv-banner-wrap" aria-label="Talk to Patrick">
+  <div class="adv-wrap">
     <div class="adv-work-foot adv-reveal">
       <p>Facing the same transition in your company?</p>
       <div class="adv-cta-actions">
         <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Talk it through with Patrick <span aria-hidden="true">↗</span></button>
-        <a class="adv-text-link" href="#scale-scenes">See how the framework works ↓</a>
+        <a class="adv-text-link" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Or start the free Scale Readiness Review ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 / CLIENT VOICES: SAMPLE TESTIMONIALS. Replace with real, approved quotes. -->
+<section class="adv-section adv-voices" id="voices" aria-labelledby="voices-title">
+  <div class="adv-wrap">
+    <header class="adv-head adv-reveal">
+      <p class="adv-chapter">04 / Client voices</p>
+      <h2 id="voices-title" class="adv-title">
+        <span>In their</span>
+        <span class="adv-light">own words.</span>
+      </h2>
+      <p class="adv-lead">
+        <span class="sample-note">Sample content</span>
+        Placeholder testimonials, shown for layout until real client quotes
+        are approved.
+      </p>
+    </header>
+    <div class="quote-grid">
+      <figure class="quote-card adv-reveal" data-sample="true">
+        <blockquote>For the first time, my leadership team makes decisions without waiting for me. I spend my week on strategy, not approvals.</blockquote>
+        <figcaption><span>Founder &amp; CEO, omnichannel retailer</span><span class="sample-tag">Sample</span></figcaption>
+      </figure>
+      <figure class="quote-card adv-reveal" data-sample="true">
+        <blockquote>Patrick didn’t give us another tool. He gave us a structure we actually use: clear owners, a steady rhythm and fewer meetings.</blockquote>
+        <figcaption><span>Managing Director, e-commerce brand</span><span class="sample-tag">Sample</span></figcaption>
+      </figure>
+      <figure class="quote-card adv-reveal" data-sample="true">
+        <blockquote>I came in reacting to everything. I left knowing what I stand for and how I want to lead in this role.</blockquote>
+        <figcaption><span>Head of Operations, scale-up</span><span class="sample-tag">Sample</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 05 / FIT CHECK -->
+<section class="adv-section adv-fit" id="fit" aria-labelledby="fit-title">
+  <div class="adv-wrap">
+    <header class="adv-head adv-reveal">
+      <p class="adv-chapter">05 / Fit</p>
+      <h2 id="fit-title" class="adv-title">
+        <span>Is this the</span>
+        <span class="adv-light">right fit?</span>
+      </h2>
+      <p class="adv-lead">
+        A quick check before you get in touch.
+      </p>
+    </header>
+    <div class="fit-grid">
+      <div class="fit-card adv-reveal">
+        <h3>Strategic Advisory fits if</h3>
+        <ul>
+          <li>Product-market fit is proven.</li>
+          <li>You run an e-commerce or omnichannel company with €20–80M revenue.</li>
+          <li>Growth brings increasing friction.</li>
+          <li>Too many decisions still reach you.</li>
+        </ul>
+      </div>
+      <div class="fit-card adv-reveal">
+        <h3>Executive Coaching fits if</h3>
+        <ul>
+          <li>You are navigating a role change or more responsibility.</li>
+          <li>The routines that got you here no longer hold up.</li>
+          <li>You want to decide from clarity, not pressure.</li>
+          <li>You want direction, with or without a leadership title.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fit-foot adv-reveal">
+      <p class="fit-not">
+        <strong>Probably not the right fit</strong> if you are still finding
+        product-market fit, need sales or marketing execution, or want
+        hands-on operational support.
+      </p>
+      <div class="adv-cta-actions">
+        <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a free introductory call <span aria-hidden="true">↗</span></button>
+        <a class="adv-button" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Free Scale Readiness Review <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
@@ -3012,575 +2500,9 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 
 </div>
 
-<div id="scale-scenes">
-
-
-<section
-  class="framework-intro"
-  aria-labelledby="framework-heading"
->
-  <div class="statement">
-    <p class="chapter">
-      The shift from growth to structure
-    </p>
-    <h2>
-      Sustainable scale is not<br>
-      a result of growth.<br>
-      <strong>
-        It is the result of <em>structure.</em>
-      </strong>
-    </h2>
-  </div>
-  <div class="framework-track" id="framework-track">
-    <div class="framework-stage">
-      <div class="framework-layout">
-        <div class="disc-column">
-          <p class="chapter">
-            The Structural Scale Framework
-          </p>
-          <h3 class="disc-heading" id="framework-heading">
-            How structural scale<br>
-            <strong>is installed.</strong>
-          </h3>
-          <div class="disc-window" id="disc-window">
-            <div
-              class="disc-wheel"
-              id="disc-wheel"
-              aria-hidden="true"
-            ></div>
-            <span
-              class="disc-pointer"
-              aria-hidden="true"
-            ></span>
-            <!-- CLARITY -->
-            <article
-              class="disc-copy is-active"
-              data-face-copy="0"
-            >
-              <span class="disc-index">
-                01 / MONTH 1–2
-              </span>
-              <h3>Clarity.</h3>
-              <p class="disc-lead">
-                The first step is defining the company’s direction.
-              </p>
-              <p class="disc-body">
-                This includes:
-              </p>
-              <ul class="disc-tags">
-                <li>The company’s purpose</li>
-                <li>The long-term ambition</li>
-                <li>The economic logic of the business</li>
-                <li>The strategic priorities that guide decisions</li>
-                <li>The founder’s role in the next growth phase</li>
-              </ul>
-              <p class="disc-outcome">
-                When this direction is explicit, it becomes
-                the reference point for decisions across
-                the organization.
-              </p>
-              <p class="disc-outcome">
-                Without clarity, growth creates activity.<br>
-                <strong>
-                  With clarity, decisions align with a shared direction.
-                </strong>
-              </p>
-            </article>
-            <!-- STRUCTURE -->
-            <article
-              class="disc-copy"
-              data-face-copy="1"
-              aria-hidden="true"
-              inert
-            >
-              <span class="disc-index">
-                02 / MONTH 3–4
-              </span>
-              <h3>Structure.</h3>
-              <p class="disc-lead">
-                Once direction is defined, it must be translated
-                into organizational architecture.
-              </p>
-              <p class="disc-body">
-                Structure defines:
-              </p>
-              <ul class="disc-tags">
-                <li>Decision domains</li>
-                <li>Ownership of outcomes</li>
-                <li>Leadership responsibilities</li>
-                <li>Escalation logic across teams</li>
-              </ul>
-              <p class="disc-outcome">
-                This transforms implicit coordination
-                into explicit authority.
-              </p>
-              <p class="disc-outcome">
-                Decisions no longer depend on the founder being
-                involved in every discussion. Instead, ownership
-                becomes distributed across the leadership team.
-              </p>
-              <p class="disc-outcome">
-                <strong>
-                  Structure allows the company to scale without
-                  increasing founder dependency.
-                </strong>
-              </p>
-            </article>
-            <!-- CADENCE -->
-            <article
-              class="disc-copy"
-              data-face-copy="2"
-              aria-hidden="true"
-              inert
-            >
-              <span class="disc-index">
-                03 / MONTH 5+
-              </span>
-              <h3>Cadence.</h3>
-              <p class="disc-lead">
-                The final layer ensures that direction and structure
-                translate into consistent execution.
-              </p>
-              <p class="disc-body">
-                Cadence introduces a predictable rhythm for
-                decision-making and alignment. This includes:
-              </p>
-              <ul class="disc-tags">
-                <li>Strategic review cycles</li>
-                <li>Leadership alignment meetings</li>
-                <li>KPI-driven decision forums</li>
-                <li>Structured issue resolution</li>
-              </ul>
-              <p class="disc-outcome">
-                A well-designed cadence prevents priorities from
-                drifting and ensures that decisions turn into
-                measurable progress.
-              </p>
-              <p class="disc-outcome">
-                <strong>
-                  Cadence transforms strategy into sustained execution.
-                </strong>
-              </p>
-            </article>
-          </div>
-          <nav
-            class="face-nav"
-            aria-label="Explore the framework principles"
-          >
-            <button
-              type="button"
-              data-select-face="0"
-              aria-pressed="true"
-            >
-              <small>01</small>Clarity
-            </button>
-            <button
-              type="button"
-              data-select-face="1"
-              aria-pressed="false"
-            >
-              <small>02</small>Structure
-            </button>
-            <button
-              type="button"
-              data-select-face="2"
-              aria-pressed="false"
-            >
-              <small>03</small>Cadence
-            </button>
-          </nav>
-          <p class="scene-note" id="scene-note">
-            Scroll to explore. Drag to choose your own perspective.
-          </p>
-        </div>
-        <!-- INTERACTIVE PYRAMID -->
-        <div class="triangle-art">
-          <span class="triangle-caption">
-            FIG. 02 / THREE FACES. ONE SYSTEM.
-          </span>
-          <div
-            class="triangle-canvas"
-            id="triangle-canvas"
-            role="img"
-            aria-label="A solid triangular pyramid. Each side represents one principle: Clarity, Structure or Cadence. Rotate with horizontal touch or mouse drag, scroll the section, or use the principle buttons."
-          ></div>
-          <div
-            class="triangle-fallback"
-            id="triangle-fallback"
-          >
-            <svg
-              class="pyramid"
-              viewBox="0 0 480 445"
-              role="img"
-              aria-label="The Structural Scale Framework: Clarity, Structure and Cadence."
-            >
-              <path
-                d="M240 25 25 340 240 420 455 340Z"
-                fill="#242424"
-              />
-              <path
-                d="M240 25 25 340 240 420Z"
-                fill="#ff630f"
-              />
-              <path
-                d="M240 25 240 420 455 340Z"
-                fill="#f4f4f4"
-              />
-              <text
-                x="154"
-                y="285"
-                style="fill:#000;font-size:26px"
-                transform="rotate(14 154 285)"
-              >
-                Clarity
-              </text>
-              <text
-                x="321"
-                y="285"
-                style="fill:#000;font-size:25px"
-                transform="rotate(-14 321 285)"
-              >
-                Structure
-              </text>
-            </svg>
-          </div>
-          <div class="triangle-controls">
-            <span
-              class="current-face"
-              id="current-face"
-              aria-hidden="true"
-            >
-              01 / Clarity
-            </span>
-            <div class="motion-buttons">
-              <button
-                class="spin-button"
-                id="triangle-spin"
-                type="button"
-                aria-label="Spin the framework pyramid"
-                hidden
-              >
-                ↻ Give it a spin
-              </button>
-              <button
-                class="auto-button"
-                id="triangle-auto"
-                type="button"
-                aria-pressed="false"
-                hidden
-              >
-                Pause rotation
-              </button>
-            </div>
-            <span class="triangle-hint" id="triangle-hint">
-              Scroll, drag or select a principle.
-            </span>
-          </div>
-          <span
-            class="sr-only"
-            id="triangle-status"
-            aria-live="polite"
-          ></span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="transition-line">
-    <p>Put the framework into practice.</p>
-    <a class="pill" href="#next-stage">
-      See what changes
-      <span aria-hidden="true">↗</span>
-    </a>
-  </div>
-</section>
-
-</div>
 
 <div id="growth-scenes">
 
-<!-- THREE HORIZONTAL CARDS -->
-<section
-  class="horizontal-story"
-  id="next-stage"
-  aria-labelledby="next-stage-title"
->
-  <div class="horizontal-stage">
-    <div class="story-heading wrap">
-      <div>
-        <p class="eyebrow">
-          The next stage of your company
-        </p>
-        <h2 class="display" id="next-stage-title">
-          Built to grow.<br>
-          <span class="light">Structured to scale.</span>
-        </h2>
-      </div>
-      <a class="section-skip" href="#about">
-        Meet Patrick ↓
-      </a>
-    </div>
-    <div class="cards-window" id="cards-window">
-      <div class="cards-rail" id="cards-rail">
-        <!-- CARD 01 -->
-        <article
-          class="story-card benefits-card"
-          id="benefits-card"
-          aria-labelledby="benefits-title"
-        >
-          <div class="card-meta">
-            <span>01 / The benefits</span>
-            <span class="card-count" aria-hidden="true">
-              01—03
-            </span>
-          </div>
-          <div class="benefits-layout">
-            <div>
-              <h2
-                class="display card-title"
-                id="benefits-title"
-              >
-                Less friction.<br>
-                More room<br>
-                <span class="light">to lead.</span>
-              </h2>
-              <p class="card-summary">
-                When direction, ownership and operating rhythm
-                work together, growth has a stronger foundation.
-              </p>
-              <svg
-                class="direction-mark"
-                viewBox="0 0 120 90"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 82 48 9 90 82Z"
-                  stroke="#bcbcb8"
-                />
-                <path
-                  d="M34 82 76 9 118 82Z"
-                  stroke="#ff630f"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M62 33 76 9 90 33"
-                  stroke="#ff630f"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <ul class="benefits-list">
-              <li>
-                <small>01</small>
-                Clear company direction
-              </li>
-              <li>
-                <small>02</small>
-                Faster, more consistent decisions
-              </li>
-              <li>
-                <small>03</small>
-                Ownership across the leadership team
-              </li>
-              <li>
-                <small>04</small>
-                Stronger leadership accountability
-              </li>
-              <li>
-                <small>05</small>
-                Less dependency on the founder
-              </li>
-              <li>
-                <small>06</small>
-                More time for strategic work
-              </li>
-              <li>
-                <small>07</small>
-                Sustainable growth momentum
-              </li>
-            </ul>
-          </div>
-        </article>
-        <!-- CARD 02 -->
-        <article
-          class="story-card audience-card"
-          id="audience-card"
-          aria-labelledby="audience-title"
-        >
-          <div class="card-meta">
-            <span>02 / Who this is for</span>
-            <span class="card-count" aria-hidden="true">
-              02—03
-            </span>
-          </div>
-          <div class="audience-layout">
-            <div>
-              <h2
-                class="display card-title"
-                id="audience-title"
-              >
-                Demand is proven.<br>
-                <span class="light">What comes next?</span>
-              </h2>
-              <p class="revenue-label">
-                FOUNDER-LED COMPANIES / ANNUAL REVENUE
-              </p>
-              <p class="revenue">
-                €20M<span class="orange">—</span>€80M
-              </p>
-              <p class="card-summary">
-                For growing businesses where complexity is
-                outpacing the way decisions get made.
-              </p>
-            </div>
-            <dl class="profile-facts">
-              <div>
-                <dt>Stage</dt>
-                <dd>Product-market fit established.</dd>
-              </div>
-              <div>
-                <dt>Business</dt>
-                <dd>
-                  Founder-led e-commerce and omnichannel companies.
-                </dd>
-              </div>
-              <div>
-                <dt>Scope</dt>
-                <dd>
-                  Direction, decision ownership and a consistent
-                  operating rhythm.
-                </dd>
-              </div>
-              <div>
-                <dt>Format</dt>
-                <dd>
-                  6–12 months of strategic advisory with the
-                  founder and leadership team.
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </article>
-        <!-- CARD 03 -->
-        <article
-          class="story-card fit-card"
-          id="fit-card"
-          aria-labelledby="fit-title"
-        >
-          <div class="card-meta">
-            <span>03 / The right fit</span>
-            <span class="card-count" aria-hidden="true">
-              03—03
-            </span>
-          </div>
-          <div class="fit-heading">
-            <h2 class="display" id="fit-title">
-              Is this your<br>
-              next move?
-            </h2>
-            <p>
-              The question is whether your business needs
-              a stronger structure for its next stage.
-            </p>
-          </div>
-          <div class="fit-columns">
-            <div class="fit-column">
-              <h3>A strong fit.</h3>
-              <ul>
-                <li>
-                  <span aria-hidden="true">↗</span>
-                  Product-market fit is proven.
-                </li>
-                <li>
-                  <span aria-hidden="true">↗</span>
-                  You operate in e-commerce or omnichannel.
-                </li>
-                <li>
-                  <span aria-hidden="true">↗</span>
-                  Annual revenue is €20M–€80M.
-                </li>
-                <li>
-                  <span aria-hidden="true">↗</span>
-                  Growth brings increasing friction.
-                </li>
-                <li>
-                  <span aria-hidden="true">↗</span>
-                  Too many decisions still reach the founder.
-                </li>
-                <li>
-                  <span aria-hidden="true">↗</span>
-                  Leadership ownership needs to be clearer.
-                </li>
-              </ul>
-            </div>
-            <div class="fit-column no">
-              <h3>A different need.</h3>
-              <ul>
-                <li>
-                  <span aria-hidden="true">—</span>
-                  You are still finding product-market fit.
-                </li>
-                <li>
-                  <span aria-hidden="true">—</span>
-                  The immediate problem is sales or marketing execution.
-                </li>
-                <li>
-                  <span aria-hidden="true">—</span>
-                  You need hands-on operational support.
-                </li>
-              </ul>
-              <a class="fit-link" href="#about">
-                Meet the advisor
-                <span aria-hidden="true">↓</span>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-    <div
-      class="carousel-controls wrap"
-      id="carousel-controls"
-    >
-      <nav
-        class="carousel-nav"
-        aria-label="Choose a section"
-      >
-        <button
-          type="button"
-          data-card="0"
-          aria-label="Show Benefits"
-          aria-pressed="true"
-        >
-          01
-        </button>
-        <button
-          type="button"
-          data-card="1"
-          aria-label="Show Who this is for"
-          aria-pressed="false"
-        >
-          02
-        </button>
-        <button
-          type="button"
-          data-card="2"
-          aria-label="Show Right fit"
-          aria-pressed="false"
-        >
-          03
-        </button>
-      </nav>
-      <div class="track-status" aria-hidden="true">
-        <span id="card-status">01 / 03</span>
-        <span class="track-line">
-          <i id="card-progress"></i>
-        </span>
-        <span>Keep scrolling →</span>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- NORMAL VERTICAL SCROLL STARTS HERE -->
 <section
   class="about"
@@ -3877,7 +2799,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     element.classList.add('roll-target', heading ? 'roll-heading' : 'roll-action');
   }
   document.querySelectorAll([
-    '#hero-scene .pill', '#scale-scenes .transition-line a',
+    '#hero-scene .pill',
     '#growth-scenes .section-skip', '#growth-scenes .fit-link',
     '#growth-scenes .about-link', '#growth-scenes .review-button',
     '#growth-scenes .footer a:not(.footer-signature)',
@@ -4461,7 +3383,7 @@ function setMenu(open, restoreFocus = true) {
     "overlay-open",
     open
   );
-  document.querySelector("#scale-scenes").inert = open;
+  document.querySelector("#advisory-scenes").inert = open;
   document.querySelector("#growth-scenes").inert = open;
   clearPointer();
   if (!open) requestRender();
@@ -4591,1219 +3513,48 @@ window.addEventListener("pageshow", event => {
 </script>
 <script>
 (() => {
-/* EXPERIENCE AND SERVICES: reveal on scroll, case-card tilt */
+/* HOMEPAGE MIDDLE: reveal on scroll and count-up for verified figures */
 const root=document.getElementById("advisory-scenes");
 if(!root)return;
 const reduced=matchMedia("(prefers-reduced-motion: reduce)");
-const finePointer=matchMedia("(hover: hover) and (pointer: fine)");
-
-/* Reveal on scroll */
-const revealItems=[...root.querySelectorAll(".adv-reveal,.adv-years")];
-if(!reduced.matches&&"IntersectionObserver" in window){
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(!entry.isIntersecting)return;
-      entry.target.classList.remove("is-waiting");
-      observer.unobserve(entry.target);
-    });
-  },{threshold:.15});
-  revealItems.forEach(item=>{
-    if(item.getBoundingClientRect().top>innerHeight*.9){
-      item.classList.add("is-waiting");
-      observer.observe(item);
-    }
-  });
+function countUp(element){
+  const target=Number(element.dataset.count);
+  if(!target||reduced.matches)return;
+  const start=performance.now();
+  const duration=1400;
+  const step=now=>{
+    const t=Math.min(1,(now-start)/duration);
+    const eased=1-Math.pow(1-t,3);
+    element.textContent=String(Math.round(target*eased));
+    if(t<1)requestAnimationFrame(step);
+  };
+  element.textContent="0";
+  requestAnimationFrame(step);
 }
-
-/* Case study slots: gentle 3D tilt that follows the pointer */
-root.querySelectorAll(".adv-case").forEach(card=>{
-  card.addEventListener("pointermove",event=>{
-    if(!finePointer.matches||reduced.matches)return;
-    const box=card.getBoundingClientRect();
-    const x=(event.clientX-box.left)/box.width;
-    const y=(event.clientY-box.top)/box.height;
-    card.style.setProperty("--ry",`${(x-.5)*7}deg`);
-    card.style.setProperty("--rx",`${(.5-y)*7}deg`);
-    card.style.setProperty("--mx",`${x*100}%`);
-    card.style.setProperty("--my",`${y*100}%`);
+const items=[...root.querySelectorAll(".adv-reveal")];
+if(reduced.matches||!("IntersectionObserver" in window))return;
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    entry.target.classList.remove("is-waiting");
+    entry.target.querySelectorAll("[data-count]").forEach(countUp);
+    observer.unobserve(entry.target);
   });
-  card.addEventListener("pointerleave",()=>{
-    ["--rx","--ry","--mx","--my"].forEach(name=>card.style.removeProperty(name));
-  });
+},{threshold:.15});
+items.forEach(item=>{
+  if(item.getBoundingClientRect().top>innerHeight*.92){
+    item.classList.add("is-waiting");
+    observer.observe(item);
+  }
 });
 })();
-</script>
-<script type="module">
-
-/* SYNCHRONIZED PYRAMID AND HALF-DISC */
-const host=document.querySelector("#triangle-canvas");
-const spinButton=document.querySelector("#triangle-spin");
-const autoButton=document.querySelector("#triangle-auto");
-const fallback=document.querySelector("#triangle-fallback");
-const liveStatus=document.querySelector("#triangle-status");
-const frameworkTrack=
-  document.querySelector("#framework-track");
-const copies=[
-  ...document.querySelectorAll("[data-face-copy]")
-];
-const faceButtons=[
-  ...document.querySelectorAll("[data-select-face]")
-];
-const disc=document.querySelector("#disc-window");
-const wheel=document.querySelector("#disc-wheel");
-const currentFace=document.querySelector("#current-face");
-const names=[
-  "Clarity",
-  "Structure",
-  "Cadence"
-];
-let activeFace=0;
-let selectFace=index=>{
-  showFace(index,1);
-};
-let destroyTriangle=()=>{};
-const FULL_TURN=Math.PI*2;
-const FACE_TURN=FULL_TURN/3;
-function nearestFaceYaw(index,current){
-  const canonical=-index*FACE_TURN;
-  return canonical+
-    Math.round(
-      (current-canonical)/FULL_TURN
-    )*FULL_TURN;
-}
-function stableFace(scores,current,margin=.065){
-  let winner=0;
-  for(let i=1;i<scores.length;i++){
-    if(scores[i]>scores[winner]){
-      winner=i;
-    }
-  }
-  return (
-    winner!==current&&
-    scores[winner]>scores[current]+margin
-  )?winner:current;
-}
-function showFace(index,direction){
-  if(index===activeFace)return;
-  disc.style.setProperty(
-    "--direction",
-    direction||1
-  );
-  copies.forEach((copy,i)=>{
-    const wasActive=
-      copy.classList.contains("is-active");
-    copy.classList.toggle(
-      "is-past",
-      i!==index&&wasActive
-    );
-    copy.classList.toggle(
-      "is-active",
-      i===index
-    );
-    copy.inert=i!==index;
-    copy.setAttribute(
-      "aria-hidden",
-      String(i!==index)
-    );
-  });
-  faceButtons.forEach((button,i)=>{
-    button.setAttribute(
-      "aria-pressed",
-      String(i===index)
-    );
-  });
-  activeFace=index;
-  currentFace.textContent=
-    `0${index+1} / ${names[index]}`;
-  const months=[
-    "Month 1 to 2",
-    "Month 3 to 4",
-    "Month 5 onwards"
-  ];
-  liveStatus.textContent=
-    `${names[index]}. ${months[index]}.`;
-}
-const navHandlers=faceButtons.map((button,index)=>{
-  const handler=()=>{
-    selectFace(index);
-  };
-  button.addEventListener("click",handler);
-  return handler;
-});
-async function initializeTriangle(){
-  try{
-    const THREE=await import("three");
-    const {RoomEnvironment}=await import(
-      "three/addons/environments/RoomEnvironment.js"
-    );
-    buildTriangle(THREE,RoomEnvironment);
-  }catch(error){
-    destroyTriangle();
-    console.warn(
-      "3D unavailable; framework content remains accessible.",
-      error
-    );
-    spinButton.hidden=true;
-    autoButton.hidden=true;
-    fallback.hidden=false;
-    host.hidden=true;
-    frameworkTrack.classList.remove("is-pinned");
-    document.querySelector("#triangle-hint").textContent=
-      "Choose a principle to read its phase.";
-    document.querySelector("#scene-note").textContent=
-      "Explore the three phases using the buttons above.";
-  }
-}
-function buildTriangle(THREE,RoomEnvironment){
-  const reduced=matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
-  const desktop=matchMedia(
-    "(min-width:900px)"
-  );
-  const renderer=new THREE.WebGLRenderer({
-    alpha:true,
-    antialias:true,
-    powerPreference:"low-power"
-  });
-  renderer.setPixelRatio(
-    Math.min(devicePixelRatio||1,2)
-  );
-  renderer.setClearColor(0x000000,0);
-  renderer.toneMapping=
-    THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure=1;
-  renderer.domElement.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-  host.appendChild(renderer.domElement);
-  const scene=new THREE.Scene();
-  const camera=new THREE.PerspectiveCamera(
-    34,
-    1,
-    .1,
-    50
-  );
-  camera.position.set(0,.05,7.6);
-  /* Studio environment */
-  const environment=new RoomEnvironment();
-  const generator=new THREE.PMREMGenerator(
-    renderer
-  );
-  const environmentTarget=generator.fromScene(
-    environment,
-    .04
-  );
-  scene.environment=environmentTarget.texture;
-  environment.dispose();
-  generator.dispose();
-  /* Lighting */
-  const key=new THREE.DirectionalLight(
-    0xffffff,
-    3
-  );
-  key.position.set(-3,4,6);
-  scene.add(key);
-  const rim=new THREE.DirectionalLight(
-    0xffaa74,
-    1.8
-  );
-  rim.position.set(4,2,-3);
-  scene.add(rim);
-  scene.add(
-    new THREE.AmbientLight(0xffffff,.45)
-  );
-  const model=new THREE.Group();
-  scene.add(model);
-  const faceRecords=[];
-  const resources=[];
-  const labelMeshes=[];
-  /* PROCEDURAL MATTE GRAIN */
-  const grainSize=512;
-  const colourPixels=new Uint8Array(
-    grainSize*grainSize*4
-  );
-  const surfacePixels=new Uint8Array(
-    grainSize*grainSize*4
-  );
-  let grainSeed=92821;
-  function grainRandom(){
-    grainSeed=(
-      1664525*grainSeed+1013904223
-    )>>>0;
-    return grainSeed/4294967296;
-  }
-  for(let i=0;i<colourPixels.length;i+=4){
-    const noise=grainRandom();
-    const shade=246+Math.floor(noise*10);
-    colourPixels[i]=shade;
-    colourPixels[i+1]=shade;
-    colourPixels[i+2]=shade;
-    colourPixels[i+3]=255;
-    surfacePixels[i]=70+Math.floor(noise*125);
-    surfacePixels[i+1]=232+Math.floor(noise*23);
-    surfacePixels[i+2]=surfacePixels[i];
-    surfacePixels[i+3]=255;
-  }
-  function grainTexture(pixels,colour=false){
-    const texture=new THREE.DataTexture(
-      pixels,
-      grainSize,
-      grainSize,
-      THREE.RGBAFormat
-    );
-    texture.wrapS=THREE.RepeatWrapping;
-    texture.wrapT=THREE.RepeatWrapping;
-    texture.repeat.set(1.4,1.4);
-    texture.magFilter=THREE.LinearFilter;
-    texture.minFilter=
-      THREE.LinearMipmapLinearFilter;
-    texture.generateMipmaps=true;
-    texture.anisotropy=Math.min(
-      8,
-      renderer.capabilities.getMaxAnisotropy()
-    );
-    if(colour){
-      texture.colorSpace=THREE.SRGBColorSpace;
-    }
-    texture.needsUpdate=true;
-    resources.push(texture);
-    return texture;
-  }
-  const colourGrain=grainTexture(
-    colourPixels,
-    true
-  );
-  const surfaceGrain=grainTexture(
-    surfacePixels
-  );
-  function matteMaterial(colour){
-    return new THREE.MeshPhysicalMaterial({
-      color:colour,
-      map:colourGrain,
-      bumpMap:surfaceGrain,
-      bumpScale:.0025,
-      roughness:.96,
-      roughnessMap:surfaceGrain,
-      metalness:0,
-      clearcoat:0,
-      envMapIntensity:.35
-    });
-  }
-  const orange=matteMaterial(0xff630f);
-  const white=matteMaterial(0xf4f4f4);
-  const charcoal=matteMaterial(0x242424);
-  /* Pure black underside, unaffected by lighting. */
-  const bottomBlack=new THREE.MeshBasicMaterial({
-    color:0x000000,
-    toneMapped:false
-  });
-  resources.push(
-    orange,
-    white,
-    charcoal,
-    bottomBlack
-  );
-  /* CLOSED TRIANGULAR PYRAMID */
-  const apex=new THREE.Vector3(
-    0,
-    1.65,
-    0
-  );
-  const base=[
-    new THREE.Vector3(-1.65,-1.05,.952628),
-    new THREE.Vector3(1.65,-1.05,.952628),
-    new THREE.Vector3(0,-1.05,-1.905256)
-  ];
-  const solidCenter=apex.clone()
-    .add(base[0])
-    .add(base[1])
-    .add(base[2])
-    .multiplyScalar(.25);
-  /* LARGE, HIGH-CONTRAST FACE LABELS */
-  function drawLabel(face,font="Arial"){
-    const canvas=document.createElement("canvas");
-    canvas.width=2048;
-    canvas.height=1024;
-    const context=canvas.getContext("2d");
-    context.textAlign="center";
-    context.textBaseline="middle";
-    context.globalAlpha=1;
-    context.fillStyle=face.dark
-      ?"#000000"
-      :"#ffffff";
-    context.font="600 112px Arial";
-    context.fillText(
-      face.month,
-      1024,
-      150,
-      1280
-    );
-    context.font=
-      `500 300px ${font},Arial,sans-serif`;
-    context.fillText(
-      face.title,
-      1024,
-      430,
-      1880
-    );
-    context.font="600 112px Arial";
-    face.lines.forEach((line,index)=>{
-      context.fillText(
-        line,
-        1024,
-        715+index*150,
-        1880
-      );
-    });
-    return canvas;
-  }
-  function makeFace(vertices,material){
-    const points=vertices.map(vertex=>{
-      return vertex.clone();
-    });
-    const normal=new THREE.Vector3()
-      .crossVectors(
-        points[1].clone().sub(points[0]),
-        points[2].clone().sub(points[0])
-      )
-      .normalize();
-    const center=points[0].clone()
-      .add(points[1])
-      .add(points[2])
-      .multiplyScalar(1/3);
-    if(
-      normal.dot(
-        center.clone().sub(solidCenter)
-      )<0
-    ){
-      [points[1],points[2]]=[
-        points[2],
-        points[1]
-      ];
-      normal.negate();
-    }
-    const geometry=new THREE.BufferGeometry();
-    geometry.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(
-        points.flatMap(vertex=>[
-          vertex.x,
-          vertex.y,
-          vertex.z
-        ]),
-        3
-      )
-    );
-    geometry.setAttribute(
-      "uv",
-      new THREE.Float32BufferAttribute(
-        [
-          0,0,
-          1,0,
-          .5,1
-        ],
-        2
-      )
-    );
-    geometry.computeVertexNormals();
-    model.add(
-      new THREE.Mesh(geometry,material)
-    );
-    resources.push(geometry);
-    return {normal,center};
-  }
-  const faces=[
-    {
-      left:base[0],
-      right:base[1],
-      material:orange,
-      title:"Clarity",
-      month:"MONTH 1–2",
-      lines:[
-        "Direction guides",
-        "decisions."
-      ],
-      dark:true
-    },
-    {
-      left:base[1],
-      right:base[2],
-      material:white,
-      title:"Structure",
-      month:"MONTH 3–4",
-      lines:[
-        "Authority enables",
-        "decisions."
-      ],
-      dark:true
-    },
-    {
-      left:base[2],
-      right:base[0],
-      material:charcoal,
-      title:"Cadence",
-      month:"MONTH 5+",
-      lines:[
-        "Rhythm enables",
-        "execution."
-      ],
-      dark:false
-    }
-  ];
-  faces.forEach(face=>{
-    faceRecords.push(
-      makeFace(
-        [face.left,face.right,apex],
-        face.material
-      )
-    );
-    const midpoint=face.left.clone()
-      .add(face.right)
-      .multiplyScalar(.5);
-    const xAxis=face.right.clone()
-      .sub(face.left)
-      .normalize();
-    const yAxis=apex.clone()
-      .sub(midpoint)
-      .normalize();
-    const normal=new THREE.Vector3()
-      .crossVectors(xAxis,yAxis)
-      .normalize();
-    if(
-      normal.dot(
-        midpoint.clone().sub(solidCenter)
-      )<0
-    ){
-      xAxis.negate();
-      normal.negate();
-    }
-    const texture=new THREE.CanvasTexture(
-      drawLabel(face)
-    );
-    texture.colorSpace=THREE.SRGBColorSpace;
-    texture.anisotropy=
-      renderer.capabilities.getMaxAnisotropy();
-    texture.minFilter=
-      THREE.LinearMipmapLinearFilter;
-    texture.magFilter=THREE.LinearFilter;
-    const material=new THREE.MeshBasicMaterial({
-      map:texture,
-      transparent:true,
-      depthWrite:false,
-      toneMapped:false,
-      side:THREE.FrontSide,
-      polygonOffset:true,
-      polygonOffsetFactor:-1,
-      polygonOffsetUnits:-1
-    });
-    const geometry=new THREE.PlaneGeometry(
-      2.25,
-      1.125
-    );
-    const label=new THREE.Mesh(
-      geometry,
-      material
-    );
-    label.position
-      .copy(midpoint)
-      .lerp(apex,.32)
-      .addScaledVector(normal,.006);
-    label.quaternion.setFromRotationMatrix(
-      new THREE.Matrix4().makeBasis(
-        xAxis,
-        yAxis,
-        normal
-      )
-    );
-    model.add(label);
-    resources.push(
-      texture,
-      material,
-      geometry
-    );
-    labelMeshes.push({
-      tier:face,
-      texture
-    });
-  });
-  /* Closed, pitch-black bottom. */
-  makeFace(
-    [base[0],base[1],base[2]],
-    bottomBlack
-  );
-  /* Subtle side edges; no bright bottom outline. */
-  const edgeGeometry=new THREE.BufferGeometry();
-  const edgePoints=[];
-  [
-    [apex,base[0]],
-    [apex,base[1]],
-    [apex,base[2]]
-  ].forEach(([a,b])=>{
-    edgePoints.push(
-      a.x,a.y,a.z,
-      b.x,b.y,b.z
-    );
-  });
-  edgeGeometry.setAttribute(
-    "position",
-    new THREE.Float32BufferAttribute(
-      edgePoints,
-      3
-    )
-  );
-  const edgeMaterial=new THREE.LineBasicMaterial({
-    color:0xffffff,
-    transparent:true,
-    opacity:.1
-  });
-  model.add(
-    new THREE.LineSegments(
-      edgeGeometry,
-      edgeMaterial
-    )
-  );
-  resources.push(
-    edgeGeometry,
-    edgeMaterial
-  );
-  /* SHARED MOTION STATE */
-  let disposed=false;
-  let frame=0;
-  let previous=0;
-  let elapsed=0;
-  let yaw=-.12;
-  let targetYaw=yaw;
-  let pitch=.08;
-  let targetPitch=pitch;
-  let velocityYaw=0;
-  let velocityPitch=0;
-  let dragging=false;
-  let pointerId=null;
-  let lastX=0;
-  let lastY=0;
-  let lastTime=0;
-  let movement=0;
-  let visible=false;
-  let motionReduced=reduced.matches;
-  let paused=true;
-  let holdUntil=0;
-  let lastProgress=0;
-  let pinned=false;
-  const normalWorld=new THREE.Vector3();
-  const centerWorld=new THREE.Vector3();
-  const viewDirection=new THREE.Vector3();
-  function render(){
-    if(disposed)return;
-    model.rotation.set(pitch,yaw,0);
-    model.position.y=0;
-    model.updateMatrixWorld(true);
-    /* Detect the actual front-facing surface. */
-    const scores=faceRecords.map(face=>{
-      normalWorld
-        .copy(face.normal)
-        .transformDirection(model.matrixWorld);
-      centerWorld
-        .copy(face.center)
-        .applyMatrix4(model.matrixWorld);
-      viewDirection
-        .copy(camera.position)
-        .sub(centerWorld)
-        .normalize();
-      return normalWorld.dot(viewDirection);
-    });
-    showFace(
-      stableFace(scores,activeFace),
-      targetYaw<yaw?1:-1
-    );
-    wheel.style.transform=
-      `rotate(${-yaw*.55}rad)`;
-    renderer.render(scene,camera);
-  }
-  function requestFrame(){
-    if(
-      !disposed&&
-      !frame&&
-      !document.hidden&&
-      visible
-    ){
-      frame=requestAnimationFrame(tick);
-    }
-  }
-  function tick(now){
-    frame=0;
-    if(
-      disposed||
-      document.hidden||
-      !visible
-    ){
-      return;
-    }
-    const delta=Math.min(
-      (now-(previous||now))/1000,
-      .045
-    );
-    previous=now;
-    if(!motionReduced){
-      elapsed+=delta;
-      if(!dragging){
-        targetYaw+=velocityYaw*delta;
-        targetPitch+=velocityPitch*delta;
-        velocityYaw*=Math.exp(-delta*3);
-        velocityPitch*=Math.exp(-delta*4);
-
-      }
-      targetPitch=Math.max(
-        -.45,
-        Math.min(.5,targetPitch)
-      );
-      const easing=1-Math.exp(
-        -delta*(dragging?24:11)
-      );
-      yaw+=(targetYaw-yaw)*easing;
-      pitch+=(targetPitch-pitch)*easing;
-    }else{
-      yaw=targetYaw;
-      pitch=targetPitch;
-    }
-    render();
-    const moving = dragging ||
-      Math.abs(velocityYaw) > .001 || Math.abs(velocityPitch) > .001 ||
-      Math.abs(targetYaw-yaw) > .0001 || Math.abs(targetPitch-pitch) > .0001;
-    if(!motionReduced && moving){ requestFrame(); }
-  }
-  function syncPlayback(){
-    cancelAnimationFrame(frame);
-    frame=0;
-    previous=0;
-    if(
-      !disposed&&
-      !document.hidden&&
-      visible
-    ){
-      render();
-      requestFrame();
-    }
-  }
-  function resize(){
-    if(disposed)return;
-    const bounds=host.getBoundingClientRect();
-    if(!bounds.width||!bounds.height)return;
-    renderer.setSize(
-      bounds.width,
-      bounds.height
-    );
-    camera.aspect=
-      bounds.width/bounds.height;
-    camera.position.z=
-      camera.aspect<1?8.7:7.6;
-    camera.updateProjectionMatrix();
-    copies.forEach(copy=>{
-      copy.classList.remove('has-copy-overflow');
-      if(copy.scrollHeight>copy.clientHeight+2)copy.classList.add('has-copy-overflow');
-    });
-    render();
-  }
-  /* SCROLL ROTATION */
-  function progress(){
-    const bounds=frameworkTrack.getBoundingClientRect();
-    const distance=pinned
-      ? Math.max(1,frameworkTrack.offsetHeight-innerHeight)
-      : Math.max(1,bounds.height+innerHeight);
-    const position=pinned ? -bounds.top : innerHeight-bounds.top;
-    return Math.max(0,Math.min(1,position/distance));
-  }
-  function scroll(){
-    const next=progress();
-    const delta=next-lastProgress;
-    lastProgress=next;
-    if(
-      motionReduced||
-      Math.abs(delta)<.000001
-    ){
-      return;
-    }
-    holdUntil=performance.now()+1700;
-    if(!dragging){
-      targetYaw-=delta*FACE_TURN*2;
-      velocityYaw=0;
-      velocityPitch=0;
-    }
-    requestFrame();
-  }
-  function syncLayout(){
-    pinned=
-      desktop.matches&&!motionReduced;
-    frameworkTrack.classList.toggle(
-      "is-pinned",
-      pinned
-    );
-    lastProgress=progress();
-    document.querySelector("#scene-note").textContent=
-      pinned
-      ?"Scroll to explore. Drag to choose your own perspective."
-      :"Drag horizontally or select a principle to explore.";
-    resize();
-    requestFrame();
-  }
-  /* DIRECT FACE SELECTION */
-  selectFace=index=>{
-    velocityYaw=0;
-    velocityPitch=0;
-    targetYaw=nearestFaceYaw(index,yaw);
-    targetPitch=.08;
-    holdUntil=performance.now()+6500;
-    if(motionReduced){
-      yaw=targetYaw;
-      pitch=targetPitch;
-      render();
-    }
-    requestFrame();
-  };
-  function spin(){
-    holdUntil=performance.now()+2600;
-    if(motionReduced){
-      targetYaw=nearestFaceYaw(
-        (activeFace+1)%3,
-        yaw
-      );
-      yaw=targetYaw;
-      render();
-    }else{
-      velocityYaw=-5.8;
-      velocityPitch=0;
-    }
-    requestFrame();
-  }
-  function toggleAuto(){}
-  /* MOUSE AND TOUCH CONTROLS */
-  function down(event){
-    if(
-      (
-        event.pointerType==="mouse"&&
-        event.button!==0
-      )||
-      dragging
-    ){
-      return;
-    }
-    dragging=true;
-    pointerId=event.pointerId;
-    movement=0;
-    velocityYaw=0;
-    velocityPitch=0;
-    targetYaw=yaw;
-    targetPitch=pitch;
-    lastX=event.clientX;
-    lastY=event.clientY;
-    lastTime=performance.now();
-    host.setPointerCapture(pointerId);
-    host.classList.add("dragging");
-    requestFrame();
-  }
-  function move(event){
-    if(
-      !dragging||
-      event.pointerId!==pointerId
-    ){
-      return;
-    }
-    const now=performance.now();
-    const delta=Math.max(
-      (now-lastTime)/1000,
-      .016
-    );
-    const dx=event.clientX-lastX;
-    const dy=event.clientY-lastY;
-    movement+=Math.abs(dx)+Math.abs(dy);
-    targetYaw+=dx*.009;
-    if(event.pointerType!=="touch"){
-      targetPitch=Math.max(
-        -.45,
-        Math.min(
-          .5,
-          targetPitch+dy*.004
-        )
-      );
-    }
-    velocityYaw=Math.max(
-      -5,
-      Math.min(
-        5,
-        dx*.009/delta
-      )
-    );
-    velocityPitch=event.pointerType==="touch"
-      ?0
-      :Math.max(
-        -.7,
-        Math.min(
-          .7,
-          dy*.004/delta
-        )
-      );
-    lastX=event.clientX;
-    lastY=event.clientY;
-    lastTime=now;
-    if(motionReduced){
-      yaw=targetYaw;
-      pitch=targetPitch;
-      render();
-    }
-    requestFrame();
-  }
-  function up(event){
-    if(
-      !dragging||
-      event.pointerId!==pointerId
-    ){
-      return;
-    }
-    const cancelled=
-      event.type!=="pointerup";
-    dragging=false;
-    pointerId=null;
-    host.classList.remove("dragging");
-    if(host.hasPointerCapture(event.pointerId)){
-      host.releasePointerCapture(event.pointerId);
-    }
-    holdUntil=performance.now()+4500;
-    if(
-      cancelled||
-      motionReduced||
-      performance.now()-lastTime>100
-    ){
-      velocityYaw=0;
-      velocityPitch=0;
-    }
-    if(!cancelled&&movement<6){
-      spin();
-    }
-    requestFrame();
-  }
-  function motionChange(event){
-    motionReduced=event.matches;
-    velocityYaw=0;
-    velocityPitch=0;
-    autoButton.disabled=motionReduced;
-    autoButton.textContent=motionReduced
-      ?"Automatic motion off"
-      :paused
-        ?"Resume rotation"
-        :"Pause rotation";
-    syncLayout();
-    syncPlayback();
-  }
-  /* VISIBILITY AND RESIZE */
-  const resizeObserver=new ResizeObserver(
-    resize
-  );
-  resizeObserver.observe(host);
-  const intersection=new IntersectionObserver(
-    entries=>{
-      visible=entries[0].isIntersecting;
-      syncPlayback();
-    }
-  );
-  intersection.observe(host);
-  host.addEventListener("pointerdown",down);
-  host.addEventListener("pointermove",move);
-  [
-    "pointerup",
-    "pointercancel",
-    "lostpointercapture"
-  ].forEach(type=>{
-    host.addEventListener(type,up);
-  });
-  spinButton.addEventListener("click",spin);
-  autoButton.addEventListener("click",toggleAuto);
-  reduced.addEventListener(
-    "change",
-    motionChange
-  );
-  desktop.addEventListener(
-    "change",
-    syncLayout
-  );
-  addEventListener(
-    "scroll",
-    scroll,
-    {passive:true}
-  );
-  addEventListener("resize",syncLayout);
-  document.addEventListener(
-    "visibilitychange",
-    syncPlayback
-  );
-  function dispose(){
-    if(disposed)return;
-    disposed=true;
-    cancelAnimationFrame(frame);
-    resizeObserver.disconnect();
-    intersection.disconnect();
-    host.removeEventListener("pointerdown",down);
-    host.removeEventListener("pointermove",move);
-    [
-      "pointerup",
-      "pointercancel",
-      "lostpointercapture"
-    ].forEach(type=>{
-      host.removeEventListener(type,up);
-    });
-    spinButton.removeEventListener("click",spin);
-    autoButton.removeEventListener(
-      "click",
-      toggleAuto
-    );
-    reduced.removeEventListener(
-      "change",
-      motionChange
-    );
-    desktop.removeEventListener(
-      "change",
-      syncLayout
-    );
-    removeEventListener("scroll",scroll);
-    removeEventListener("resize",syncLayout);
-    document.removeEventListener(
-      "visibilitychange",
-      syncPlayback
-    );
-    resources.forEach(resource=>{
-      resource.dispose();
-    });
-    environmentTarget.dispose();
-    renderer.dispose();
-    renderer.domElement.remove();
-    selectFace=index=>{
-      showFace(index,1);
-    };
-    frameworkTrack.classList.remove("is-pinned");
-  }
-  function contextLost(event){
-    event.preventDefault();
-    dispose();
-    fallback.hidden=false;
-    spinButton.hidden=true;
-    autoButton.hidden=true;
-    document.querySelector("#triangle-hint").textContent=
-      "Choose a principle to read its phase.";
-  }
-  renderer.domElement.addEventListener(
-    "webglcontextlost",
-    contextLost,
-    {once:true}
-  );
-  destroyTriangle=dispose;
-  syncLayout();
-  fallback.hidden=true;
-  spinButton.hidden=false;
-  autoButton.hidden=false;
-  autoButton.disabled=motionReduced;
-  if(motionReduced){
-    autoButton.textContent=
-      "Automatic motion off";
-  }
-  document.fonts.load("500 50px Mona").then(()=>{
-    if(disposed)return;
-    labelMeshes.forEach(({tier,texture})=>{
-      texture.image=drawLabel(tier,"Mona");
-      texture.needsUpdate=true;
-    });
-    resize();
-  });
-}
-addEventListener("pagehide",event=>{
-  if(!event.persisted){
-    destroyTriangle();
-    faceButtons.forEach((button,index)=>{
-      button.removeEventListener(
-        "click",
-        navHandlers[index]
-      );
-    });
-  }
-});
-initializeTriangle();
-
 </script>
 <script>
 
 (() => {
-  const section=document.querySelector("#next-stage");
-  const viewport=document.querySelector("#cards-window");
-  const rail=document.querySelector("#cards-rail");
-  const cards=[
-    ...rail.querySelectorAll(".story-card")
-  ];
-  const buttons=[
-    ...document.querySelectorAll("[data-card]")
-  ];
-  const bar=document.querySelector("#card-progress");
-  const status=document.querySelector("#card-status");
   const reduced=matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
-  const desktop=matchMedia(
-    "(min-width:900px)"
-  );
-  let enabled=false;
-  let travel=0;
-  let run=1;
-  let hold=0;
-  let frame=0;
-  let active=0;
-  const clamp=value=>{
-    return Math.max(0,Math.min(1,value));
-  };
-  function sceneProgress(top,distance){
-    return clamp(
-      -top/Math.max(1,distance)
-    );
-  }
-  function paint(){
-    frame=0;
-    if(document.hidden||!enabled)return;
-    const progress=sceneProgress(
-      section.getBoundingClientRect().top,
-      run
-    );
-    rail.style.transform=
-      `translate3d(${-progress*travel}px,0,0)`;
-    active=Math.min(
-      cards.length-1,
-      Math.round(
-        progress*(cards.length-1)
-      )
-    );
-    bar.style.width=
-      `${progress*100}%`;
-    status.textContent=
-      `0${active+1} / 03`;
-    cards.forEach((card,index)=>{
-      card.inert=index!==active;
-      card.setAttribute(
-        "aria-hidden",
-        String(index!==active)
-      );
-    });
-    buttons.forEach((button,index)=>{
-      button.setAttribute(
-        "aria-pressed",
-        String(index===active)
-      );
-    });
-  }
-  function schedule(){
-    if(!frame&&!document.hidden){
-      frame=requestAnimationFrame(paint);
-    }
-  }
-  function layout(){
-    enabled=
-      desktop.matches&&!reduced.matches;
-    section.classList.toggle(
-      "is-horizontal",
-      enabled
-    );
-    if(enabled){
-      const stagePadding=Math.max(14,Math.min(24,innerHeight*.025));
-      const cardGap=Math.max(12,Math.min(20,innerHeight*.025));
-      section.style.setProperty('--stage-padding',`${stagePadding}px`);
-      section.style.setProperty('--card-gap',`${cardGap}px`);
-      const heading=section.querySelector('.story-heading');
-      const controls=section.querySelector('.carousel-controls');
-      const available=Math.max(250,Math.min(620,
-        innerHeight-stagePadding*2-cardGap*2-
-        heading.getBoundingClientRect().height-controls.getBoundingClientRect().height
-      ));
-      section.style.setProperty('--card-height',`${available}px`);
-      section.style.setProperty('--card-title-size',`${Math.min(64,Math.max(34,available*.115))}px`);
-      section.style.setProperty('--revenue-size',`${Math.min(88,Math.max(55,available*.18))}px`);
-      section.style.setProperty('--card-padding',`${Math.min(38,Math.max(22,available*.06))}px`);
-      section.classList.toggle('compact-cards',available<470);
-      cards.forEach(card=>card.classList.toggle('has-card-overflow',card.scrollHeight>card.clientHeight+2));
-      const style=getComputedStyle(viewport);
-      const contentWidth=
-        viewport.clientWidth-
-        parseFloat(style.paddingLeft)-
-        parseFloat(style.paddingRight);
-      travel=Math.max(
-        0,
-        rail.scrollWidth-contentWidth
-      );
-      run=Math.max(1,travel);
-      hold=innerHeight*.22;
-      section.style.setProperty(
-        "--track-height",
-        `${innerHeight+run+hold}px`
-      );
-      schedule();
-    }else{
-      section.classList.remove('compact-cards');
-      cards.forEach(card=>card.classList.remove('has-card-overflow'));
-      section.style.removeProperty(
-        "--track-height"
-      );
-      rail.style.removeProperty(
-        "transform"
-      );
-      cards.forEach(card=>{
-        card.inert=false;
-        card.removeAttribute("aria-hidden");
-      });
-    }
-  }
-  /* Navigation buttons move to the correct scroll position. */
-  buttons.forEach((button,index)=>{
-    button.addEventListener("click",()=>{
-      if(!enabled)return;
-      const start=
-        scrollY+
-        section.getBoundingClientRect().top;
-      window.scrollTo({
-        top:
-          start+
-          run*index/(cards.length-1),
-        behavior:
-          reduced.matches?"instant":"smooth"
-      });
-    });
-  });
-  addEventListener(
-    "scroll",
-    schedule,
-    {passive:true}
-  );
-  addEventListener("resize",layout);
-  desktop.addEventListener(
-    "change",
-    layout
-  );
-  reduced.addEventListener(
-    "change",
-    layout
-  );
-  document.addEventListener(
-    "visibilitychange",
-    ()=>{
-      if(document.hidden){
-        cancelAnimationFrame(frame);
-        frame=0;
-      }else{
-        schedule();
-      }
-    }
-  );
-  const resize=new ResizeObserver(()=>{
-    if(enabled){
-      layout();
-    }
-  });
-  resize.observe(viewport);
-  document.fonts.ready.then(layout);
-  layout();
   /* ABOUT / FOOTER REVEALS */
   const revealItems=[
     ...document.querySelectorAll(".reveal")
@@ -6096,7 +3847,7 @@ initializeTriangle();
       const hero=document.querySelector('#top');
       return hero.classList.contains('webgl-ready')?null:hero.querySelector('.portrait-surface');
     }
-    return target.closest('.adv-head,.adv-point,.adv-years li,.adv-case,.adv-cases-head,.adv-work-foot,.story-card,.disc-window,.portrait-frame,.booking-teaser,#triangle-canvas,.glass-dialog,.statement,.story-copy,.chart-figure,.about-copy,.footer-copy,.footer-bottom,.footer-tail,.footer-top,.story-heading,.face-nav,.disc-heading,.chapter,.triangle-controls,.transition-line');
+    return target.closest('.adv-head,.svc-card,.principle,.proof-stats li,.case-card,.quote-card,.fit-card,.fit-foot,.adv-work-foot,.story-card,.disc-window,.portrait-frame,.booking-teaser,#triangle-canvas,.glass-dialog,.statement,.story-copy,.chart-figure,.about-copy,.footer-copy,.footer-bottom,.footer-tail,.footer-top,.story-heading,.face-nav,.disc-heading,.chapter,.triangle-controls,.transition-line');
   }
   function select(element){
     if(element===active)return;
