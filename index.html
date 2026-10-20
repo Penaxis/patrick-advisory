@@ -720,7 +720,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #advisory-scenes ::selection{background:var(--orange);color:#000}
 #advisory-scenes p{margin:0}
 #advisory-scenes .adv-wrap{width:88%;max-width:1440px;margin-inline:auto}
-#advisory-scenes .adv-services{padding:150px 0 120px}
+#advisory-scenes .adv-services{padding:150px 0 140px}
 #advisory-scenes .adv-work{padding:130px 0 140px;border-top:1px solid var(--line)}
 #advisory-scenes .adv-chapter{display:flex;align-items:center;gap:10px;margin-bottom:28px;color:var(--orange);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
 #advisory-scenes .adv-chapter::before{content:"";width:24px;height:1px;flex-shrink:0;background:var(--orange)}
@@ -732,51 +732,27 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #advisory-scenes .adv-light{font-weight:250;color:#aaa}
 #advisory-scenes .adv-lead{color:#aaa;font-size:15px;line-height:1.7;text-wrap:pretty}
 
-/* Services: sticky layered visual + four pressure points */
-#advisory-scenes .adv-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:7%;align-items:start}
-#advisory-scenes .adv-visual{position:sticky;top:12svh;height:76svh;min-height:440px;display:grid;place-items:center;perspective:1400px}
-#advisory-scenes .adv-stack{position:relative;width:min(54%,310px);aspect-ratio:1;transform-style:preserve-3d;transform:translateY(-4%) rotateX(56deg) rotateZ(-38deg);transition:filter 1s}
-#advisory-scenes .adv-plane{--dx:0px;--dy:0px;--rz:0deg;position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between;padding:14px 16px;border:1px solid rgba(255,255,255,.22);background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.01));color:#777;font-size:10px;letter-spacing:.14em;text-transform:uppercase;transform:translate3d(var(--dx),var(--dy),calc(var(--i)*58px)) rotateZ(var(--rz));transition:transform 1.2s var(--ease),border-color .6s,color .6s,background .6s,box-shadow .6s}
-#advisory-scenes .adv-plane b{font-family:Mona,Arial,sans-serif;font-size:19px;font-weight:250;letter-spacing:-.03em;text-transform:none;color:inherit}
-#advisory-scenes .adv-plane:nth-child(1){--dx:-38px;--dy:26px;--rz:-12deg}
-#advisory-scenes .adv-plane:nth-child(2){--dx:26px;--dy:-26px;--rz:8deg}
-#advisory-scenes .adv-plane:nth-child(3){--dx:-26px;--dy:-44px;--rz:-6deg}
-#advisory-scenes .adv-plane:nth-child(4){--dx:26px;--dy:20px;--rz:10deg}
-#advisory-scenes .adv-plane.is-aligned{--dx:0px;--dy:0px;--rz:0deg;color:#ddd;border-color:rgba(255,255,255,.45)}
-#advisory-scenes .adv-plane.is-active{color:var(--orange);border-color:var(--orange);background:linear-gradient(135deg,rgba(255,99,15,.13),rgba(255,99,15,.02));box-shadow:0 0 60px rgba(255,99,15,.18)}
-#advisory-scenes .adv-stack.is-complete .adv-plane{border-color:rgba(255,99,15,.55)}
-#advisory-scenes .adv-visual-caption{position:absolute;left:0;bottom:0;color:#777;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
-#advisory-scenes .adv-count{color:var(--orange)}
-
-#advisory-scenes .adv-points{margin:0;padding:0;list-style:none;counter-reset:none}
-#advisory-scenes .adv-point{padding:44px 0 48px;border-top:1px solid var(--line)}
+/* Services: four problems, one answer each */
+#advisory-scenes .adv-points{margin:0;padding:0;list-style:none}
+#advisory-scenes .adv-point{position:relative;display:grid;grid-template-columns:90px minmax(0,1fr) minmax(240px,360px);gap:4%;align-items:baseline;padding:40px 0 42px;border-top:1px solid var(--line)}
 #advisory-scenes .adv-point:last-child{border-bottom:1px solid var(--line)}
-#advisory-scenes .adv-point-head{display:block}
-#advisory-scenes .adv-num{display:block;margin-bottom:18px;color:#777;font-size:9px;letter-spacing:.16em;text-transform:uppercase;transition:color .5s}
-#advisory-scenes .adv-symptom{display:block;max-width:620px;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(28px,2.9vw,46px);font-weight:250;line-height:1.08;letter-spacing:-.045em;color:#fff;transition:color .6s}
-#advisory-scenes .adv-symptom span{background:linear-gradient(var(--orange),var(--orange)) 0 56%/0% 1px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1s var(--ease)}
-#advisory-scenes .adv-detail{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;margin-top:30px;transition:opacity .7s,transform .9s var(--ease)}
-#advisory-scenes .adv-label{margin-bottom:9px!important;color:#666;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
-#advisory-scenes .adv-build{color:#aaa;font-size:14px;line-height:1.65}
-#advisory-scenes .adv-build strong{display:block;margin-bottom:2px;color:#fff;font-weight:400}
-#advisory-scenes .adv-outcome{position:relative;padding-left:18px;color:#fff;font-size:14px;line-height:1.65}
-#advisory-scenes .adv-outcome::before{content:"→";position:absolute;left:0;top:0;color:var(--orange)}
-/* Scroll states (only when the enhancement runs) */
-#advisory-scenes .is-staged .adv-point .adv-symptom{color:rgba(255,255,255,.4)}
-#advisory-scenes .is-staged .adv-point .adv-detail{opacity:.28;transform:translateY(10px)}
-#advisory-scenes .is-staged .adv-point.is-active .adv-num{color:var(--orange)}
-#advisory-scenes .is-staged .adv-point.is-active .adv-symptom{color:#fff}
-#advisory-scenes .is-staged .adv-point.is-active .adv-detail{opacity:1;transform:none}
-#advisory-scenes .is-staged .adv-point.is-solved .adv-symptom{color:#777}
-#advisory-scenes .is-staged .adv-point.is-solved .adv-detail{opacity:.6;transform:none}
-#advisory-scenes .is-staged .adv-point.is-active .adv-symptom span,#advisory-scenes .is-staged .adv-point.is-solved .adv-symptom span{background-size:100% 1px}
+#advisory-scenes .adv-point::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
+#advisory-scenes .adv-num{color:#666;font-size:10px;letter-spacing:.16em;transition:color .4s}
+#advisory-scenes .adv-symptom{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(30px,3.4vw,54px);font-weight:250;line-height:1.05;letter-spacing:-.045em;transition:transform .7s var(--ease)}
+#advisory-scenes .adv-answer{color:#888;font-size:15px;line-height:1.6;text-wrap:pretty;transition:color .4s}
+@media (hover: hover) and (pointer: fine){
+  #advisory-scenes .adv-point:hover::before{transform:scaleX(1)}
+  #advisory-scenes .adv-point:hover .adv-num{color:var(--orange)}
+  #advisory-scenes .adv-point:hover .adv-symptom{transform:translateX(12px)}
+  #advisory-scenes .adv-point:hover .adv-answer{color:#fff}
+}
+#advisory-scenes .adv-point:nth-child(2){transition-delay:.08s}
+#advisory-scenes .adv-point:nth-child(3){transition-delay:.16s}
+#advisory-scenes .adv-point:nth-child(4){transition-delay:.24s}
 
 /* Conversion strip */
-#advisory-scenes .adv-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px 8%;align-items:end;margin-top:110px}
-#advisory-scenes .adv-cta-copy,#advisory-scenes .adv-work-foot>p{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(30px,3.4vw,52px);font-weight:500;line-height:1;letter-spacing:-.05em}
-#advisory-scenes .adv-cta-copy span{display:block}
+#advisory-scenes .adv-work-foot>p{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(30px,3.4vw,52px);font-weight:500;line-height:1;letter-spacing:-.05em}
 #advisory-scenes .adv-cta-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
-#advisory-scenes .adv-cta-actions small{flex-basis:100%;color:#777;font-size:10px;letter-spacing:.03em}
 #advisory-scenes .adv-button{display:inline-flex;align-items:center;gap:18px;min-height:52px;padding:16px 24px;border:1px solid rgba(255,255,255,.4);border-radius:99px;color:#fff;background:transparent;font:inherit;font-size:13px;line-height:1.2;text-decoration:none;cursor:pointer;transition:background .25s,border-color .25s,color .25s,transform .25s}
 #advisory-scenes .adv-button:hover{border-color:var(--orange);color:var(--orange)}
 #advisory-scenes .adv-button-primary{border-color:#fff;color:#000;background:#fff}
@@ -835,13 +811,9 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   #advisory-scenes .adv-head{grid-template-columns:1fr;gap:24px;margin-bottom:50px}
   #advisory-scenes .adv-title{font-size:clamp(44px,12vw,72px)}
   #advisory-scenes .adv-lead{font-size:14px}
-  #advisory-scenes .adv-grid{grid-template-columns:1fr}
-  #advisory-scenes .adv-visual{display:none}
-  #advisory-scenes .adv-point{padding:32px 0 34px}
-  #advisory-scenes .adv-num{margin-bottom:12px}
-  #advisory-scenes .adv-symptom{font-size:clamp(26px,7.4vw,36px)}
-  #advisory-scenes .adv-detail{grid-template-columns:1fr;gap:18px;margin-top:22px}
-  #advisory-scenes .adv-cta{grid-template-columns:1fr;margin-top:70px}
+  #advisory-scenes .adv-point{grid-template-columns:1fr;gap:12px;padding:30px 0 32px}
+  #advisory-scenes .adv-symptom{font-size:clamp(28px,8vw,38px)}
+  #advisory-scenes .adv-answer{font-size:14px}
   #advisory-scenes .adv-button{width:100%;justify-content:space-between}
   #advisory-scenes .adv-years{margin-bottom:80px}
   #advisory-scenes .adv-years li{grid-template-columns:96px minmax(0,1fr);gap:8px 16px;padding:20px 0}
@@ -2908,103 +2880,32 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
         <span class="adv-light">gets stuck.</span>
       </h2>
       <p class="adv-lead">
-        Beyond €20M revenue, complexity can outgrow the structure
-        that got the company here. Patrick works on the four points
-        where it shows first.
+        Four signs a company has outgrown its structure, and what
+        Patrick changes.
       </p>
     </header>
-
-    <div class="adv-grid">
-      <!-- Four layers that move from scattered to aligned as each point is addressed -->
-      <div class="adv-visual" aria-hidden="true">
-        <div class="adv-stack" style="--solved:0">
-          <div class="adv-plane" style="--i:0"><span>01</span><b>Direction</b></div>
-          <div class="adv-plane" style="--i:1"><span>02</span><b>Decisions</b></div>
-          <div class="adv-plane" style="--i:2"><span>03</span><b>Ownership</b></div>
-          <div class="adv-plane" style="--i:3"><span>04</span><b>Rhythm</b></div>
-        </div>
-        <p class="adv-visual-caption"><span class="adv-count">0</span> / 4 aligned</p>
-      </div>
-
-      <ol class="adv-points">
-        <li class="adv-point" data-point="0">
-          <div class="adv-point-head">
-            <span class="adv-num">01 / Direction</span>
-            <p class="adv-symptom"><span>The team is busy, but not pulling in one direction.</span></p>
-          </div>
-          <div class="adv-detail" id="adv-detail-0">
-            <div>
-              <p class="adv-label">Patrick builds</p>
-              <p class="adv-build"><strong>Strategic clarity.</strong> Purpose, ambition, economic logic and priorities, made explicit.</p>
-            </div>
-            <div>
-              <p class="adv-label">What changes</p>
-              <p class="adv-outcome">One clear reference point for every decision.</p>
-            </div>
-          </div>
-        </li>
-        <li class="adv-point" data-point="1">
-          <div class="adv-point-head">
-            <span class="adv-num">02 / Decisions</span>
-            <p class="adv-symptom"><span>Every important decision still waits for you.</span></p>
-          </div>
-          <div class="adv-detail" id="adv-detail-1">
-            <div>
-              <p class="adv-label">Patrick builds</p>
-              <p class="adv-build"><strong>Decision architecture.</strong> Clear decision domains, authority and escalation logic.</p>
-            </div>
-            <div>
-              <p class="adv-label">What changes</p>
-              <p class="adv-outcome">Decisions no longer depend on you being in every discussion.</p>
-            </div>
-          </div>
-        </li>
-        <li class="adv-point" data-point="2">
-          <div class="adv-point-head">
-            <span class="adv-num">03 / Ownership</span>
-            <p class="adv-symptom"><span>Everyone is involved. No one clearly owns the outcome.</span></p>
-          </div>
-          <div class="adv-detail" id="adv-detail-2">
-            <div>
-              <p class="adv-label">Patrick builds</p>
-              <p class="adv-build"><strong>Ownership structure.</strong> Outcomes and leadership responsibilities assigned across the team.</p>
-            </div>
-            <div>
-              <p class="adv-label">What changes</p>
-              <p class="adv-outcome">Ownership and accountability sit with the leadership team.</p>
-            </div>
-          </div>
-        </li>
-        <li class="adv-point" data-point="3">
-          <div class="adv-point-head">
-            <span class="adv-num">04 / Rhythm</span>
-            <p class="adv-symptom"><span>More tools, people and meetings. The same problems.</span></p>
-          </div>
-          <div class="adv-detail" id="adv-detail-3">
-            <div>
-              <p class="adv-label">Patrick builds</p>
-              <p class="adv-build"><strong>Operating cadence.</strong> Strategic reviews, leadership alignment and KPI-driven decision forums.</p>
-            </div>
-            <div>
-              <p class="adv-label">What changes</p>
-              <p class="adv-outcome">Priorities stop drifting. Strategy turns into execution.</p>
-            </div>
-          </div>
-        </li>
-      </ol>
-    </div>
-
-    <aside class="adv-cta adv-reveal" aria-label="Next step">
-      <p class="adv-cta-copy">
-        <span>Recognise two or more?</span>
-        <span class="adv-light">See where your company stands.</span>
-      </p>
-      <div class="adv-cta-actions">
-        <a class="adv-button adv-button-primary" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Start the free Scale Readiness Review <span aria-hidden="true">↗</span></a>
-        <button class="adv-button" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a 30-minute call <span aria-hidden="true">↗</span></button>
-        <small>Review: 5–7 minutes. Free. No obligation.</small>
-      </div>
-    </aside>
+    <ol class="adv-points">
+      <li class="adv-point adv-reveal">
+        <span class="adv-num">01</span>
+        <p class="adv-symptom">The team is busy, but not aligned.</p>
+        <p class="adv-answer">Clear direction and priorities the whole team works to.</p>
+      </li>
+      <li class="adv-point adv-reveal">
+        <span class="adv-num">02</span>
+        <p class="adv-symptom">Every decision still waits for you.</p>
+        <p class="adv-answer">Clear decision rights, so the team moves without you.</p>
+      </li>
+      <li class="adv-point adv-reveal">
+        <span class="adv-num">03</span>
+        <p class="adv-symptom">Everyone is involved. No one owns it.</p>
+        <p class="adv-answer">Clear ownership of every outcome.</p>
+      </li>
+      <li class="adv-point adv-reveal">
+        <span class="adv-num">04</span>
+        <p class="adv-symptom">More meetings. Same problems.</p>
+        <p class="adv-answer">A steady rhythm of reviews that turns plans into results.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -4690,69 +4591,11 @@ window.addEventListener("pageshow", event => {
 </script>
 <script>
 (() => {
-/* HOW PATRICK HELPS: scroll-linked pressure points + aligning layers */
+/* EXPERIENCE AND SERVICES: reveal on scroll, case-card tilt */
 const root=document.getElementById("advisory-scenes");
 if(!root)return;
 const reduced=matchMedia("(prefers-reduced-motion: reduce)");
 const finePointer=matchMedia("(hover: hover) and (pointer: fine)");
-const list=root.querySelector(".adv-points");
-const points=[...root.querySelectorAll(".adv-point")];
-const planes=[...root.querySelectorAll(".adv-plane")];
-const stack=root.querySelector(".adv-stack");
-const count=root.querySelector(".adv-count");
-const services=root.querySelector(".adv-services");
-let frame=0;
-let nearby=false;
-function render(){
-  frame=0;
-  if(document.hidden)return;
-  const line=innerHeight*.55;
-  let active=-1;
-  points.forEach((point,index)=>{
-    if(point.getBoundingClientRect().top<line)active=index;
-  });
-  const last=points[points.length-1];
-  if(last.getBoundingClientRect().bottom<innerHeight*.4)active=points.length;
-  points.forEach((point,index)=>{
-    point.classList.toggle("is-active",index===active);
-    point.classList.toggle("is-solved",index<active);
-  });
-  planes.forEach((plane,index)=>{
-    plane.classList.toggle("is-aligned",index<=active);
-    plane.classList.toggle("is-active",index===active);
-  });
-  stack.classList.toggle("is-complete",active>=points.length);
-  count.textContent=String(Math.max(0,Math.min(points.length,active+1)));
-}
-function schedule(){
-  if(!frame&&nearby&&!document.hidden&&!reduced.matches)frame=requestAnimationFrame(render);
-}
-function sync(){
-  const staged=!reduced.matches;
-  list.classList.toggle("is-staged",staged);
-  if(!staged){
-    points.forEach(point=>point.classList.remove("is-active","is-solved"));
-    planes.forEach(plane=>{plane.classList.add("is-aligned");plane.classList.remove("is-active");});
-    stack.classList.add("is-complete");
-    count.textContent=String(points.length);
-    return;
-  }
-  stack.classList.remove("is-complete");
-  render();
-}
-if("IntersectionObserver" in window){
-  new IntersectionObserver(entries=>{
-    nearby=entries[0].isIntersecting;
-    schedule();
-  },{rootMargin:"20% 0px"}).observe(services);
-}else{
-  nearby=true;
-}
-addEventListener("scroll",schedule,{passive:true});
-addEventListener("resize",schedule);
-document.addEventListener("visibilitychange",schedule);
-reduced.addEventListener("change",sync);
-sync();
 
 /* Reveal on scroll */
 const revealItems=[...root.querySelectorAll(".adv-reveal,.adv-years")];
@@ -6253,7 +6096,7 @@ initializeTriangle();
       const hero=document.querySelector('#top');
       return hero.classList.contains('webgl-ready')?null:hero.querySelector('.portrait-surface');
     }
-    return target.closest('.adv-head,.adv-point,.adv-cta-copy,.adv-years li,.adv-case,.adv-cases-head,.adv-work-foot,.story-card,.disc-window,.portrait-frame,.booking-teaser,#triangle-canvas,.glass-dialog,.statement,.story-copy,.chart-figure,.about-copy,.footer-copy,.footer-bottom,.footer-tail,.footer-top,.story-heading,.face-nav,.disc-heading,.chapter,.triangle-controls,.transition-line');
+    return target.closest('.adv-head,.adv-point,.adv-years li,.adv-case,.adv-cases-head,.adv-work-foot,.story-card,.disc-window,.portrait-frame,.booking-teaser,#triangle-canvas,.glass-dialog,.statement,.story-copy,.chart-figure,.about-copy,.footer-copy,.footer-bottom,.footer-tail,.footer-top,.story-heading,.face-nav,.disc-heading,.chapter,.triangle-controls,.transition-line');
   }
   function select(element){
     if(element===active)return;
