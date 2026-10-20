@@ -685,6 +685,35 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
     transform: none !important;
     filter: none !important;
   }}
+/* HERO MESSAGING: promise-led headline, value line and supporting facts */
+#hero-scene .letter{white-space:pre}
+#hero-scene .hero-kicker{position:absolute;left:0;bottom:100%;display:flex;align-items:baseline;gap:12px;margin:0 0 24px;color:#aaa;font-size:10px;line-height:1.6;letter-spacing:.035em;text-transform:uppercase}
+#hero-scene .hero-kicker strong{font-weight:400;color:#fff}
+#hero-scene .hero-kicker strong::before{content:"";display:inline-block;width:6px;height:6px;margin-right:10px;border-radius:50%;background:var(--accent);vertical-align:1px}
+#hero-scene .monogram{font-size:13cqw}
+#hero-scene .surname .letter:last-child{color:var(--accent)}
+#hero-scene .notes{max-width:530px;line-height:1.55}
+#hero-scene .notes p{text-wrap:pretty}
+#hero-scene .notes p + p{margin-top:6px}
+#hero-scene .hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:26px 0 0;padding:0}
+#hero-scene .hero-facts div{position:relative;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)}
+#hero-scene .hero-facts div::before{content:"";position:absolute;top:-1px;left:0;width:18px;height:1px;background:var(--accent)}
+#hero-scene .hero-facts dt{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:34px;font-weight:250;line-height:1;letter-spacing:-.04em;white-space:nowrap}
+#hero-scene .hero-facts dd{margin:9px 0 0;color:#aaa;font-size:10px;line-height:1.5;letter-spacing:.035em;text-transform:uppercase}
+#hero-scene .hero.play .hero-kicker{animation:contentEntrance .5s .25s both}
+@media (min-width: 769px){#hero-scene .notes p{max-width:min(530px,44vw)}}
+@media (max-width: 768px){
+  #hero-scene .hero-kicker{gap:8px;margin-bottom:16px;font-size:8px}
+  #hero-scene .hero-kicker strong::before{width:5px;height:5px;margin-right:7px}
+  #hero-scene .monogram{font-size:17cqw}
+  #hero-scene .notes{right:32px;bottom:100px;max-width:none;font-size:13px;line-height:1.5}
+  #hero-scene .notes p:first-child{display:none}
+  #hero-scene .notes p + p{margin-top:0;color:#ccc}
+  #hero-scene .hero-facts{gap:14px;margin-top:18px}
+  #hero-scene .hero-facts div{padding-top:10px}
+  #hero-scene .hero-facts dt{font-size:22px}
+  #hero-scene .hero-facts dd{margin-top:6px;font-size:8px}
+}
 #scale-scenes{
   --bg:#000;
   --white:#fff;
@@ -2876,31 +2905,35 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     </button>
   </nav>
   <div class="title-block">
+    <p class="hero-kicker">
+      <strong>Patrick Grossmann</strong>
+      <span>Strategic Advisor</span>
+    </p>
+    <!-- HEADLINE: the promise, split around the portrait -->
     <h1
       class="title"
-      aria-label="Patrick Grossmann — Strategic Advisory"
+      aria-label="Scale beyond the founder."
     >
       <span
         class="monogram"
-        data-letters="PG"
+        data-letters="Scale"
         aria-hidden="true"
       ></span>
-      <!-- NAME IN TWO LINES -->
       <span class="name" aria-hidden="true">
         <span
           class="first-name"
-          data-letters="Patrick"
+          data-letters="beyond"
         ></span>
         <span
           class="surname"
-          data-letters="Grossmann"
+          data-letters="the founder."
         ></span>
         <sup>[01]</sup>
       </span>
     </h1>
     <div class="subtitle">
       <span>
-        STRATEGIC ADVISORY FOR FOUNDER-LED COMPANIES
+        FROM PRODUCT-MARKET FIT TO STRUCTURAL SCALE
       </span>
       <span>
         [ CLARITY / STRUCTURE / CADENCE ]
@@ -2927,11 +2960,25 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     </button>
   </div>
   <span class="side-label">
-    STRATEGIC ADVISORY / CLARITY & ALIGNMENT — 001
+    PATRICK GROSSMANN / STRATEGIC ADVISOR — 001
   </span>
   <div class="notes">
-    <p>• Decision clarity. Leadership alignment.</p>
-    <p>• Direction for your next stage of growth.</p>
+    <p>When growth outpaces structure, too many decisions still reach the founder.</p>
+    <p>Patrick helps founder-led companies build clear direction, ownership and operating rhythm, so the business can scale without running through one person.</p>
+    <dl class="hero-facts">
+      <div>
+        <dt>€20–80M</dt>
+        <dd>Annual revenue, founder-led companies</dd>
+      </div>
+      <div>
+        <dt>6–12</dt>
+        <dd>Months with founder and leadership team</dd>
+      </div>
+      <div>
+        <dt>15</dt>
+        <dd>Years in high-growth environments</dd>
+      </div>
+    </dl>
   </div>
   <button
     class="pill bottom-action approach-button"
@@ -6389,7 +6436,7 @@ initializeTriangle();
   function choose(target){
     if(target.closest('iframe,.menu-panel,#site-loader'))return null;
     if(target.closest('#hero-scene')){
-      const foreground=target.closest('.monogram,.name,.subtitle,.notes,.side-label,.pill,.down-arrow,.menu-toggle,.clock');
+      const foreground=target.closest('.hero-kicker,.monogram,.name,.subtitle,.notes,.side-label,.pill,.down-arrow,.menu-toggle,.clock');
       if(foreground)return foreground;
       const hero=document.querySelector('#top');
       return hero.classList.contains('webgl-ready')?null:hero.querySelector('.portrait-surface');
