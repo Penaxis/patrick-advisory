@@ -714,6 +714,158 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   #hero-scene .hero-facts dt{font-size:22px}
   #hero-scene .hero-facts dd{margin-top:6px;font-size:8px}
 }
+/* ===== HOW PATRICK HELPS + EXPERIENCE & SELECTED WORK ===== */
+#advisory-scenes{--white:#fff;--orange:#ff630f;--muted:#999;--line:#252525;--ease:cubic-bezier(.16,1,.3,1);position:relative;background:#000;color:#fff;font-family:Arial,sans-serif}
+#advisory-scenes *{box-sizing:border-box}
+#advisory-scenes ::selection{background:var(--orange);color:#000}
+#advisory-scenes p{margin:0}
+#advisory-scenes .adv-wrap{width:88%;max-width:1440px;margin-inline:auto}
+#advisory-scenes .adv-services{padding:150px 0 120px}
+#advisory-scenes .adv-work{padding:130px 0 140px;border-top:1px solid var(--line)}
+#advisory-scenes .adv-chapter{display:flex;align-items:center;gap:10px;margin-bottom:28px;color:var(--orange);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .adv-chapter::before{content:"";width:24px;height:1px;flex-shrink:0;background:var(--orange)}
+#advisory-scenes .adv-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,380px);gap:40px 8%;align-items:end;margin-bottom:90px}
+#advisory-scenes .adv-head .adv-chapter{grid-column:1/-1;margin-bottom:0}
+#advisory-scenes .adv-head-split>div .adv-chapter{margin-bottom:28px}
+#advisory-scenes .adv-title{margin:0;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(48px,6.6vw,108px);font-weight:500;line-height:.95;letter-spacing:-.06em}
+#advisory-scenes .adv-title span{display:block}
+#advisory-scenes .adv-light{font-weight:250;color:#aaa}
+#advisory-scenes .adv-lead{color:#aaa;font-size:15px;line-height:1.7;text-wrap:pretty}
+
+/* Services: sticky layered visual + four pressure points */
+#advisory-scenes .adv-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:7%;align-items:start}
+#advisory-scenes .adv-visual{position:sticky;top:12svh;height:76svh;min-height:440px;display:grid;place-items:center;perspective:1400px}
+#advisory-scenes .adv-stack{position:relative;width:min(54%,310px);aspect-ratio:1;transform-style:preserve-3d;transform:translateY(-4%) rotateX(56deg) rotateZ(-38deg);transition:filter 1s}
+#advisory-scenes .adv-plane{--dx:0px;--dy:0px;--rz:0deg;position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between;padding:14px 16px;border:1px solid rgba(255,255,255,.22);background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.01));color:#777;font-size:10px;letter-spacing:.14em;text-transform:uppercase;transform:translate3d(var(--dx),var(--dy),calc(var(--i)*58px)) rotateZ(var(--rz));transition:transform 1.2s var(--ease),border-color .6s,color .6s,background .6s,box-shadow .6s}
+#advisory-scenes .adv-plane b{font-family:Mona,Arial,sans-serif;font-size:19px;font-weight:250;letter-spacing:-.03em;text-transform:none;color:inherit}
+#advisory-scenes .adv-plane:nth-child(1){--dx:-38px;--dy:26px;--rz:-12deg}
+#advisory-scenes .adv-plane:nth-child(2){--dx:26px;--dy:-26px;--rz:8deg}
+#advisory-scenes .adv-plane:nth-child(3){--dx:-26px;--dy:-44px;--rz:-6deg}
+#advisory-scenes .adv-plane:nth-child(4){--dx:26px;--dy:20px;--rz:10deg}
+#advisory-scenes .adv-plane.is-aligned{--dx:0px;--dy:0px;--rz:0deg;color:#ddd;border-color:rgba(255,255,255,.45)}
+#advisory-scenes .adv-plane.is-active{color:var(--orange);border-color:var(--orange);background:linear-gradient(135deg,rgba(255,99,15,.13),rgba(255,99,15,.02));box-shadow:0 0 60px rgba(255,99,15,.18)}
+#advisory-scenes .adv-stack.is-complete .adv-plane{border-color:rgba(255,99,15,.55)}
+#advisory-scenes .adv-visual-caption{position:absolute;left:0;bottom:0;color:#777;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .adv-count{color:var(--orange)}
+
+#advisory-scenes .adv-points{margin:0;padding:0;list-style:none;counter-reset:none}
+#advisory-scenes .adv-point{padding:44px 0 48px;border-top:1px solid var(--line)}
+#advisory-scenes .adv-point:last-child{border-bottom:1px solid var(--line)}
+#advisory-scenes .adv-point-head{display:block}
+#advisory-scenes .adv-num{display:block;margin-bottom:18px;color:#777;font-size:9px;letter-spacing:.16em;text-transform:uppercase;transition:color .5s}
+#advisory-scenes .adv-symptom{display:block;max-width:620px;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(28px,2.9vw,46px);font-weight:250;line-height:1.08;letter-spacing:-.045em;color:#fff;transition:color .6s}
+#advisory-scenes .adv-symptom span{background:linear-gradient(var(--orange),var(--orange)) 0 56%/0% 1px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1s var(--ease)}
+#advisory-scenes .adv-detail{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;margin-top:30px;transition:opacity .7s,transform .9s var(--ease)}
+#advisory-scenes .adv-label{margin-bottom:9px!important;color:#666;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .adv-build{color:#aaa;font-size:14px;line-height:1.65}
+#advisory-scenes .adv-build strong{display:block;margin-bottom:2px;color:#fff;font-weight:400}
+#advisory-scenes .adv-outcome{position:relative;padding-left:18px;color:#fff;font-size:14px;line-height:1.65}
+#advisory-scenes .adv-outcome::before{content:"→";position:absolute;left:0;top:0;color:var(--orange)}
+/* Scroll states (only when the enhancement runs) */
+#advisory-scenes .is-staged .adv-point .adv-symptom{color:rgba(255,255,255,.4)}
+#advisory-scenes .is-staged .adv-point .adv-detail{opacity:.28;transform:translateY(10px)}
+#advisory-scenes .is-staged .adv-point.is-active .adv-num{color:var(--orange)}
+#advisory-scenes .is-staged .adv-point.is-active .adv-symptom{color:#fff}
+#advisory-scenes .is-staged .adv-point.is-active .adv-detail{opacity:1;transform:none}
+#advisory-scenes .is-staged .adv-point.is-solved .adv-symptom{color:#777}
+#advisory-scenes .is-staged .adv-point.is-solved .adv-detail{opacity:.6;transform:none}
+#advisory-scenes .is-staged .adv-point.is-active .adv-symptom span,#advisory-scenes .is-staged .adv-point.is-solved .adv-symptom span{background-size:100% 1px}
+
+/* Conversion strip */
+#advisory-scenes .adv-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px 8%;align-items:end;margin-top:110px}
+#advisory-scenes .adv-cta-copy,#advisory-scenes .adv-work-foot>p{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(30px,3.4vw,52px);font-weight:500;line-height:1;letter-spacing:-.05em}
+#advisory-scenes .adv-cta-copy span{display:block}
+#advisory-scenes .adv-cta-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+#advisory-scenes .adv-cta-actions small{flex-basis:100%;color:#777;font-size:10px;letter-spacing:.03em}
+#advisory-scenes .adv-button{display:inline-flex;align-items:center;gap:18px;min-height:52px;padding:16px 24px;border:1px solid rgba(255,255,255,.4);border-radius:99px;color:#fff;background:transparent;font:inherit;font-size:13px;line-height:1.2;text-decoration:none;cursor:pointer;transition:background .25s,border-color .25s,color .25s,transform .25s}
+#advisory-scenes .adv-button:hover{border-color:var(--orange);color:var(--orange)}
+#advisory-scenes .adv-button-primary{border-color:#fff;color:#000;background:#fff}
+#advisory-scenes .adv-button-primary:hover{border-color:var(--orange);color:#000;background:var(--orange);transform:translateY(-2px)}
+#advisory-scenes .adv-text-link{color:#aaa;font-size:12px;text-decoration:none;transition:color .25s}
+#advisory-scenes .adv-text-link:hover{color:var(--orange)}
+
+/* Experience */
+#advisory-scenes .adv-years{margin:0 0 120px;padding:0;list-style:none}
+#advisory-scenes .adv-years li{display:grid;grid-template-columns:150px minmax(0,1fr) 260px;gap:4%;align-items:center;padding:24px 0;border-top:1px solid var(--line)}
+#advisory-scenes .adv-years li:last-child{border-bottom:1px solid var(--line)}
+#advisory-scenes .adv-years-value{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(44px,4.6vw,72px);font-weight:250;line-height:1;letter-spacing:-.05em}
+#advisory-scenes .adv-years-value small{margin-left:6px;color:#777;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+#advisory-scenes .adv-years-bar{position:relative;height:1px;background:var(--line)}
+#advisory-scenes .adv-years-bar i{position:absolute;left:0;top:-1px;height:3px;width:calc(var(--years) / 15 * 100%);background:#fff;transform-origin:left;transition:transform 1.4s var(--ease)}
+#advisory-scenes .adv-years-bar i::after{content:"";position:absolute;right:-4px;top:-3px;width:9px;height:9px;border-radius:50%;background:var(--orange)}
+#advisory-scenes .adv-years li:nth-child(2) .adv-years-bar i{transition-delay:.12s}
+#advisory-scenes .adv-years li:nth-child(3) .adv-years-bar i{transition-delay:.24s}
+#advisory-scenes .adv-years.is-waiting .adv-years-bar i{transform:scaleX(0)}
+#advisory-scenes .adv-years-label{color:#aaa;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+
+/* Case study slots */
+#advisory-scenes .adv-cases-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+#advisory-scenes .adv-cases-head h3{margin:0;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:clamp(28px,2.6vw,40px);font-weight:500;letter-spacing:-.05em;line-height:1}
+#advisory-scenes .adv-cases-head p{max-width:400px;color:#888;font-size:13px;line-height:1.65}
+#advisory-scenes .adv-cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;perspective:1200px}
+#advisory-scenes .adv-case{--rx:0deg;--ry:0deg;--mx:50%;--my:50%;position:relative;min-height:340px;padding:30px;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:radial-gradient(420px at var(--mx) var(--my),rgba(255,99,15,.07),transparent 60%),linear-gradient(160deg,#0d0d0d,#040404);transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .6s var(--ease),border-color .4s}
+#advisory-scenes .adv-case:hover{border-color:#3a3a3a}
+#advisory-scenes .adv-case header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:56px}
+#advisory-scenes .adv-case-num{color:#777;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+#advisory-scenes .adv-case-status{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border:1px solid rgba(255,99,15,.45);border-radius:99px;color:var(--orange);font-size:8px;letter-spacing:.14em;text-transform:uppercase}
+#advisory-scenes .adv-case-status::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--orange);animation:advPulse 2.2s ease-in-out infinite}
+#advisory-scenes .adv-case-title{margin-bottom:40px!important;color:#777;font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:22px;font-weight:250;line-height:1.15;letter-spacing:-.03em}
+#advisory-scenes .adv-case dl{display:grid;gap:18px;margin:0}
+#advisory-scenes .adv-case dl div{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+#advisory-scenes .adv-case dt{color:#555;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+#advisory-scenes .adv-case dd{margin:0}
+#advisory-scenes .adv-case dd i{display:block;height:6px;border-radius:3px;background:#161616}
+#advisory-scenes .adv-case dl div:nth-child(1) i{width:62%}
+#advisory-scenes .adv-case dl div:nth-child(2) i{width:88%}
+#advisory-scenes .adv-case dl div:nth-child(3) i{width:74%}
+#advisory-scenes .adv-case dl div:nth-child(4) i{width:46%}
+@keyframes advPulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+#advisory-scenes .adv-work-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:30px;margin-top:100px;padding-top:44px;border-top:1px solid var(--line)}
+#advisory-scenes .adv-work-foot>p{font-size:clamp(26px,2.6vw,40px)}
+
+/* Reveal on scroll */
+#advisory-scenes .adv-reveal{transition:opacity .9s ease,transform 1.1s var(--ease)}
+#advisory-scenes .adv-reveal.is-waiting{opacity:0;transform:translateY(40px)}
+
+@media (max-width: 899px){
+  #advisory-scenes .adv-wrap{width:90%}
+  #advisory-scenes .adv-services{padding:100px 0 90px}
+  #advisory-scenes .adv-work{padding:90px 0 100px}
+  #advisory-scenes .adv-head{grid-template-columns:1fr;gap:24px;margin-bottom:50px}
+  #advisory-scenes .adv-title{font-size:clamp(44px,12vw,72px)}
+  #advisory-scenes .adv-lead{font-size:14px}
+  #advisory-scenes .adv-grid{grid-template-columns:1fr}
+  #advisory-scenes .adv-visual{display:none}
+  #advisory-scenes .adv-point{padding:32px 0 34px}
+  #advisory-scenes .adv-num{margin-bottom:12px}
+  #advisory-scenes .adv-symptom{font-size:clamp(26px,7.4vw,36px)}
+  #advisory-scenes .adv-detail{grid-template-columns:1fr;gap:18px;margin-top:22px}
+  #advisory-scenes .adv-cta{grid-template-columns:1fr;margin-top:70px}
+  #advisory-scenes .adv-button{width:100%;justify-content:space-between}
+  #advisory-scenes .adv-years{margin-bottom:80px}
+  #advisory-scenes .adv-years li{grid-template-columns:96px minmax(0,1fr);gap:8px 16px;padding:20px 0}
+  #advisory-scenes .adv-years-value{grid-row:span 2}
+  #advisory-scenes .adv-years-label{font-size:9px}
+  #advisory-scenes .adv-cases-head{display:block}
+  #advisory-scenes .adv-cases-head p{margin-top:14px}
+  #advisory-scenes .adv-cases{grid-template-columns:1fr;gap:14px}
+  #advisory-scenes .adv-case{min-height:0;padding:24px}
+  #advisory-scenes .adv-case header{margin-bottom:30px}
+  #advisory-scenes .adv-case-title{margin-bottom:28px!important;font-size:20px}
+  #advisory-scenes .adv-work-foot{margin-top:70px}
+  #advisory-scenes .adv-work-foot .adv-cta-actions{width:100%}
+}
+@media (min-width: 900px) and (max-width: 1180px){
+  #advisory-scenes .adv-cases{gap:14px}
+  #advisory-scenes .adv-case{padding:24px}
+  #advisory-scenes .adv-case dl div{grid-template-columns:1fr;gap:8px}
+  #advisory-scenes .adv-years li{grid-template-columns:130px minmax(0,1fr) 200px}
+}
+@media (prefers-reduced-motion: reduce){
+  #advisory-scenes *,#advisory-scenes *::before,#advisory-scenes *::after{transition:none!important;animation:none!important}
+}
+
 #scale-scenes{
   --bg:#000;
   --white:#fff;
@@ -773,15 +925,6 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   color:#bbb;
 }
 #scale-scenes .back:hover{color:var(--orange)}
-#scale-scenes .story-track{position:relative}
-#scale-scenes .story-stage{
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:6%;
-  align-items:center;
-  padding:100px 6%;
-}
-#scale-scenes .story-copy{min-width:0}
 #scale-scenes .chapter{
   font-size:9px;
   letter-spacing:.16em;
@@ -799,240 +942,11 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   background:var(--orange);
   flex-shrink:0;
 }
-#scale-scenes .panels{
-  display:grid;
-  gap:55px;
-}
-#scale-scenes .panel h1,#scale-scenes .panel h2{
-  font-family:Mona,Arial,sans-serif;
-  font-size:clamp(44px,4.8vw,76px);
-  font-weight:500;
-  letter-spacing:-.06em;
-  line-height:1;
-  margin:0 0 25px;
-}
-#scale-scenes .panel h1 span,#scale-scenes .panel h2 span{
-  display:block;
-}
 #scale-scenes .light{
   font-weight:250;
   color:#aaa;
 }
 #scale-scenes .orange{color:var(--orange)}
-#scale-scenes .panel p{
-  max-width:370px;
-  font-size:14px;
-  line-height:1.8;
-  color:#aaa;
-  margin:0 0 18px;
-}
-#scale-scenes .panel strong{
-  color:white;
-  font-weight:400;
-}
-#scale-scenes .panel .small-label{
-  font-size:9px;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  color:#888;
-  margin-bottom:16px;
-}
-#scale-scenes .friction-list,#scale-scenes .fixes{
-  list-style:none;
-  padding:0;
-  margin:25px 0 0;
-  max-width:370px;
-}
-#scale-scenes .friction-list li,#scale-scenes .fixes li{
-  display:flex;
-  align-items:center;
-  gap:13px;
-  border-top:1px solid var(--line);
-  padding:13px 0;
-  font-size:14px;
-  color:#ddd;
-}
-#scale-scenes .friction-list i{
-  width:7px;
-  height:7px;
-  display:block;
-  border:1px solid var(--orange);
-  transform:rotate(45deg);
-  flex-shrink:0;
-}
-#scale-scenes .fixes small{
-  font-size:9px;
-  color:var(--orange);
-  min-width:20px;
-}
-#scale-scenes .footnote{
-  font-size:11px!important;
-  color:#777!important;
-  margin-top:22px!important;
-}
-#scale-scenes .progress{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-top:32px;
-}
-#scale-scenes .progress span{
-  font-size:10px;
-  letter-spacing:.08em;
-}
-#scale-scenes .progress-rail{
-  height:1px;
-  width:130px;
-  background:#333;
-}
-#scale-scenes .progress-rail i{
-  display:block;
-  height:100%;
-  width:0;
-  background:var(--orange);
-}
-#scale-scenes .progress small{
-  color:#666;
-  font-size:9px;
-}
-#scale-scenes .scroll-hint{
-  margin:18px 0 0;
-  font-size:8px;
-  letter-spacing:.13em;
-  color:#777;
-  text-transform:uppercase;
-}
-#scale-scenes .chart-figure{
-  margin:0;
-  min-width:0;
-  position:relative;
-}
-#scale-scenes .chart-overline{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  font-size:8px;
-  letter-spacing:.13em;
-  color:#888;
-  text-transform:uppercase;
-  margin-bottom:20px;
-}
-#scale-scenes .chart-figure svg{
-  display:block;
-  width:100%;
-  height:auto;
-  overflow:visible;
-}
-#scale-scenes .chart-title{
-  font-family:Mona,Arial;
-  font-size:24px;
-  font-weight:500;
-  letter-spacing:-.7px;
-  fill:white;
-}
-#scale-scenes .axis{
-  stroke:#777;
-  stroke-width:1;
-  fill:none;
-}
-#scale-scenes .guide{
-  stroke:#191919;
-  stroke-width:1;
-}
-#scale-scenes .chart-text{
-  fill:#999;
-  font-family:Arial;
-  font-size:11px;
-}
-#scale-scenes .curve{
-  fill:none;
-  stroke-width:3;
-  stroke-linecap:round;
-}
-#scale-scenes .revenue{stroke:#fff}
-#scale-scenes .cost{stroke:var(--orange)}
-#scale-scenes .profit{
-  stroke:#bbb;
-  stroke-dasharray:7 7;
-  stroke-width:2;
-}
-#scale-scenes .threshold-line{
-  stroke:var(--orange);
-  stroke-width:1;
-  stroke-dasharray:4 6;
-}
-#scale-scenes .pmf-line{
-  stroke:#555;
-  stroke-width:1;
-  stroke-dasharray:4 6;
-}
-#scale-scenes .orange-label{fill:var(--orange)}
-#scale-scenes .curve-label{
-  font-family:Arial;
-  font-size:13px;
-}
-#scale-scenes .chart-figure figcaption{
-  border-top:1px solid var(--line);
-  padding-top:17px;
-  font-size:11px;
-  line-height:1.7;
-  color:#888;
-  margin-top:20px;
-  max-width:600px;
-}
-#scale-scenes .chart-figure figcaption span{
-  display:block;
-  color:#555;
-  font-size:9px;
-  margin-top:7px;
-}
-#scale-scenes .threshold-glow{
-  fill:var(--orange);
-  opacity:.045;
-}
-#scale-scenes .story-track.animated{
-  height:370svh;
-}
-#scale-scenes .animated .story-stage{
-  position:sticky;
-  top:0;
-  height:100svh;
-  min-height:600px;
-  overflow:hidden;
-  padding:35px 6%;
-}
-#scale-scenes .animated .panels{
-  display:grid;
-  gap:0;
-  min-height:380px;
-  align-items:center;
-}
-#scale-scenes .animated .panel{
-  grid-area:1/1;
-  opacity:0;
-  visibility:hidden;
-  will-change:transform,opacity;
-}
-#scale-scenes .animated .panel:first-child{
-  opacity:1;
-  visibility:visible;
-}
-#scale-scenes .animated .friction-list li{
-  will-change:transform,opacity;
-}
-#scale-scenes .animated .chart-figure{
-  align-self:center;
-}
-#scale-scenes .animated .progress{
-  margin-top:24px;
-}
-#scale-scenes .animated .panel h1,#scale-scenes .animated .panel h2{
-  font-size:clamp(40px,4.3vw,66px);
-}
-#scale-scenes .animated .panel p{
-  font-size:13px;
-  line-height:1.7;
-}
 #scale-scenes .framework-intro{
   border-top:1px solid var(--line);
   padding:120px 6% 85px;
@@ -1490,23 +1404,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
     font-size:9.5px;
     gap:7px;
   }}
-@media(max-width:899px){#scale-scenes .story-stage{
-    padding:65px 6%;
-    grid-template-columns:1fr;
-    gap:65px;
-  }
-#scale-scenes .story-copy{max-width:600px}
-#scale-scenes .panels{gap:45px}
-#scale-scenes .panel h1,#scale-scenes .panel h2{
-    font-size:clamp(42px,8vw,65px);
-  }
-#scale-scenes .panel p,#scale-scenes .friction-list,#scale-scenes .fixes{
-    max-width:520px;
-  }
-#scale-scenes .progress,#scale-scenes .scroll-hint{
-    display:none;
-  }
-#scale-scenes .chart-figure{max-width:720px}
+@media(max-width:899px){
 #scale-scenes .framework-intro{padding:75px 6%}
 #scale-scenes .statement{margin-bottom:65px}
 #scale-scenes .transition-line{
@@ -1553,12 +1451,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #scale-scenes .brand small{font-size:7px}
 #scale-scenes .back{font-size:10px}
 #scale-scenes .chapter{font-size:8px}
-#scale-scenes .chart-overline{
-    font-size:7px;
-    letter-spacing:.07em;
-  }
 #scale-scenes .statement h2{font-size:40px}
-#scale-scenes .chart-figure figcaption{font-size:10px}
 #scale-scenes .pill{font-size:11px}
 #scale-scenes .disc-heading{font-size:27px}
 #scale-scenes .disc-window{
@@ -2737,11 +2630,6 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 
 /* MOTION REPAIR V2 — sticky motion is based on width, never screen height. */
 @media(min-width:900px){
- #scale-scenes .animated .story-stage{min-height:0;height:100svh;padding:20px 6%;overflow:visible}
- #scale-scenes .animated .panels{min-height:min(380px,calc(100svh - 145px))}
- #scale-scenes .animated .panel h2{font-size:clamp(32px,6.6svh,66px);line-height:1.04}
- #scale-scenes .animated .panel p{font-size:clamp(11px,2.1svh,13px);line-height:1.7}
- #scale-scenes .animated .chart-figure svg{max-height:calc(100svh - 150px)}
  #scale-scenes .framework-track.is-pinned{height:330svh}
  #scale-scenes .is-pinned .framework-stage{position:sticky;top:0;height:100svh;min-height:0;display:flex;align-items:center;padding:16px 0}
  #scale-scenes .framework-layout{grid-template-columns:1.03fr 1fr;gap:5%;width:100%;align-items:center}
@@ -2828,14 +2716,8 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 #hero-scene .hero.webgl-ready .portrait-image{opacity:0}
 #hero-scene .hero.webgl-ready .portrait-canvas{opacity:1}
 /* Match the supplied graph's grid, curve geometry, labels and quiet caption. */
-#scale-scenes .chart-figure text{font-family:Arial,sans-serif}
-#scale-scenes .chart-figure figcaption{border:0;padding:0;margin-top:20px;font-size:10px;color:#666;line-height:1.7}
-@media(min-width:900px){
- #scale-scenes .story-stage{grid-template-columns:.88fr 1.12fr;gap:7%;width:94%;max-width:1440px;margin-inline:auto;padding-inline:0}
- #scale-scenes .animated .story-stage{padding:20px 0}
- #scale-scenes .animated .panels{min-height:0;align-self:stretch;align-content:center}
- #scale-scenes .fixes,#scale-scenes .friction-list{max-width:none}
-}
+
+
 /* Compact email and icon-only social navigation. */
 #growth-scenes .footer-contact>a{font-size:clamp(12px,1.05vw,15px);line-height:1.5;letter-spacing:0}
 #growth-scenes .social-links{gap:0}
@@ -2845,7 +2727,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 <noscript><style>.site-loader{display:none!important}#page-content{opacity:1!important}.disc-copy{position:static!important;opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important}.disc-window{height:auto!important;border-radius:0!important}.disc-wheel{display:none!important}</style></noscript>
 </head>
 <body>
-<a class="skip-link" href="#threshold">Skip introduction</a>
+<a class="skip-link" href="#services">Skip introduction</a>
 <div class="site-loader" id="site-loader" role="status" aria-label="Loading Patrick Grossmann Strategic Advisory">
   <div class="loader-top"><span>PATRICK GROSSMANN</span><span>STRATEGIC ADVISORY</span></div>
   <div class="intro-stage"><div class="intro-lockup">
@@ -2942,7 +2824,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     <button
       class="down-arrow approach-button"
       type="button"
-      aria-label="Scroll to the scale-up threshold"
+      aria-label="Scroll to how Patrick helps"
     >
       <svg
         viewBox="0 0 24 24"
@@ -3014,204 +2896,224 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
 </section>
 </div>
 
-<div id="scale-scenes">
+<div id="advisory-scenes">
 
-<section
-  class="story-track"
-  id="threshold"
-  aria-label="The scale-up threshold"
->
-  <div class="story-stage">
-    <div class="story-copy">
-      <p class="chapter">
-        When growth starts creating friction
+<!-- 01 / HOW PATRICK HELPS -->
+<section class="adv-services" id="services" aria-labelledby="services-title">
+  <div class="adv-wrap">
+    <header class="adv-head adv-reveal">
+      <p class="adv-chapter">01 / How Patrick helps</p>
+      <h2 id="services-title" class="adv-title">
+        <span>Where growth</span>
+        <span class="adv-light">gets stuck.</span>
+      </h2>
+      <p class="adv-lead">
+        Beyond €20M revenue, complexity can outgrow the structure
+        that got the company here. Patrick works on the four points
+        where it shows first.
       </p>
-      <div class="panels">
-        <article class="panel">
-          <p class="small-label">
-            01 / The scale-up threshold
-          </p>
-          <h2>
-            <span>Growth looks good.</span>
-            <span class="light">Until complexity</span>
-            <span class="light">catches up.</span>
-          </h2>
-          <p>
-            Product-market fit proves the potential. But growth
-            also brings more decisions, more coordination and
-            more demands on the founder.
-          </p>
-          <p>
-            Patrick’s framework focuses on the transition beyond
-            <strong>€20M revenue</strong>, when complexity can
-            outgrow the organisation’s structure.
-          </p>
-        </article>
-        <article class="panel">
-          <p class="small-label">
-            02 / Beneath the surface
-          </p>
-          <h2>
-            <span>More growth.</span>
-            <span class="light">More friction.</span>
-          </h2>
-          <p>
-            Everything can still look strong on the outside.
-            Inside, the organisation starts to feel the strain.
-          </p>
-          <ul class="friction-list">
-            <li>
-              <i aria-hidden="true"></i>
-              Slower decisions
-            </li>
-            <li>
-              <i aria-hidden="true"></i>
-              Unclear ownership
-            </li>
-            <li>
-              <i aria-hidden="true"></i>
-              Rising coordination costs
-            </li>
-            <li>
-              <i aria-hidden="true"></i>
-              Increasing founder dependency
-            </li>
-          </ul>
-        </article>
-        <article class="panel">
-          <p class="small-label">
-            03 / The familiar response
-          </p>
-          <h2>
-            <span>More activity.</span>
-            <span class="light">The same problem.</span>
-          </h2>
-          <p>
-            Structural problems often receive operational fixes.
-          </p>
-          <ul class="fixes">
-            <li><small>01</small>More tools.</li>
-            <li><small>02</small>More people.</li>
-            <li><small>03</small>More meetings.</li>
-          </ul>
-          <p class="footnote">
-            These actions rarely resolve the underlying
-            structural issue.
-          </p>
-        </article>
-        <article class="panel">
-          <p class="small-label">
-            04 / A different foundation
-          </p>
-          <h2>
-            <span>What’s missing</span>
-            <span class="light">is a structural</span>
-            <span class="orange">operating system.</span>
-          </h2>
-          <p>
-            After product-market fit, the focus shifts from
-            proving the idea to building a business that delivers.
-          </p>
-          <p>
-            Direction, authority and leadership rhythm need
-            to develop alongside growth.
-          </p>
-        </article>
-      </div>
-      <div class="progress" aria-hidden="true">
-        <span id="scene-number">01</span>
-        <div class="progress-rail">
-          <i id="scene-progress"></i>
+    </header>
+
+    <div class="adv-grid">
+      <!-- Four layers that move from scattered to aligned as each point is addressed -->
+      <div class="adv-visual" aria-hidden="true">
+        <div class="adv-stack" style="--solved:0">
+          <div class="adv-plane" style="--i:0"><span>01</span><b>Direction</b></div>
+          <div class="adv-plane" style="--i:1"><span>02</span><b>Decisions</b></div>
+          <div class="adv-plane" style="--i:2"><span>03</span><b>Ownership</b></div>
+          <div class="adv-plane" style="--i:3"><span>04</span><b>Rhythm</b></div>
         </div>
-        <small>04</small>
+        <p class="adv-visual-caption"><span class="adv-count">0</span> / 4 aligned</p>
       </div>
-      <p class="scroll-hint" aria-hidden="true">
-        ↓ Scroll to follow the story
-      </p>
+
+      <ol class="adv-points">
+        <li class="adv-point" data-point="0">
+          <div class="adv-point-head">
+            <span class="adv-num">01 / Direction</span>
+            <p class="adv-symptom"><span>The team is busy, but not pulling in one direction.</span></p>
+          </div>
+          <div class="adv-detail" id="adv-detail-0">
+            <div>
+              <p class="adv-label">Patrick builds</p>
+              <p class="adv-build"><strong>Strategic clarity.</strong> Purpose, ambition, economic logic and priorities, made explicit.</p>
+            </div>
+            <div>
+              <p class="adv-label">What changes</p>
+              <p class="adv-outcome">One clear reference point for every decision.</p>
+            </div>
+          </div>
+        </li>
+        <li class="adv-point" data-point="1">
+          <div class="adv-point-head">
+            <span class="adv-num">02 / Decisions</span>
+            <p class="adv-symptom"><span>Every important decision still waits for you.</span></p>
+          </div>
+          <div class="adv-detail" id="adv-detail-1">
+            <div>
+              <p class="adv-label">Patrick builds</p>
+              <p class="adv-build"><strong>Decision architecture.</strong> Clear decision domains, authority and escalation logic.</p>
+            </div>
+            <div>
+              <p class="adv-label">What changes</p>
+              <p class="adv-outcome">Decisions no longer depend on you being in every discussion.</p>
+            </div>
+          </div>
+        </li>
+        <li class="adv-point" data-point="2">
+          <div class="adv-point-head">
+            <span class="adv-num">03 / Ownership</span>
+            <p class="adv-symptom"><span>Everyone is involved. No one clearly owns the outcome.</span></p>
+          </div>
+          <div class="adv-detail" id="adv-detail-2">
+            <div>
+              <p class="adv-label">Patrick builds</p>
+              <p class="adv-build"><strong>Ownership structure.</strong> Outcomes and leadership responsibilities assigned across the team.</p>
+            </div>
+            <div>
+              <p class="adv-label">What changes</p>
+              <p class="adv-outcome">Ownership and accountability sit with the leadership team.</p>
+            </div>
+          </div>
+        </li>
+        <li class="adv-point" data-point="3">
+          <div class="adv-point-head">
+            <span class="adv-num">04 / Rhythm</span>
+            <p class="adv-symptom"><span>More tools, people and meetings. The same problems.</span></p>
+          </div>
+          <div class="adv-detail" id="adv-detail-3">
+            <div>
+              <p class="adv-label">Patrick builds</p>
+              <p class="adv-build"><strong>Operating cadence.</strong> Strategic reviews, leadership alignment and KPI-driven decision forums.</p>
+            </div>
+            <div>
+              <p class="adv-label">What changes</p>
+              <p class="adv-outcome">Priorities stop drifting. Strategy turns into execution.</p>
+            </div>
+          </div>
+        </li>
+      </ol>
     </div>
-    <figure class="chart-figure">
-      <div class="chart-overline">
-        <span>The illusion of smooth scaling</span>
-        <span>Fig. 01 / Growth & complexity</span>
+
+    <aside class="adv-cta adv-reveal" aria-label="Next step">
+      <p class="adv-cta-copy">
+        <span>Recognise two or more?</span>
+        <span class="adv-light">See where your company stands.</span>
+      </p>
+      <div class="adv-cta-actions">
+        <a class="adv-button adv-button-primary" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Start the free Scale Readiness Review <span aria-hidden="true">↗</span></a>
+        <button class="adv-button" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a 30-minute call <span aria-hidden="true">↗</span></button>
+        <small>Review: 5–7 minutes. Free. No obligation.</small>
       </div>
-
-      <svg viewBox="0 0 820 550" role="img"
-           aria-labelledby="chart-title chart-desc">
-        <title id="chart-title">The Illusion of Smooth Scaling</title>
-        <desc id="chart-desc">
-          A conceptual illustration showing revenue rising,
-          complexity and costs accelerating, and profit coming
-          under pressure after a structural scale-up threshold.
-        </desc>
-
-        <defs>
-          <linearGradient id="threshold-gradient" x1="0" x2="1">
-            <stop offset="0" stop-color="#ff630f" stop-opacity="0"/>
-            <stop offset=".5" stop-color="#ff630f" stop-opacity=".09"/>
-            <stop offset="1" stop-color="#ff630f" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-
-        <g stroke="#202020" stroke-width="1">
-          <path d="M65 100H770M65 190H770M65 280H770M65 370H770"/>
-          <path d="M190 65V460M335 65V460M480 65V460M625 65V460"/>
-        </g>
-
-        <path d="M65 65V460H775" fill="none" stroke="#505050"/>
-
-        <g fill="#666" font-size="11">
-          <text x="65" y="35">ORGANISATIONAL LOAD</text>
-          <text x="650" y="505">COMPANY GROWTH →</text>
-          <text x="65" y="488">EARLY STAGE</text>
-        </g>
-
-        <rect id="threshold-glow" x="375" y="65"
-              width="110" height="395" fill="url(#threshold-gradient)"/>
-
-        <g id="pmf-marker">
-          <path d="M230 90V460" stroke="#555"
-                stroke-dasharray="3 7"/>
-          <text x="230" y="531" fill="#777"
-                font-size="11" text-anchor="middle">PRODUCT-MARKET FIT</text>
-        </g>
-
-        <g id="threshold-marker">
-          <path d="M430 65V460" stroke="#ff630f"
-                stroke-opacity=".65" stroke-dasharray="3 7"/>
-          <text x="430" y="57" fill="#ff630f"
-                font-size="11" text-anchor="middle">STRUCTURAL THRESHOLD</text>
-          <text x="430" y="484" fill="#ff630f"
-                font-size="12" text-anchor="middle">€20M+</text>
-        </g>
-
-        <path id="revenue-line"
-              d="M70 430C160 420 210 382 270 335S400 245 480 200S650 120 760 88"
-              fill="none" stroke="#f5f4f1" stroke-width="3"
-              stroke-linecap="round"/>
-
-        <path id="cost-line"
-              d="M70 443C180 440 270 420 350 380S450 310 500 247S620 110 760 45"
-              fill="none" stroke="#ff630f" stroke-width="3"
-              stroke-linecap="round"/>
-
-        <path id="profit-reveal"
-              d="M70 452C170 440 270 398 350 365S455 340 515 355S650 410 760 448"
-              fill="none" stroke="#999" stroke-width="2"
-              stroke-linecap="round"/>
-
-        <g font-size="12">
-          <text id="revenue-label" x="665" y="139" fill="#f5f4f1">Revenue</text>
-          <text id="cost-label" x="640" y="62" fill="#ff630f">Complexity & costs</text>
-          <text id="profit-label" x="680" y="428" fill="#999">Profit</text>
-        </g>
-      </svg>
-
-      <figcaption>
-        Conceptual model / Growth, complexity and profit.
-      </figcaption>
-    </figure>
+    </aside>
   </div>
 </section>
+
+<!-- 02 / EXPERIENCE & SELECTED WORK -->
+<section class="adv-work" id="work" aria-labelledby="work-title">
+  <div class="adv-wrap">
+    <header class="adv-head adv-head-split adv-reveal">
+      <div>
+        <p class="adv-chapter">02 / Experience &amp; selected work</p>
+        <h2 id="work-title" class="adv-title">
+          <span>Built inside</span>
+          <span class="adv-light">growing companies.</span>
+        </h2>
+      </div>
+      <p class="adv-lead">
+        Patrick’s advice comes from three perspectives: working in
+        high-growth environments, leading teams, and coaching leaders.
+      </p>
+    </header>
+
+    <!-- Verified figures from the About section -->
+    <ul class="adv-years" aria-label="Experience">
+      <li style="--years:15">
+        <span class="adv-years-value">15<small>yrs</small></span>
+        <span class="adv-years-bar" aria-hidden="true"><i></i></span>
+        <span class="adv-years-label">In high-growth environments</span>
+      </li>
+      <li style="--years:10">
+        <span class="adv-years-value">10<small>yrs</small></span>
+        <span class="adv-years-bar" aria-hidden="true"><i></i></span>
+        <span class="adv-years-label">Leadership experience</span>
+      </li>
+      <li style="--years:5">
+        <span class="adv-years-value">5<small>yrs</small></span>
+        <span class="adv-years-bar" aria-hidden="true"><i></i></span>
+        <span class="adv-years-label">Coaching experience</span>
+      </li>
+    </ul>
+
+    <div class="adv-cases-head adv-reveal">
+      <h3>Selected work</h3>
+      <p>
+        Client engagements are confidential. Case studies will be
+        published here once clients approve them.
+      </p>
+    </div>
+
+    <!--
+      CASE STUDY SLOTS: placeholders only, no real client data.
+      To publish one: replace the placeholder text, set
+      data-status="published" and change the status label.
+    -->
+    <div class="adv-cases">
+      <article class="adv-case adv-reveal" data-status="placeholder">
+        <header>
+          <span class="adv-case-num">Case 01</span>
+          <span class="adv-case-status">In preparation</span>
+        </header>
+        <p class="adv-case-title">Case study to be published with client approval</p>
+        <dl>
+          <div><dt>Company</dt><dd><i></i></dd></div>
+          <div><dt>Challenge</dt><dd><i></i></dd></div>
+          <div><dt>What changed</dt><dd><i></i></dd></div>
+          <div><dt>Outcome</dt><dd><i></i></dd></div>
+        </dl>
+      </article>
+      <article class="adv-case adv-reveal" data-status="placeholder">
+        <header>
+          <span class="adv-case-num">Case 02</span>
+          <span class="adv-case-status">In preparation</span>
+        </header>
+        <p class="adv-case-title">Case study to be published with client approval</p>
+        <dl>
+          <div><dt>Company</dt><dd><i></i></dd></div>
+          <div><dt>Challenge</dt><dd><i></i></dd></div>
+          <div><dt>What changed</dt><dd><i></i></dd></div>
+          <div><dt>Outcome</dt><dd><i></i></dd></div>
+        </dl>
+      </article>
+      <article class="adv-case adv-reveal" data-status="placeholder">
+        <header>
+          <span class="adv-case-num">Case 03</span>
+          <span class="adv-case-status">In preparation</span>
+        </header>
+        <p class="adv-case-title">Case study to be published with client approval</p>
+        <dl>
+          <div><dt>Company</dt><dd><i></i></dd></div>
+          <div><dt>Challenge</dt><dd><i></i></dd></div>
+          <div><dt>What changed</dt><dd><i></i></dd></div>
+          <div><dt>Outcome</dt><dd><i></i></dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="adv-work-foot adv-reveal">
+      <p>Facing the same transition in your company?</p>
+      <div class="adv-cta-actions">
+        <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Talk it through with Patrick <span aria-hidden="true">↗</span></button>
+        <a class="adv-text-link" href="#scale-scenes">See how the framework works ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div id="scale-scenes">
+
+
 <section
   class="framework-intro"
   aria-labelledby="framework-heading"
@@ -4078,7 +3980,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     '#growth-scenes .section-skip', '#growth-scenes .fit-link',
     '#growth-scenes .about-link', '#growth-scenes .review-button',
     '#growth-scenes .footer a:not(.footer-signature)',
-    '[data-booking-open]' 
+    '[data-booking-open]', '#advisory-scenes .adv-button', '#advisory-scenes .adv-text-link'
   ].join(',')).forEach(element => rollingText(element));
 
   // Direct links work normally; same-page links also move keyboard focus.
@@ -4707,7 +4609,7 @@ function navigateTo(selector) {
   target.focus({ preventScroll: true });
 }
 document.querySelectorAll(".contact-button").forEach(button => button.addEventListener("click", () => navigateTo("#booking")));
-document.querySelectorAll(".approach-button").forEach(button => button.addEventListener("click", () => navigateTo("#threshold")));
+document.querySelectorAll(".approach-button").forEach(button => button.addEventListener("click", () => navigateTo("#services")));
 document.querySelector(".about-button").addEventListener("click", () => navigateTo("#about"));
 /* VISIBILITY AND PREFERENCES */
 document.addEventListener("visibilitychange", () => {
@@ -4788,194 +4690,104 @@ window.addEventListener("pageshow", event => {
 </script>
 <script>
 (() => {
-
-/* CHART ANIMATION */
-const track=document.querySelector(".story-track");
-const panels=[...document.querySelectorAll(".panel")];
-const number=document.querySelector("#scene-number");
-const progressBar=document.querySelector("#scene-progress");
-const reduced=matchMedia(
-  "(prefers-reduced-motion: reduce)"
-);
-const desktop=matchMedia(
-  "(min-width:900px)"
-);
-const lines=[
-  "revenue-line",
-  "cost-line",
-  "profit-reveal"
-].map(id=>document.getElementById(id));
-const lengths=lines.map(line=>{
-  return line.getTotalLength();
-});
-const markers=[
-  "pmf-marker",
-  "threshold-marker",
-  "threshold-glow"
-].map(id=>document.getElementById(id));
-const labels=[
-  "revenue-label",
-  "cost-label",
-  "profit-label"
-].map(id=>document.getElementById(id));
-let animated=false;
+/* HOW PATRICK HELPS: scroll-linked pressure points + aligning layers */
+const root=document.getElementById("advisory-scenes");
+if(!root)return;
+const reduced=matchMedia("(prefers-reduced-motion: reduce)");
+const finePointer=matchMedia("(hover: hover) and (pointer: fine)");
+const list=root.querySelector(".adv-points");
+const points=[...root.querySelectorAll(".adv-point")];
+const planes=[...root.querySelectorAll(".adv-plane")];
+const stack=root.querySelector(".adv-stack");
+const count=root.querySelector(".adv-count");
+const services=root.querySelector(".adv-services");
 let frame=0;
-const clamp=value=>{
-  return Math.max(0,Math.min(1,value));
-};
-const part=(progress,start,end)=>{
-  return clamp((progress-start)/(end-start));
-};
-const ease=value=>{
-  return value*value*(3-2*value);
-};
-function drawLine(index,amount){
-  lines[index].style.strokeDasharray=
-    lengths[index];
-  lines[index].style.strokeDashoffset=
-    lengths[index]*(1-clamp(amount));
-}
-function showAll(){
-  panels.forEach(panel=>{
-    panel.removeAttribute("style");
-    panel.removeAttribute("aria-hidden");
-    panel.inert=false;
-  });
-  document.querySelectorAll(".friction-list li").forEach(item=>{
-    item.removeAttribute("style");
-  });
-  lines.forEach(line=>{
-    line.removeAttribute("style");
-  });
-  markers.forEach(marker=>{
-    marker.removeAttribute("style");
-  });
-  labels.forEach(label=>{
-    label.removeAttribute("style");
-  });
-}
+let nearby=false;
 function render(){
   frame=0;
-  if(document.hidden||!animated)return;
-  const bounds=track.getBoundingClientRect();
-  const distance=track.offsetHeight-innerHeight;
-  const progress=clamp(
-    -bounds.top/Math.max(1,distance)
-  );
-  const starts=[0,.23,.49,.75];
-  const ends=[.23,.49,.75,1.1];
-  let active=0;
-  panels.forEach((panel,index)=>{
-    let opacity=1;
-    let y=0;
-    if(progress<starts[index]){
-      opacity=0;
-      y=24;
-    }else{
-      const incoming=index===0
-        ?1
-        :ease(
-          part(
-            progress,
-            starts[index],
-            starts[index]+.055
-          )
-        );
-      const outgoing=index===3
-        ?0
-        :ease(
-          part(
-            progress,
-            ends[index]-.05,
-            ends[index]
-          )
-        );
-      opacity=incoming*(1-outgoing);
-      y=(1-incoming)*24-outgoing*20;
-    }
-    panel.style.opacity=opacity;
-    panel.style.transform=
-      `translateY(${y}px)`;
-    panel.style.visibility=
-      opacity>.001?"visible":"hidden";
-    const isCurrent=
-      progress>=starts[index]&&
-      progress<ends[index];
-    panel.inert=!isCurrent;
-    panel.setAttribute(
-      "aria-hidden",
-      String(!isCurrent)
-    );
-    if(isCurrent)active=index;
+  if(document.hidden)return;
+  const line=innerHeight*.55;
+  let active=-1;
+  points.forEach((point,index)=>{
+    if(point.getBoundingClientRect().top<line)active=index;
   });
-  number.textContent=
-    String(active+1).padStart(2,"0");
-  progressBar.style.width=
-    `${progress*100}%`;
-  drawLine(0,ease(part(progress,0,.22)));
-  drawLine(1,ease(part(progress,.07,.43)));
-  drawLine(2,ease(part(progress,.17,.51)));
-  markers[0].style.opacity=
-    part(progress,.05,.15);
-  markers[1].style.opacity=
-    part(progress,.14,.23);
-  markers[2].style.opacity=
-    part(progress,.14,.3);
-  labels[0].style.opacity=
-    part(progress,.18,.24);
-  labels[1].style.opacity=
-    part(progress,.37,.44);
-  labels[2].style.opacity=
-    part(progress,.45,.52);
-  document.querySelectorAll(".friction-list li").forEach(
-    (item,index)=>{
-      const amount=ease(
-        part(
-          progress,
-          .235+index*.035,
-          .285+index*.035
-        )
-      );
-      item.style.opacity=amount;
-      item.style.transform=
-        `translateY(${(1-amount)*14}px)`;
-    }
-  );
+  const last=points[points.length-1];
+  if(last.getBoundingClientRect().bottom<innerHeight*.4)active=points.length;
+  points.forEach((point,index)=>{
+    point.classList.toggle("is-active",index===active);
+    point.classList.toggle("is-solved",index<active);
+  });
+  planes.forEach((plane,index)=>{
+    plane.classList.toggle("is-aligned",index<=active);
+    plane.classList.toggle("is-active",index===active);
+  });
+  stack.classList.toggle("is-complete",active>=points.length);
+  count.textContent=String(Math.max(0,Math.min(points.length,active+1)));
 }
 function schedule(){
-  if(!frame&&!document.hidden){
-    frame=requestAnimationFrame(render);
-  }
+  if(!frame&&nearby&&!document.hidden&&!reduced.matches)frame=requestAnimationFrame(render);
 }
 function sync(){
-  animated=
-    desktop.matches&&!reduced.matches;
-  track.classList.toggle(
-    "animated",
-    animated
-  );
-  showAll();
-  schedule();
-}
-addEventListener(
-  "scroll",
-  schedule,
-  {passive:true}
-);
-addEventListener("resize",schedule);
-desktop.addEventListener("change",sync);
-reduced.addEventListener("change",sync);
-document.addEventListener("visibilitychange",()=>{
-  if(document.hidden){
-    cancelAnimationFrame(frame);
-    frame=0;
-  }else{
-    schedule();
+  const staged=!reduced.matches;
+  list.classList.toggle("is-staged",staged);
+  if(!staged){
+    points.forEach(point=>point.classList.remove("is-active","is-solved"));
+    planes.forEach(plane=>{plane.classList.add("is-aligned");plane.classList.remove("is-active");});
+    stack.classList.add("is-complete");
+    count.textContent=String(points.length);
+    return;
   }
-});
-document.fonts.ready.then(schedule);
+  stack.classList.remove("is-complete");
+  render();
+}
+if("IntersectionObserver" in window){
+  new IntersectionObserver(entries=>{
+    nearby=entries[0].isIntersecting;
+    schedule();
+  },{rootMargin:"20% 0px"}).observe(services);
+}else{
+  nearby=true;
+}
+addEventListener("scroll",schedule,{passive:true});
+addEventListener("resize",schedule);
+document.addEventListener("visibilitychange",schedule);
+reduced.addEventListener("change",sync);
 sync();
 
+/* Reveal on scroll */
+const revealItems=[...root.querySelectorAll(".adv-reveal,.adv-years")];
+if(!reduced.matches&&"IntersectionObserver" in window){
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      entry.target.classList.remove("is-waiting");
+      observer.unobserve(entry.target);
+    });
+  },{threshold:.15});
+  revealItems.forEach(item=>{
+    if(item.getBoundingClientRect().top>innerHeight*.9){
+      item.classList.add("is-waiting");
+      observer.observe(item);
+    }
+  });
+}
+
+/* Case study slots: gentle 3D tilt that follows the pointer */
+root.querySelectorAll(".adv-case").forEach(card=>{
+  card.addEventListener("pointermove",event=>{
+    if(!finePointer.matches||reduced.matches)return;
+    const box=card.getBoundingClientRect();
+    const x=(event.clientX-box.left)/box.width;
+    const y=(event.clientY-box.top)/box.height;
+    card.style.setProperty("--ry",`${(x-.5)*7}deg`);
+    card.style.setProperty("--rx",`${(.5-y)*7}deg`);
+    card.style.setProperty("--mx",`${x*100}%`);
+    card.style.setProperty("--my",`${y*100}%`);
+  });
+  card.addEventListener("pointerleave",()=>{
+    ["--rx","--ry","--mx","--my"].forEach(name=>card.style.removeProperty(name));
+  });
+});
 })();
 </script>
 <script type="module">
@@ -6441,7 +6253,7 @@ initializeTriangle();
       const hero=document.querySelector('#top');
       return hero.classList.contains('webgl-ready')?null:hero.querySelector('.portrait-surface');
     }
-    return target.closest('.story-card,.disc-window,.portrait-frame,.booking-teaser,#triangle-canvas,.glass-dialog,.statement,.story-copy,.chart-figure,.about-copy,.footer-copy,.footer-bottom,.footer-tail,.footer-top,.story-heading,.face-nav,.disc-heading,.chapter,.triangle-controls,.transition-line');
+    return target.closest('.adv-head,.adv-point,.adv-cta-copy,.adv-years li,.adv-case,.adv-cases-head,.adv-work-foot,.story-card,.disc-window,.portrait-frame,.booking-teaser,#triangle-canvas,.glass-dialog,.statement,.story-copy,.chart-figure,.about-copy,.footer-copy,.footer-bottom,.footer-tail,.footer-top,.story-heading,.face-nav,.disc-heading,.chapter,.triangle-controls,.transition-line');
   }
   function select(element){
     if(element===active)return;
