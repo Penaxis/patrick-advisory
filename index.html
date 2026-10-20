@@ -248,18 +248,20 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   align-items: center;
   justify-content: space-between;
 }
-#hero-scene .clock{
-  font-size: 10px;
-  line-height: 1.7;
-  letter-spacing: .035em;
-  color: var(--muted);
-}
-#hero-scene .clock strong{
-  display: block;
+#hero-scene .wordmark{
   color: #fff;
-  font-size: 14px;
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
+  font-family: Mona, "Arial Narrow", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -.04em;
+  text-decoration: none;
+  transition: color .25s;
+}
+#hero-scene .wordmark span{
+  color: var(--accent);
+}
+#hero-scene .wordmark:hover{
+  color: var(--accent);
 }
 #hero-scene .menu-toggle{
   position: absolute;
@@ -591,11 +593,8 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
     left: 5%;
     right: 5%;
   }
-#hero-scene .clock{
-    font-size: 8px;
-  }
-#hero-scene .clock strong{
-    font-size: 12px;
+#hero-scene .wordmark{
+    font-size: 18px;
   }
 #hero-scene .pill{
     min-height: 42px;
@@ -687,8 +686,6 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   }}
 /* HERO MESSAGING: promise-led headline, value line and supporting facts */
 #hero-scene .letter{white-space:pre}
-#hero-scene .hero-kicker{position:absolute;left:0;bottom:100%;display:flex;align-items:baseline;gap:12px;margin:0 0 24px;color:#aaa;font-size:10px;line-height:1.6;letter-spacing:.035em;text-transform:uppercase}
-#hero-scene .hero-kicker strong{font-weight:400;color:#fff}
 #hero-scene .monogram{font-size:11.5cqw}
 #hero-scene .surname .letter:last-child{color:var(--accent)}
 #hero-scene .notes{max-width:530px;line-height:1.55}
@@ -698,10 +695,8 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #hero-scene .hero-facts div{position:relative}
 #hero-scene .hero-facts dt{font-family:Mona,"Arial Narrow",Arial,sans-serif;font-size:34px;font-weight:250;line-height:1;letter-spacing:-.04em;white-space:nowrap}
 #hero-scene .hero-facts dd{margin:9px 0 0;color:#aaa;font-size:10px;line-height:1.5;letter-spacing:.035em;text-transform:uppercase}
-#hero-scene .hero.play .hero-kicker{animation:contentEntrance .5s .25s both}
 @media (min-width: 769px){#hero-scene .notes p{max-width:min(530px,44vw)}}
 @media (max-width: 768px){
-  #hero-scene .hero-kicker{gap:8px;margin-bottom:16px;font-size:8px}
   #hero-scene .monogram{font-size:17cqw}
   #hero-scene .notes{right:32px;bottom:100px;max-width:none;font-size:13px;line-height:1.5}
   #hero-scene .notes p:first-child{display:none}
@@ -2078,10 +2073,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
   <div class="shade" aria-hidden="true"></div>
   <div class="cursor-glow" aria-hidden="true"></div>
   <nav class="navigation" aria-label="Main navigation">
-    <div class="clock">
-      <span id="timezone"></span>
-      <strong id="local-time"></strong>
-    </div>
+    <a class="wordmark" href="#top" aria-label="Patrick Grossmann, back to top">Patrick Grossmann<span>.</span></a>
     <button
       class="menu-toggle"
       type="button"
@@ -2105,10 +2097,6 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
     </button>
   </nav>
   <div class="title-block">
-    <p class="hero-kicker">
-      <strong>Patrick Grossmann</strong>
-      <span>Advisor &amp; Executive Coach</span>
-    </p>
     <!-- HEADLINE: the promise, split around the portrait -->
     <h1
       class="title"
@@ -2843,7 +2831,6 @@ const finePointer = matchMedia(
 );
 const desktop = matchMedia("(min-width: 769px)");
 let entranceTimer;
-let clockTimer;
 /* ANIMATED TITLE LETTERS */
 let letterDelay = .38;
 document.querySelectorAll("[data-letters]").forEach(element => {
@@ -2867,33 +2854,6 @@ document.querySelectorAll("[data-roll]").forEach(element => {
     element.append(span);
   });
 });
-/* LIVE CLOCK */
-function updateClock() {
-  const now = new Date();
-  const offset = -now.getTimezoneOffset();
-  const sign = offset >= 0 ? "+" : "−";
-  const absolute = Math.abs(offset);
-  const hours = String(
-    Math.floor(absolute / 60)
-  ).padStart(2, "0");
-  const minutes = String(
-    absolute % 60
-  ).padStart(2, "0");
-  document.querySelector("#timezone").textContent =
-    `GMT${sign}${hours}:${minutes} // LOCAL`;
-  document.querySelector("#local-time").textContent =
-    now.toLocaleTimeString("en-GB", {
-      hour12: false
-    });
-}
-function startClock() {
-  clearInterval(clockTimer);
-  updateClock();
-  if (!document.hidden) {
-    clockTimer = setInterval(updateClock, 1000);
-  }
-}
-startClock();
 /* ENTRANCE */
 function playEntrance() {
   if (reducedMotion.matches) return;
@@ -3438,7 +3398,6 @@ document.querySelectorAll(".approach-button").forEach(button => button.addEventL
 document.querySelector(".about-button").addEventListener("click", () => navigateTo("#about"));
 /* VISIBILITY AND PREFERENCES */
 document.addEventListener("visibilitychange", () => {
-  startClock();
   document.body.classList.toggle(
     "page-hidden",
     document.hidden
@@ -3501,12 +3460,10 @@ photoReady.then(() => {
 });
 window.addEventListener("pagehide", () => {
   stopRendering();
-  clearInterval(clockTimer);
   clearTimeout(entranceTimer);
 });
 window.addEventListener("pageshow", event => {
   if (event.persisted) {
-    startClock();
     setupWebGL();
   }
 });
