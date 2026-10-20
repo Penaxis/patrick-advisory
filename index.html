@@ -730,8 +730,8 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
 #advisory-scenes .adv-button:hover{border-color:var(--orange);color:var(--orange)}
 #advisory-scenes .adv-button-primary{border-color:#fff;color:#000;background:#fff}
 #advisory-scenes .adv-button-primary:hover{border-color:var(--orange);color:#000;background:var(--orange);transform:translateY(-2px)}
-#advisory-scenes .adv-text-link{color:#aaa;font-size:13px;text-decoration:none;transition:color .25s}
-#advisory-scenes .adv-text-link:hover{color:var(--orange)}
+#advisory-scenes .adv-text-link{padding:0;border:0;background:none;color:#aaa;font:inherit;font-size:13px;text-decoration:underline;text-decoration-color:rgba(255,255,255,.25);text-underline-offset:4px;cursor:pointer;transition:color .25s,text-decoration-color .25s}
+#advisory-scenes .adv-text-link:hover{color:var(--orange);text-decoration-color:var(--orange)}
 
 /* 01 Services */
 #advisory-scenes .svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
@@ -844,6 +844,7 @@ a:focus-visible,button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px s
   #advisory-scenes .svc-top{margin-bottom:28px}
   #advisory-scenes .svc-meta{grid-template-columns:1fr;gap:14px}
   #advisory-scenes .adv-button{width:100%}
+  #advisory-scenes .svc-actions{gap:16px}
   #advisory-scenes .principle{margin-top:90px}
   #advisory-scenes .principle-head{grid-template-columns:1fr;margin-bottom:28px}
   #advisory-scenes .principle-step{grid-template-columns:1fr;gap:16px;padding:22px 0}
@@ -2254,8 +2255,8 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
           <div><dt>Best fit</dt><dd>Founder-led, €20–80M annual revenue</dd></div>
         </dl>
         <div class="svc-actions">
-          <a class="adv-button adv-button-primary" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Start the free Scale Readiness Review <span aria-hidden="true">↗</span></a>
-          <button class="adv-button" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a call <span aria-hidden="true">↗</span></button>
+          <a class="adv-button adv-button-primary" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Check your scale readiness <span aria-hidden="true">↗</span></a>
+          <button class="adv-text-link" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">or talk to Patrick first</button>
         </div>
       </article>
 
@@ -2283,7 +2284,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
           <div><dt>Experience</dt><dd>40+ coaching clients since 2022</dd></div>
         </dl>
         <div class="svc-actions">
-          <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a free introductory call <span aria-hidden="true">↗</span></button>
+          <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a free intro call <span aria-hidden="true">↗</span></button>
         </div>
       </article>
     </div>
@@ -2332,8 +2333,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
       <div class="principle-cta adv-reveal">
         <p>Start with clarity. The first conversation is free.</p>
         <div class="adv-cta-actions">
-          <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a free introductory call <span aria-hidden="true">↗</span></button>
-          <a class="adv-button" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Free Scale Readiness Review <span aria-hidden="true">↗</span></a>
+          <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Start the conversation <span aria-hidden="true">↗</span></button>
         </div>
       </div>
     </div>
@@ -2432,7 +2432,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
       <p>Facing the same transition in your company?</p>
       <div class="adv-cta-actions">
         <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Talk it through with Patrick <span aria-hidden="true">↗</span></button>
-        <a class="adv-text-link" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Or start the free Scale Readiness Review ↗</a>
+        <a class="adv-text-link" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">or take the free review ↗</a>
       </div>
     </div>
   </div>
@@ -2508,8 +2508,7 @@ html.has-brand-cursor.cursor-present:not(.cursor-suspended) #brand-cursor{opacit
         hands-on operational support.
       </p>
       <div class="adv-cta-actions">
-        <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Book a free introductory call <span aria-hidden="true">↗</span></button>
-        <a class="adv-button" href="https://patrickgrossmann.de/en/advisory/scale-readiness-review-en/" target="_blank" rel="noopener noreferrer">Free Scale Readiness Review <span aria-hidden="true">↗</span></a>
+        <button class="adv-button adv-button-primary" type="button" data-booking-open aria-haspopup="dialog" aria-controls="booking-dialog">Ask Patrick which fits <span aria-hidden="true">↗</span></button>
       </div>
     </div>
   </div>
